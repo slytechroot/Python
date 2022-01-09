@@ -2,13 +2,13 @@
 
 
 #declare myname variable
-myname = "Attila"
+myname = "Attila Kun"
 print ('My name is',myname)
 
 #declare myage variable
 myage = 41
-print ('And I am',myage)
+print ('And I am', myage, '.')
 
 #declare mymajor
-mymajor = "Business Admin and IS"
-print ('I majored Dec. 2021 in',mymajor)
+mymajor = "Business Admin and IS."
+print ('I majored in Dec. 2021 in',mymajor)
