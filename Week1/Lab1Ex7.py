@@ -26,6 +26,7 @@ print ('\nThe total area of all 3 rooms is: ',total_area)
 #cost per square foot * total areas
 square_foot = 4.57
 flooring_area = float(square_foot * total_area)
+#print(flooring_area)
 print ('\nThe total flooring cost for all 3 rooms is: $ {:.2f}'.format(flooring_area))
 
 
