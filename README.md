@@ -1,1 +1,2 @@
-# SANS-511
+Riverside City College - Riverside CA
+My first Python class. 
