@@ -17,7 +17,7 @@ print(my_tuple)
 my_tuple = ("mouse", [8,4,6], (3,4))
 print(my_tuple)
 
-#accessing tuple elements using indexing
+#accessing (and printing out) tuple elements using indexing
 my_tuple = ('P','e','r','m','i','t')
 print(my_tuple[0]) # 'p'
 print(my_tuple[5]) # 't'

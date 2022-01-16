@@ -11,17 +11,14 @@ print(my_dict.get('age'))
 # Output None
 print(my_dict.get('address'))
 
-
 #changing and adding Dictionary elements
 #update value
 my_dict['age'] = 27
-
 #output: {'name': 'Jack', 'age': 26}
 print (my_dict)
 
 #add item
 my_dict['address'] = 'Downtown'
-
 #output: {'address': 'Downtown', 'name': 'Jack', 'age': 26}
 print(my_dict)
 

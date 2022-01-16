@@ -7,9 +7,7 @@ print(str1)
 print (type(str1))
 
 str2="8"
-
 print(type(str2))
-
 str3="She is a shot-hair"
 
 ##concatenate
@@ -22,7 +20,6 @@ c=" ".join([str1,str3])
 print(c)
 
 ##string operations
-
 print (len(str1)) #how long is my string
 
 #print  first letter of str1
