@@ -1,0 +1,59 @@
+ Write a Weather Forecast Python program
+
+ 
+
+To create a simple weather forecast Python program, you can use a weather API to fetch weather data and then display it to the user. In this example, we'll use the OpenWeatherMap API to retrieve weather information. You will need to sign up for a free API key from OpenWeatherMap (https://openweathermap.org/api) to use their service.
+
+First, make sure you have the requests library installed. If you don't have it installed, you can install it using pip:
+
+bash
+
+pip install requests
+
+Now, you can create a Python program for weather forecasting:
+
+python
+
+import requests
+import json
+
+def get_weather(api_key, city_name):
+    # OpenWeatherMap API URL
+    url = f"http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api_key}&units=metric"
+    
+    try:
+        response = requests.get(url)
+        data = json.loads(response.text)
+        
+        if data["cod"] == 200:
+            # Extract relevant weather data
+            main_data = data["main"]
+            weather_data = data["weather"][0]
+
+            # Display weather information
+            print(f"Weather in {city_name}:")
+            print(f"Description: {weather_data['description']}")
+            print(f"Temperature: {main_data['temp']}°C")
+            print(f"Humidity: {main_data['humidity']}%")
+            print(f"Pressure: {main_data['pressure']} hPa")
+        else:
+            print("Error: City not found.")
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+
+def main():
+    # Replace 'YOUR_API_KEY' with your actual API key
+    api_key = "YOUR_API_KEY"
+    
+    # Get the city name from the user
+    city_name = input("Enter the city name: ")
+
+    # Get and display the weather
+    get_weather(api_key, city_name)
+
+if __name__ == "__main__":
+    main()
+
+Replace "YOUR_API_KEY" with your actual OpenWeatherMap API key. When you run this program, it will prompt you to enter a city name, and then it will retrieve and display the current weather conditions for that city.
+
+Remember that this is a simple example, and you can expand on it by adding more features like forecasts, location detection, and error handling as needed.
