@@ -1,11 +1,14 @@
 Python without the boring books - learn to work with lines, files and the internet - 1
 
 If you think that a hacker does not need programming, then you are deeply mistaken! Yes, you can download Kali Linux and use ready-made programs, copy the code from forums and blindly swing scripts with GitHub. But the ceiling of your skills until you learn to write and understand the code will be low. In this article, I will try to teach you the basics of programming in an accessible form. Starting from absolute zero!
+
 From the editorial board
 Recently, we conducted a survey on which course on Python would be more interesting to readers. The first two lines with a large margin in it took the options “for the hacker” and “Python from scratch”. After learning about this state of affairs, we immediately ordered an article on how to start programming in Python. If it succeeds, it can turn into a whole series. The difference between our approaches is that we explain everything in a living language and give boring examples. In general, training in the corporate style of "Hacker"!
 And since this is an experiment, the article is available without a paid subscription.
+
 If you have a modern Linux distribution on the computer, then it already includes Python 3, and it will be convenient to write the first programs in IDLE - a simple code editor that is attached to Python. In Ubuntu to install it, dial in the console
 sudo apt-get install idle3 
+
 In Windows, when installing Python, be sure to mark the Ad to Path tick on the first screen so that you can run python3from the command line in any convenient place.
 Running IDLE, go to Options → Configure IDLE, go to the General tab and tick at the Open Edit Window point, click OK and restart IDLE. Now you can write programs, save them and run the F5 key. So, chased?
  
@@ -15,21 +18,28 @@ a = 2
 a = a + 2
 print(a)
 Well, what print(a)- this is a team that prints the current value of the variable on the screen, you have already understood. You wrote after the sign again the variable itself + 2, that is, at first in the variable was a value of 2, then another 2 was added to this value. On the screen proudly flaunts 4. Congratulations, two and two have been folded!
+
 And if initially it is not known, what numbers should be added? Then I would have to first ask the user to enter them into the console and press Enter. Let's do it like this:
 a = input(' Enter how many liters of beer you have: ')
 b = input(' How much beer did my friend bring: ')
 c = int(a) + int(b)
 print('For the two of you: ' + str(c) + '  liters of beer')
+
 Inside the brackets at the input you write an explanation for the user what exactly is asked to enter. But the trouble is, by default, everything that is entered through input is considered not a number, but a string, so before you add up the number of liters of beer, you must first convert the entered lines into the numbers using the int( function).
+
 Info
 The word “function” should be familiar to you from mathematics. In brackets, we write what it takes (argument), and the output will be the result. Python will first replace the variable on its current value ( int(a)on, say, int("5"), and then the function - for the result of its execution, that is 5. It happens that the function does not return anything, only does something. For example, print()Just typing the argument.
+
 Okay, convert the strings into numbers, put them in a variable c, and then what kind of thrash inside the brackets print? Here the lines are folded (lines are always written inside quotes), explaining what exactly is displayed on the screen, and the result of the addition is transmitted to the function print().
+
 To make the lines painlessly formed with the variable c, in which the number lies, it is necessary to convert it into a string function str()- just as we turned the lines into numbers, only on the contrary.
 In general, there are many types of variables, but the essence you have caught - to produce some actions with variables, you need to first lead them to one type - to the string, or to the numerical, or to some other. If you do not bother with this, Python will not add the numbers, but the lines and entering 2 and 3 liters of beer in total will give not 5, but as much as 23. It would be good in reality!
+
 Here is another example, calculating how much more you drink beer, based on the average life expectancy in Russia:
 a = input(' Enter how old you are : ')
 b = 73 - int(a)
 print(' There are about 100 left : ' + str(b) + "  years")
+
 Here we call the function input()to get a value, subtract it from 73 (the average life expectancy of a Russian), not forgetting to turn the line into a number, and then print the result, turning the number back into a line and adding to other lines.
 So, you've learned what integers and string variables are, that these types can be converted into each other by commands int()and str(). In addition, now you know how to get variables from the user with the help of the function input('Введите что-то')and print results using the function print().
  
