@@ -1,0 +1,221 @@
+Python without the boring books - learn to work with lines, files and the internet - 1
+
+If you think that a hacker does not need programming, then you are deeply mistaken! Yes, you can download Kali Linux and use ready-made programs, copy the code from forums and blindly swing scripts with GitHub. But the ceiling of your skills until you learn to write and understand the code will be low. In this article, I will try to teach you the basics of programming in an accessible form. Starting from absolute zero!
+From the editorial board
+Recently, we conducted a survey on which course on Python would be more interesting to readers. The first two lines with a large margin in it took the options “for the hacker” and “Python from scratch”. After learning about this state of affairs, we immediately ordered an article on how to start programming in Python. If it succeeds, it can turn into a whole series. The difference between our approaches is that we explain everything in a living language and give boring examples. In general, training in the corporate style of "Hacker"!
+And since this is an experiment, the article is available without a paid subscription.
+If you have a modern Linux distribution on the computer, then it already includes Python 3, and it will be convenient to write the first programs in IDLE - a simple code editor that is attached to Python. In Ubuntu to install it, dial in the console
+sudo apt-get install idle3 
+In Windows, when installing Python, be sure to mark the Ad to Path tick on the first screen so that you can run python3from the command line in any convenient place.
+Running IDLE, go to Options → Configure IDLE, go to the General tab and tick at the Open Edit Window point, click OK and restart IDLE. Now you can write programs, save them and run the F5 key. So, chased?
+ 
+Variables
+In any programming language there is such a thing as variables. It's like in school algebra: here's a variable a = 1, here is the variable b = 2. That is, these are such abstract things, inside them there is a meaning that can change – for example, when you write a sign after a variable sign is equal to a new meaning.
+a = 2
+a = a + 2
+print(a)
+Well, what print(a)- this is a team that prints the current value of the variable on the screen, you have already understood. You wrote after the sign again the variable itself + 2, that is, at first in the variable was a value of 2, then another 2 was added to this value. On the screen proudly flaunts 4. Congratulations, two and two have been folded!
+And if initially it is not known, what numbers should be added? Then I would have to first ask the user to enter them into the console and press Enter. Let's do it like this:
+a = input(' Enter how many liters of beer you have: ')
+b = input(' How much beer did my friend bring: ')
+c = int(a) + int(b)
+print('For the two of you: ' + str(c) + '  liters of beer')
+Inside the brackets at the input you write an explanation for the user what exactly is asked to enter. But the trouble is, by default, everything that is entered through input is considered not a number, but a string, so before you add up the number of liters of beer, you must first convert the entered lines into the numbers using the int( function).
+Info
+The word “function” should be familiar to you from mathematics. In brackets, we write what it takes (argument), and the output will be the result. Python will first replace the variable on its current value ( int(a)on, say, int("5"), and then the function - for the result of its execution, that is 5. It happens that the function does not return anything, only does something. For example, print()Just typing the argument.
+Okay, convert the strings into numbers, put them in a variable c, and then what kind of thrash inside the brackets print? Here the lines are folded (lines are always written inside quotes), explaining what exactly is displayed on the screen, and the result of the addition is transmitted to the function print().
+To make the lines painlessly formed with the variable c, in which the number lies, it is necessary to convert it into a string function str()- just as we turned the lines into numbers, only on the contrary.
+In general, there are many types of variables, but the essence you have caught - to produce some actions with variables, you need to first lead them to one type - to the string, or to the numerical, or to some other. If you do not bother with this, Python will not add the numbers, but the lines and entering 2 and 3 liters of beer in total will give not 5, but as much as 23. It would be good in reality!
+Here is another example, calculating how much more you drink beer, based on the average life expectancy in Russia:
+a = input(' Enter how old you are : ')
+b = 73 - int(a)
+print(' There are about 100 left : ' + str(b) + "  years")
+Here we call the function input()to get a value, subtract it from 73 (the average life expectancy of a Russian), not forgetting to turn the line into a number, and then print the result, turning the number back into a line and adding to other lines.
+So, you've learned what integers and string variables are, that these types can be converted into each other by commands int()and str(). In addition, now you know how to get variables from the user with the help of the function input('Введите что-то')and print results using the function print().
+ 
+Conditions
+At the heart of any program are the conditions. Depending on whether they are performed or not performed, the program can follow one or the other path. Imagine, you are driving and watching for hours: if you already have ten evenings, you will turn home, if not, then you can come to visit. In the same way, the program works: it checks some meaning and turns there or here and performs the corresponding piece of code.
+beer = input('Введите Yes, если пиво есть, и No, если пива нет: ')
+if beer.lower() == 'yes':
+result = 'Ты взломаешь Пентагон'
+else:
+result = 'Ты сломаешь свой мозг'
+print(result)
+In English, if it means “if”, and the universe means “other” or “otherwise”. In the line after if there is a condition that we check. If it is true, the first block of code is executed (it is separated by four gaps at the beginning). If not, the one after else:.
+Info
+The code blocks in Python are detached by indentations. The indentation can actually be any, for example, some prefer to use the Tab key instead of four gaps. The main thing is not to mix in one program invoices of different types. If you start using four gaps, then use the whole program, or Python will argue and humiliate you.
+Another important point here is equality in the condition. It is written as a double “equal” (==) and this is different from the appropriation - the single "equal".
+The lower() function, before comparing the condition, makes all the letters in the line small, because a stupid user can enter the word YES with the burning Caps Lock, and this should be foreseen in advance.
+Info
+In fact, lower()– not just a function, but a class method string(Strike). That is why it is called through the point after the variable that contains the string. We will talk about classes and methods some other time, but for the time being just remember that some functions are caused in this way.
+Let's try to make a condition for checking the login and password using the operator I, which is written as and. It is needed in order to check at the same time the fulfillment of the first and second conditions.
+myname = input('Введите логин: ')
+mypass = input('Введите пароль: ')
+if myname == 'xakep' and mypass == 'superpassword123':
+result = 'Добро пожаловать, о великий хакер!'
+else:
+result = 'Ты кто такой, давай до свидания...'
+print(result)
+Info
+The operator in Python is a symbol that performs an operation on one or more variables or values: arithmetic (“plus”, “minus”, “equal” and so on), comparisons (double “equal”, “more”, “less”, etc.), assignment (almost several others), logical operators (almost (almost others).and, or, not), Membership operators (in, not in) and the operators of identity (is, is not) There are also broken operators to compare binary numbers.
+Let's create an even more difficult condition by using the operator orwhich is translated as OR.
+myname = input('Введите логин: ')
+mypass = input('Введите пароль: ')
+if(myname == 'ivan' and mypass == 'superpassword123') or (myname == 'marina' and mypass == 'marinka93'):
+result = 'Привет, ' + myname + '. Добро пожаловать!'
+else:
+result = 'Ты кто такой, давай до свидания...'
+print(result)
+Here are used brackets – Python does not require brackets for simple conditions, but for complex they apply to clearly determine the order of actions. The program welcomes only two users, ivan или marina. That is, it is first checked whether the login and password coincided with the login and password of Ivan, and then after the operator orThe same is checked for Marina.
+Info
+When you need to check not one, but two or three conditions at once, you can put each of them in brackets, and put operators between them oror and. In the case of orthe general condition is fulfilled if at least one of the conditions included in it is met. In the case of c and, in order for the general condition to be met, both inclined to be met.
+Here is another example, it uses elifwhich means something different. This is used to set several units of commands: if one condition is not met, the following and so on are checked with ELIF.
+v = int(input('Введи, сколько тебе лет: '))
+if v < 18:
+print('Привет, юный хацкер')
+elif v < 30:
+print('Превед, олдскул')
+elif v < 65:
+print('Решил пересесть с ассемблера на Python?')
+elif v < 100:
+print('На пенсии — самое время покодить')
+elif v < 100000:
+print('Клан бессмертных приветствует тебя!')
+Various comparison operators can act as conditions:
+•	a == 9(a is 9)
+•	a != 7(a not equal to 7)
+•	a > 5(a more than 5)
+•	a < 5(a less than 5)
+•	a >= 3(a more or equal to 3)
+•	a <= 8(a less than or equal to 8)
+You can also invert the truth of the condition (true) to falsity (fals) and back with the help of the word not.
+beer = input('Введи Yes, если пиво есть, и No, если пива нет: ')
+if beer.lower() == 'yes':
+print('Пива нет!')
+if not beer.lower() == 'yes':
+print('Ура, пиво еще есть!')
+For example, it is necessary that a person enters a number of not (NOT) less than 5.
+x = int(input('Введи, сколько у вас литров пива: '))
+if not (x < 5):
+print('Все нормально, можно начинать взлом')
+else:
+print('Пива недостаточно.')
+ 
+Lists
+Ordinary variables are good for storing single values, be it a string or a number. But sometimes you need to store a group of variables. Lists come to the rescue here.
+For example, the list may be as follows:
+a = [67,5,90,20,30]
+Each element of the list has its own index. To get one of the values of the list, you can refer to its serial number. Numbering in the lists goes not from one, but from scratch, that is, 0, 1, 2, 3, 4...
+Team print(a[2])prints the number 90 - the third element (numbering from scratch!) in the list that was announced above. Elements on the lists can be as many as you want.
+You can also make a list of lines:
+b = ['Маша', 'Ваня', 'Лена', 'Марина', 'Арнольд']
+Then print(b[1])prints the line Ваня.
+You can add a new value to the existing list using the method append:
+b.append('Дима')
+Now the list looks like this:
+b = ['Маша', 'Ваня', 'Лена', 'Марина', 'Арнольд', 'Дима']
+If you need to refer to some element of the list, counting from the end of this list, you can write negative numbers. For example, the last element of the list has an index of -1, and print(b[-1])print Дима.
+Any list can be sorted by ascending or alphabetically.
+a = [67,5,90,20,30]
+a.sort()
+After the function a.sort()The list will take this kind: [5,20,30,67,90].
+Now a little about the cuts. A cut is like getting some part of the list, which in turn is also a list. The cuts are set in this way:
+список[x:y:z]
+Here x– the number of the element from which the slice is taken, yThe last element of the cut, z– the interval at which we take the elements (optional value).
+Receive a slice of list elements bfrom 1 to 3 (4 is not included in the cut):
+print(b[1:4])
+Receive a slice of list elements bfrom 2 to the end:
+print(b[2:])
+We get every second element of the list:
+print(b[::2])
+Change the order of the list elements to the opposite:
+print(b[::-1])
+By the way, the usual lines also support slices, their result will also be a line. For example:
+s = 'Hello world'
+print(s[:5])
+Hello is displayed on the screen because we printed the first five characters of the line.
+The elements of the list may be other lists. To refer to the list elements inside the list, use another square brackets:
+a = [[1, 2, 3], [44, 45, 46]]
+Such a list of lists is called two-dimensional and resembles a table. For example, to get the first number in the second line (indices 0 and 1, since the numbering from scratch), you need to write:
+print(a[1][0])
+The result will be 44.
+The list is a variable sequence. This means that if you create some action on the list, then you do not have to redefine it and re-maintain it in a variable. But the line is an immutable sequence. If you do something with it, you will have to place the new value received.
+Another immutable type of data is a motorcade. It's the same list, but you can't change it. So he takes up less memory. You can announce the motorcade with the help of round brackets:
+a = (1, 2, 3, 4)
+A set is another sequence of elements, each of which does not have its own index. That is, the elements are not ordered and you can not turn to them on the index. But all the elements of the set are unique and do not repeat. If you need a set of unique elements, you can put them in many. Let's use an example to convert the existing list into a set and see that there will be no repetitive elements in it.
+l = [1, 2, 2, 3, 3, 4, 1]
+m = set(l)
+print(m)
+Result: set([1, 2, 3, 4])Repetitive elements have disappeared. By the way, if you want to turn a lot (or something else) into a list, use the function list().
+ 
+Cycles
+A cycle is a unit of commands that repeats a certain number of times. Cycles can be set in different ways. For example, the cycle forIt is often used when you need to go through all elements of a sequence like the list.
+lst = [15,50,60,97,78]
+for x in lst:
+x = x + 1
+print(x)
+Here initially there is a list of numbers, and then with the help of the design for x in lstWe pass in turn every element of this list and take some action with it. These actions, as in the case of the conditions, are separated by a derogation.
+Variable хin this case, alternately takes the value of each element of the list lst, we add a unit to this value, print the result and move on to the next round of the cycle - that is, we take the following values in the list and do the same with it, and so until the list runs out.
+If you just need to execute commands a specific, pre-known number of times, then use the cycle forand function range().
+num = 0
+for i in range(5):
+num=num + 1
+print('Я ' + str(num) + ' кружка пива')
+If you have any list, you can easily run through it with a cycle:
+mas = ['Ленин', 'Сталин', 'Хрущёв', 'Брежнев', 'Горбачёв', 'Ельцин', 'Путин', 'Медведев']
+# Ах да, Путин же потом вернулся. Нужно добавить его еще раз.
+mas.append('снова Путин')
+for x in mas:
+print('Был ' + x + ' а после него... ')
+Now it's time to find out about the list while. The word while translates from English as “yet” (not in the sense of “goodbye”, but in the sense of “as soon as”). That is, the commands within the cycle will be fulfilled as long as the condition indicated further is fulfilled. For example, here is a cycle that will print all even numbers from 1 to 100.
+a = 0
+while a < 100:
+a = a + 1
+if (a % 2) == 0:
+print(a)
+Info
+How did we check that the number is even? This was helped by the operator %, which returns the balance of division. If when dividing in half turns zero, then the number is even!
+In the cycle whileIt is necessary to clearly indicate the change in the variable that is responsible for the condition, otherwise the cycle can become infinite and the program freezes.
+Looking ahead a little bit, I will show how to create a very small but malicious script called a fork bomb. He endlessly creates his copies in the RAM, which can cause sufficient brakes:
+import os
+while True:
+a=os.fork()
+Here we are doing a new thing that is also worth remembering - we import a module, namely the module oswhich contains commands to access different functions of the operating system.
+Then inside the cycle whileWe create endless copies. As a condition, we wrote here simply TrueThat is, just “truth”. The body of the cycle does not change this value, and therefore the cycle will be executed again and again, and os.fork()will produce new and new processes, clogging with their prompt memory. So, comrade, be careful with the cycle while!
+ 
+Practical task: monitor the clipboard
+And now from the educational examples, let’s move on to something interesting! After all, we’re not just learning programming out of curiosity. Let's write a program that will monitor what is happening in the exchange buffer.
+One of the strengths of Python is a huge base of ready-made modules that can be taken and connected to your programs. To install and use them inside your programs, you can tie a package manager called a pip. Let's assume that you have already installed a pip.
+First of all, put with the help of a pip module that is responsible for working with the exchange buffer. In Windows it will be such a command:
+pip install pyperclip
+In Linux - slightly different:
+pip3 install pyperclip 
+Moving to coding. Our program will monitor the clipboard and print on the screen any text that the user copies. I gave explanations in the form of comments, they in Python are beaten with a sign #at the beginning of the line.
+# Подключим модуль для работы с буфером обмена
+import pyperclip
+# Подключим модуль для работы с системным временем
+import time
+# Задаем переменную old и присваиваем ей пустую строку
+old = ''
+# Начнем бесконечный цикл слежения за буфером обмена
+while True:
+# Кладем в переменную s содержимое буфера обмена
+s = pyperclip.paste()
+# Если полученное содержимое не равно предыдущему, то:
+if(s != old):
+# печатаем его
+print(s)
+# в переменную old записываем текущее пойманное значение
+# чтобы в следующий виток цикла не повторяться и не печатать то, что уже поймано
+old = s
+# В конце витка цикла делаем паузу в одну секунду, чтобы содержимое буфера обмена успело прогрузиться
+time.sleep(1)
+Well, congratulations, you wrote a program that can catch everything that the user copies in the clipboard. Then it can be developed - for example, instead of displaying on the screen, write the caught strings into a file with a log or send over the network. But we just started, right?
+ 
+Homework
+Let me give you a couple of feasible tasks at home so you can practice for yourself.
+1.	Make a program that calculates your ideal weight depending on height and age. Find the appropriate formula in search engines and implement the condition for calculation. Beer beer, and health should be monitored!
+2.	Write the program that monitors the clipboard in the cycle, periodically receiving text from it using pyperclip.paste()and, if he sees that someone has been copied email, replaces this email with another, pre-written in the code, placing it in a team exchange buffer pyperclip.copy('coolhacker@xakep.ru').
+
+
+
