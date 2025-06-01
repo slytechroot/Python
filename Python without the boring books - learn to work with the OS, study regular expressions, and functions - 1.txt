@@ -1,0 +1,266 @@
+Python without the boring books - learn to work with the OS, study regular expressions, and functions - 1
+Content of the article
+•	We work with files
+•	Regular expressions
+•	Functions
+•	Practice: SQL Vulnerabilities Test
+Today we will work with the OS file system - we will learn to go through directories, open and change files. Then let’s master powerful spells called “regular expressions,” study the subtleties of creating and calling functions and at the end we will write a simple SQL vulnerability scanner. And all this in one short lesson!
+From the editorial board
+This article is part of the “Python from absolute zero” cycle, where we talk about Python’s aces in our branded boring style. You can read them in order or choose some areas that you would like to tighten them.
+•	Lesson 1: Variables, data types, conditions and cycles 
+•	Lesson 2: Lines, Files, Exceptions and Internet Work 
+The first two lessons are available in whole without a paid subscription. This is almost entirely: except for the last example and homework.
+ 
+We work with files
+Let’s start, as always, with simple things. In Python there is a module with a laconic name oswhich (you will not believe!) designed to interact with the operating system, including to manage files.
+First of all, of course, you need to import it at the beginning of our script:
+import os
+And now we have different interesting opportunities. For example, we can get the way to the current folder. At first, it coincides with the one in which you were at the start of the script (even if the script itself is somewhere else), but in the course of the program we can change this value using the function os.chdir().
+# Возвращает путь к текущей рабочей папке
+pth=os.getcwd()
+print(pth)
+# Устанавливает путь к текущей рабочей папке, в данном случае это диск D:/
+os.chdir(r'D:/')
+Info
+If you work in Windows, then on the way to the file or folder in front of the opening quote, point the letter r(which means raw) or instead of one oblique devil on the way put two.
+Let’s try to get a list of files with the .py extension in the current directory. For this, we use os and fnmatch modules.
+import os
+import fnmatch
+# В цикле, с помощью os.listdir('.') получим список файлов
+# в текущей директории (точка в скобках как раз ее и обозначает)
+for fname in os.listdir('.'):
+# Если у текущего имени файла расширение .py, то печатаем его
+if fnmatch.fnmatch(fname, '*.py'):
+print(fname)
+The fnmatch module allows you to search in strings for a certain text that is suitable for a mask to a given template:
+•	*replaces any number of any symbols; 
+•	?replaces any symbol; 
+•	[seq]replaces any symbols from the sequence in square brackets; 
+•	[!seq]replaces any symbols other than those present in square brackets. 
+Let's ruthlessly delete some file:
+import os
+(os.remove(r'D:\allmypasswords.txt'))
+Remove the file:
+import os
+os.rename('lamer.txt','xakep.txt')
+And now we will create a folder along the specified path and immediately remove it. For this, you will use the shutill module, where there is a function rmtree(), which removes the folder along with the contents.
+import os
+import shutil
+os.makedirs(r'D:\secret\beer\photo') # Создает все папки по указанному пути
+shutil.rmtree(r'D:\secret\beer\photo') # Удаляет папку вместе с ее содержимым
+Let’s say you want to get a list of all the files contained in the folders on the specified path (taking into account the nested folders too) to find something interesting. The script will look like this:
+Warning
+Be careful - the script in this form will shake the entire disk D. If you have it and there is a lot of trash, the process can be delayed.
+import os
+for root, dirs, files in os.walk(r'D:'):
+for name in files:
+fullname = os.path.join(root, name)
+print(fullname)
+if('pass' in fullname):
+print('Бинго!!!')
+The function of the walk() module os adopts one mandatory argument - the name of the catalog. It consistently passes all the nested directories and returns the generator object from which it is obtained:
+•	the address of the next catalog in the form of a line; 
+•	list of names of subdirectories of the first level of nesting for this catalog; 
+•	list of the names of the files of this directory. 
+Info
+A generator is an object that does not calculate the values of all its elements when created. These generators differ from the lists - they store all their elements in memory, and they can only be removed software. Calculations with generators are called lazy, they save memory. In more detail, we will consider the generators in the following lessons.
+Now I will show you how to find out the size of any file, as well as the date of its modification.
+import os.path
+# Модуль для преобразования даты в приемлемый формат
+from datetime import datetime
+path = r'C:\Windows\notepad.exe'
+# Получим размер файла в байтах
+size = os.path.getsize(path)
+# А теперь в килобайтах
+# Две косые черты — это целочисленное деление
+ksize = size // 1024
+atime = os.path.getatime(path)
+# Дата последнего доступа в секундах с начала эпохи
+mtime = os.path.getmtime(path)
+# Дата последней модификации в секундах с начала эпохи
+print ('Размер: ', ksize, ' KB')
+print ('Дата последнего использования: ', datetime.fromtimestamp(atime))
+print ('Дата последнего редактирования: ', datetime.fromtimestamp(mtime))
+Info
+For Unix operating systems on January 1, 1970, 00:00:00 (UTC) - the starting point of time, or "the beginning of the era". Most often, time in the computer is calculated in the form of seconds that have passed since then and only then translates into a convenient view for humans.
+Let's joke on the user: create some file and constantly open it with the program that this file usually opens in the system:
+import os
+# Модуль time понадобится для паузы, чтобы не слишком часто открывалось
+import time
+# Создаем текстовый файл
+f=open('beer.txt','w',encoding='UTF-8')
+f.write('СРОЧНО НАЛЕЙТЕ ХАКЕРУ ПИВА, ИНАЧЕ ЭТО НЕ ЗАКОНЧИТСЯ!!')
+f.close()
+while True:
+# Открываем файл программой по умолчанию
+os.startfile('beer.txt')
+# Делаем паузу в одну секунду
+time.sleep(1)
+Below is a list of some useful teams:
+•	os.path.basename('путь')– returns the name of the file or folder at the end of the way; 
+•	os.path.dirname('путь')– returns the parental path to the object of the path; 
+•	os.path.splitext('путь')– divides the path to the path and file extension; 
+•	os.path.exists('путь')– whether there is a way to the file or folder; 
+•	os.path.isfile('путь')whether the object is a file (existing); 
+•	os.path.isdir('путь')is the object of the path a folder (existing). 
+ 
+Regular expressions
+Regular expressions are special templates for searching and replacing strings in text. Generally speaking, they can be considered an independent language, and its study goes beyond this cycle. We will walk along the very basics and use of regulars in Python.
+www
+You can read more about re-expans in the Python documentation, Wikipedia or in the book Jeffrey Friedle, which is called “Regular Expressions”.
+We have written more than once about useful sites that help to work with regular expressions: CyberChef, RegExr, txt2re. In addition, you can pay attention to the service regex101.com and the RegexOne website with an interactive simulator.
+The re module is responsible for working with regular expressions in Python. First of all, we import it.
+import re
+As the simplest pattern, we can use a word. Let it be “beer” traditionally:
+import re
+pattern = r"пиво"
+string = "Хакер знает, что пиво играет во взломе решающую роль. Свежее пиво — ключ к сисадмину. Пока сисадмин ходит писать, можно сесть за его комп и внедрить троян."
+result = re.search(pattern, string)
+print(result.group(0))
+Team re.search(pattern,string)looking for in the text stringFirst Signing of the Template patternand returns a group of lines that can be accessed through the method .group(). But the team searchLooking for only the first sign of the template. Therefore, in our case, only one result will be returned - the word "beer", despite the fact that in our text it is present twice.
+To return all the changes of the template to the text, the command is used re.findall(pattern, string). This command will return the list of lines that are present in the text and match the template.
+import re
+pattern = r"пиво"
+string = "Хакер знает, что пиво играет во взломе решающую роль. Свежее пиво — ключ к сисадмину. Пока сисадмин ходит писать, можно сесть за его комп и внедрить троян."
+result = re.findall(pattern, string)
+print(result)
+Info
+Please note that the templates in regular terms have a letter r before the start of the line. These are the so-called raw lines in which the screening symbol does not work with the reverse slash \. At the same time, the “raw” line cannot end with this symbol.
+In the previous two examples of programs as a template patternTo search for lines, you just used a word. But the power of regular expressions is not that. You can replace parts of the template with special symbols so that not only specific words, but also very different lines fit the template.
+Let's, for example, try to find in the text all the words that begin with "pie". For this, use a special symbol \bIt means “the beginning of the word.” Immediately after it, we indicate where the word should start, and write a special symbol wwhich means that some letters must go further in the template (plus means that there may be one or more of them) until there is a non-letter symbol (e.g., a gap or a punctuation mark). The template will look like this: r"\bпи\w+".
+import re
+pattern = r"\bпи\w+"
+string = "Хакер знает, что пиво играет во взломе решающую роль. Свежее пиво — ключ к сисадмину. Пока сисадмин ходит писать, можно сесть за его комп и внедрить троян."
+result = re.findall(pattern, string)
+print(result)
+ Brief reference to special characters
+Let's try to perform a slightly more difficult task. Find in the text all email with a domain mail.ruIf they are there.
+import re
+pattern = r"\b\w+@mail\.ru"
+string = "Если вы хотите связаться с админом, пишите на почту admin@mail.ru. По другим вопросам обращайтесь на support@mail.ru."
+result = re.findall(pattern, string)
+print(result)
+As you can see, we used the same trick as last time, wrote a special symbol \bto indicate the beginning of the word, then \w+, which means "one or more letters", and then @mail.ru, replicating the point, because otherwise it will mean “any symbol”.
+It is often necessary to find some element of the line, surrounded by the other two elements. For example, it could be a URL. To highlight the part of the template that needs to be returned, brackets are used. Let me give you an example in which you will get all the link addresses from some piece of code to HTML.
+import re
+string = 'Вы можете посмотреть карту сайта <a href="map.php">тут</a>. Посетите также <a href="best.php"раздел</a>'
+pattern = r'href="(.+?)"'
+result = re.findall(pattern,string)
+print(result)
+In the code above, the pattern was used r'href="(.+?)"– in this template, the search bar begins with href="and ends with another double quote. Brackets are needed in order to indicate which part of the fittings to the template you want to get into the variable result. The point and plus inside the brackets indicate that inside the quotation marks can be any symbols (except for the symbol of the new line). The question mark means that you need to stop before the first quotation rate met.
+Info
+The question mark in regular expressions is used in two slightly different meanings. If it goes after one symbol, it means that the symbol may or may not be present in the line. If the question mark goes after a group of symbols, it means “unexpected” (non-greedy mode): such a regularl will try to capture as few characters as possible.
+We can not only look for lines, but also replace them with something else. For example, let’s try to remove all tags from the HTML code. For this purpose, the command is used re.sub(pattern,'чем заменять',string).
+import re
+string = 'Вы можете посмотреть карту сайта <a href="map.php">тут</a>. Посетите также <a href="best.php"раздел</a>'
+pattern = r'<(.+?)>'
+result = re.sub(pattern,'',string)
+print(result)
+The program will print the line without tags, as we replaced them with an empty line.
+Regular expressions are a very powerful thing. Having mastered them, you can do with the lines almost anything, and in combination with code in Python - literally anything. First, you can experiment and change some of the recipes.
+ 
+Functions
+It’s time to talk more about the functions. We have repeatedly called different functions – like built-in in Python (e.g., print()), and from plug-ins (e.g., urllib.request()) But what is a function from the inside and how to do them yourself?
+Imagine that you have some kind of set of commands that need to be done several times, changing only the input data. Such units of commands are usually taken into separate pieces of the program.
+Info
+In object-oriented programming, functions are methods of a class and are written by point from its name.
+s='Hello, xakep!'
+print(s) # Функция
+s.lower() # Метод
+The function may have input parameters – one or more variables that are written in brackets after the function name. When you call a function, you can pass on the arguments for these parameters. Some of the parameters may be optional or have a default value – in case it is not transmitted.
+The announcement of the function begins with a keyword def, then follows the function name, bracket parameters and the program code separated by four spaces. The function can return one or more values using a keyword return. By the way, it stops the function, and if any teams follow it, they will be missed.
+For example, we will understand the simplest function that will take two numbers as arguments and multiply them by returning the result of multiplication. Let's call it umn.
+def umn(a, b):
+c = a * b
+return c
+Now that you have described the function, then in the same program you can call it.
+a = int(input('Введите первое число: '))
+b = int(input('Введите второе число: '))
+с = umn(a, b)
+print(c)
+Sometimes you need to set one of the parameters as optional, setting the default value for it.
+def umn(a, b=10):
+c = a * b
+return c
+Now, if you call a function and not give it the second argument, then it will simply consider it equal to ten, that is, it will multiply any transferred number by ten.
+с=umn(5)
+print(c)
+Although the parameter bin this case, equal by default 10 and is optional for transmission as a second argument, you can still convey the second argument, if necessary, and then as a quality bwill be used not 10and the transferred value.
+с=umn(5, b=20)
+print(c)
+Inside the program, we can call the function we create as many times as we can.
+Let’s create a program that will count the salary increase for every vulnerability that a hacker found at work. Each hacker will have his own salary, depending on his rank, but the accruing an increase for all works on the principle of “+2% to the basic salary for vulnerability, if more than three of them are found.”
+We will make a function that accepts as arguments the size of the employee’s salary and the number of vulnerabilities found. For rounding the result we use the function round(), which rounds the increase to the whole number.
+def pribavka(zarplata, bugs):
+k = 0
+if bugs > 3:
+k = round((bugs - 3) * 0.02 * zarplata)
+return k
+a = int(input('Введите зарплату сотрудника: '))
+b = int(input('Введите количество найденных им уязвимостей за месяц: '))
+c = pribavka(a, b)
+print('В этом месяце прибавка к зарплате составит: ' + str(c))
+If the function has to return more than one value, then you can list them through a comma.
+def myfunc(x):
+a = x + 1
+b = x * 2
+return a, b
+The function will return the list, but we can immediately assign the return values to some variable:
+plusone, sum = myfunc(5)
+Inside the functions, it is quite possible to use variables that were found in the program code before the function call. But if you set a variable with the same name within the function code, then this variable will automatically become local and all further changes will only occur with it within the function.
+Let me explain by example:
+def boom(a, b):
+z = 15
+c = a * b * z
+return c
+z = 1
+c = boom(15, 20)
+print(z)
+As a result of the program, you will see a unit. Why? Inside the function code we assigned a variable zvalue 15, and it has become local, and all changes with it will occur within the function, while in the main program its value will still be equal to one.
+It’s a bit difficult to understand, but it’s actually convenient. If you write several similar functions, you can use the same names of local variables inside them, without fear that they will affect each other in some way.
+Variables, out of functions are called global. If you want to change one of them from inside the function, then declare it inside the function, using the keyword global.
+def addfive(num):
+global a
+a += num
+a = 5
+addfive(3)
+print(a)
+This program will print 8. Please note that we did not return anything through return, and just changed the global variable. By the way, a function in which nothing is returned through return, will return the value None.
+a = 5
+print(addfive(3))
+On the screen there is a word None. This is useful if the function returns something only if some conditions are met, and if they are not fulfilled, then the execution does not reach return. Then you can check whether she returned None.
+def isoneortwo(num):
+if(num==1):
+return 'Один'
+if(num==2):
+return 'Два'
+print(isoneortwo(1))
+print(isoneortwo(2))
+print(isoneortwo(3))
+This function checks whether the value is equal to a unit or a deuce, and if not equal, it will return None. This can be further verified with if:
+if isoneortwo(3) is None:
+print("Не 1 и не 2!")
+So, we have learned to create functions, call them and return parameters from them, and also use global variables within the functions. From now on, we can already take on relatively complex examples!
+ 
+Practice: SQL Vulnerabilities Test
+This time we will create a script that will search for SQL vulnerabilities across different URLs. We will create a file in advance urls.txt, in each line of which there will be the addresses of sites containing GET parameters. For example:
+http://www.taanilinna.com/index.php?id=325
+https://www.925jewellery.co.uk/productlist.php?Group=3&pr=0
+http://www.isbtweb.org/index.php?id=1493
+We will write a script that receives a list of similar URLs from our file and adds a quote sign to each of the GET parameters, trying to trigger SQL database errors.
+
+###############
+Made the first task to count slashes on the way:
+import os
+gap = ' '
+for roots, dirs, files in os.walk('".):
+    #gap for dirs
+    if (os.path.relpath(roots)! =r'.')
+        fgap = os.path.relpath(roots).count(')+1
+        print(fgap* ',roots)
+    #gap for files
+    for file in files:
+        gap = os.path.join(roots, file).count(')
+        print(gap*', file)
+
+
