@@ -1,3 +1,5 @@
+https://xakep.ru/2021/08/04/python-for-newbies-3/#toc01.
+
 Python without the boring books - learn to work with the OS, study regular expressions, and functions - 1
 Content of the article
 •	We work with files
