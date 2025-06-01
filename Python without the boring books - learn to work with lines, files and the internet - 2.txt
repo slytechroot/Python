@@ -1,0 +1,272 @@
+Python without the boring books - learn to work with lines, files and the internet - 2
+Content of the article
+•	Formatting the lines
+•	Method 1 – c by using the .format() method
+•	Method 2 - through f-lines
+•	Files
+•	Working with the web
+•	Error handling
+•	We write a port scanner
+•	Homework
+Once the crocodile Gena and Cheburashka was instructed to write an essay on the topic “How I spent the summer”. The problem was that all summer friends drank beer. A gene that does not know how to lie, and wrote, so Cheburashka had to replace some words. And since Cheburashka was an encoder on the python, he did it with a string function. In this article, I will show you how to keep up with Cheburashka and learn how to work with lines, files and make queries to websites in Python.
+From the editorial board
+Recently, we conducted a survey among readers and found that many would like to study Python, and start from the very beginning. As an experiment, we published an article “Python from absolute zero. We learn to code without boring books”, where they talked about Python’s azas: variables, conditions, cycles and lists. The responses were positive, and we decided to continue to introduce readers to Python in our brand-owned boring style.
+This article, like the previous one, is available without a paid subscription, so boldly share these links with friends who dream of learning Python!
+Let’s start with the lines. To solve the problem that confronted friends, Cheburashka used the function replace(), which replaces one substring in the line with another.
+First, he announced the variable sAnd he put there a line that Gena sent him.
+s = 'Все лето мы пили пиво. Вот как-то открываю дверь, а на пороге Чебурашка, весь такой пьяный-пьяный, и бутылка из кармана торчит.'
+Then Cheburashka identified a dictionary of words that needed to be replaced.
+slova = {'пили':'читали', 'пиво':'книги', 'пьяный':'начитанный', 'бутылка':'энциклопедия'}
+And now with the help of a cycle forCheburashka had a dictionary to replace each of the words (key) the corresponding value from the dictionary (slova[key]):
+for key in slova:
+s = s.replace(key, slova[key])
+print(s)
+Info
+Dictionaries are very similar to the lists, but the values in them are written in pairs: the key and the value. You can find the value by the key. We can assume that in the lists the keys are indices (0, 1, 2 ...), and in dictionaries - lines.
+Function replace()convenient to use to completely remove some words from the line. To do this, we will replace them with an empty line (if you open and close the quote, you will get an empty line):
+s = '''Я не люблю пить пиво.
+Оно невкусное и неполезное!'''
+s = s.replace('не','')
+print(s)
+Info
+To write in a few lines in the variable, you can turn them into three single quotes and make transfers right in the code.
+To get the number of characters in the string, the len() function is used.
+s = 'Если очень вам неймется, код пишите как придется!'
+n = len(s)
+print(n)
+And, as I said in the last article, from the lines you can take cuts as from arrays, if you specify the beginning and end of the subscript in the square brackets after the variable. The position begins from zero.
+s = 'Меня зовут Бонд, Джеймс Бонд'
+a = s[11:15]
+print('Фамилия: ' + a)
+If you need to make a slice from the beginning of the line, the first figure can not be written.
+Suppose you need to find the lines on the list that start on https. Let's get them out with for, for each check whether the first five characters coincide with the string https, and if so, we output the line:
+mas = [ 'Это просто строка', 'https://xakep.ru', 'Еще одна строка', 'https://habr.ru' ]
+for x in mas:
+if x[:5] == 'https':
+print(x)
+To calculate the number of sublines in the line, you can use the method .count():
+s = 'Прикинь, короче, я такой, короче, ему бах эксплоитом по порту, а он, короче, упал сразу!'
+n = s.count('короче')
+print(n)
+Sometimes at the beginning or at the end of the line there may be unnecessary gaps or string transfers. Let's remove them special team .strip():
+s = ' Пива много не бывает! \n'
+s = s.strip()
+print(s)
+Info
+Transpositions of lines can be added using symbols \n (used in all OS) or \r\n (in Windows). There are other special systems. For example, \t - sign of tabulation.
+To determine the presence of substring in the line s, you can use the method .find():
+n = s.find('строка, которую ищем')
+If the reasoned substring is found, then in the variable nwill get its position in the line, and if not found, nwill become equal -1.
+Let's try to determine if there is an e-mail address in the line with Xakep.ru, that is, we will look for a substring @xakep.ru.
+But first we will need another string method – .split(). It allows you to divide the line into parts, indicating as an argument a string-divisionator. For example, s.split('\n')divide the text into paragraphs according to the symbol of the transfer of the line. If you leave the brackets empty, the dividingter will be used by default - a space.
+s = 'Это обычная строка, а в ней адрес почты vasya@xakep.ru'
+words = s.split()
+for w in words:
+n = w.find('@xakep.ru')
+if n != -1:
+print('Найден e-mail: ' + str(w) + ' в позиции ' + str(n))
+Method .join()allows, on the contrary, to glue the lines. It accepts the list and returns a string where each element of the list is connected to another through the string in which you called this method.
+s = 'вирус внедряется '
+list1 = ['раз, ', 'два, ', 'три...']
+print(s + s.join(list1))
+ 
+Formatting the lines
+We have repeatedly printed different things, connecting the lines with a simple addition. This is not always convenient, especially considering that if the numbers come across, they will have to be translated into the lines by the function str(). There is a more beautiful and convenient way to substitute the values of variables inside the strings. More precisely, two slightly different ways.
+ 
+Method 1 – c by using the .format() method
+We can insert paired figure brackets into the line and then call string method .format()and give him the necessary values in the order of their substitution in the line.
+name = 'Вася Пупкин'
+age = 20
+address = 'улица Пушкина, дом Колотушкина'
+info = 'Имя: {}. Возраст: {}. Адрес: {}'.format(name, age, address)
+print(info)
+You can transfer information with a list through an asterisk:
+data = ['Вася Пупкин', 20, 'улица Пушкина, дом Колотушкина']
+info = 'Имя: {}. Возраст: {}. Адрес: {}'.format(*data)
+print(info)
+ 
+Method 2 - through f-lines
+Another option is to write a letter fbefore the line and then in the figured brackets to indicate directly the variables.
+name = 'Вася Пупкин'
+age = 20
+address = 'улица Пушкина, дом Колотушкина'
+info = f'Имя: {name.upper()}. Возраст: {age}. Адрес: {address}'
+print(info)
+The main advantage of this method is that you can insert the value into the line several times. In addition, you can change the values right in the figured brackets: first, Python will perform all the actions in them, and then substitute the result in the line. Okay, method .upper()In the example above, all the letters are capital.
+ 
+Files
+The listed methods are enough for you to do with the lines anything. But where do these lines come from? Most often they are recorded in files, so now I will tell you how to manage them in Python.
+To work with a file, you need to open it. For this purpose, the function is open(), and it works like this:
+f = open('имя файла с путем и расширением', 'режим работы с файлом', encoding='Кодировка текста')
+There are several modes of working with files, but you are mainly interested in:
+•	r– open the file to read it information;
+•	w– open the file to write it information (creates a new file);
+•	a– open the file to write information at the end of the file (describes the information at the end of the existing file);
+•	a+– Record and reading.
+To avoid problems with the ways in Windows, use a double slash in them \\, as well as before the opening circuit of the file, put the letter u, indicating that the string is in Unicode encoding:
+f = open(u'D:\\test.txt', 'r', encoding='UTF-8')
+You can read the lines from the file by .read():
+f = open('test.txt', 'r', encoding='UTF-8')
+s = f.read()
+print(s)
+Alternatively, you can read individual strings from the file via a cycle for:
+f = open('test.txt', 'r', encoding='UTF-8')
+for x in f:
+print(x)
+After the work with the file is finished, you need to close it.
+f.close()
+Info
+To work with binary files when you open a file, add the letter to the mode b:
+f = open('myfile.bin', 'rb')
+d = f.read()
+print("d = ", d)
+We will talk more about binary data in one of the following articles.
+Let's now try to create a new text file in the same directory with our script and write down the values of some variables in it.
+s1 = 'Раз, два, три, четыре, пять\n'
+s2 = 'Я иду сервак ломать...\n'
+f = open('poems.txt', 'w', encoding='UTF-8')
+f.write(s1)
+f.write(s2)
+f.close()
+Please note that at the end of each line there is a symbol \n– transition to a new line.
+Let's say you want to finish the third line at the end of this file. This is where the record schedule will be useful!
+s3 = 'Ох, устанут поднимать!\n'
+f = open('poems.txt', 'a', encoding='UTF-8')
+f.write(s3)
+f.close()
+It is also very convenient to use the design to open files with open('имя файла с путем и расширением', 'режим работы с файлом') as f, because thanks to the word with the file will close automatically and you do not have to think about it.
+s = 'Если вы закроете этот файл, ваш диск будет отформатирован!\nШутка\n'
+with open('test.txt', 'w', encoding='UTF-8') as f:
+f.write(s)
+ 
+Working with the web
+Let’s learn to get information from the web. First, you need to install several modules. We write in the command line:
+pip install requests
+pip install html2text
+The request module allows you to make GET and POST requests to web pages. The html2text module serves to convert the HTML code of web pages to plain text, that is, it cleans it from HTML tags.
+We will import our new modules at the beginning of the program and try to get some page from the Internet.
+import requests
+# Делаем GET-запрос
+s = requests.get('http://xakep.ru')
+# Печатаем код ответа сервера
+print(s.status_code)
+# Печатаем HTML-код
+print(s.text)
+The program will print a lot of HTML code, which makes up the main page of the journal. But what if you only need the text of the site, and not a baggage from the tags? Here will help html2text. It will select from the code text, titles and pictures and give them away without HTML tags.
+import requests
+import html2text
+# Делаем GET-запрос
+s = requests.get('http://xakep.ru')
+# Код ответа сервера
+print(s.status_code)
+# Создается экземпляр парсера
+d = html2text.HTML2Text()
+# Параметр, влияющий на то, как парсятся ссылки
+d.ignore_links = True
+# Текст без HTML-тегов
+c=d.handle(s.text)
+print(c)
+In addition to GET queries, there are so-called POST queries that are used to refer to the server of large texts or some files. If you see a form on the site, especially with the download of the file, then, most likely, when you click on the "Send" button, a POST-request will be made.
+The request library also allows you to make POST queries. You may need it to simulate the user’s actions – for example, if you need to automate the work with the site. You can even use it as a Fixed analogue of Burp!
+Let's see how to send a regular POST request. Suppose on the site site.ruThere is a script guest.php, which POST-query takes from the form of the user name nameand message messageand then put them in a guest book.
+import requests
+# Переменные, которые нужно отправить POST-запросом
+user = 'coolhacker'
+message = 'You have beeh pwned!!!'
+# Делаем POST-запрос и передаем словарь из полей
+r = requests.post("http://site.ru/guest.php", data={'user': user, 'message': message})
+print(r.status_code)
+Now now, please send a request with the file payload.phpin the attachment and the same two fields of form as in the previous request. The file will come to the server under the name misc.php.
+import requests
+user = 'kitty2007'
+message = '(* ^ ω ^)'
+# Открываем файл в бинарном режиме
+with open('payload.php', 'rb') as f:
+# POST-запрос с отправкой файла
+r = requests.post('http://site.ru/upload.php', files={'misc.php': f}, data={'user': user, 'message': message})
+Learn to download files. This is in many ways similar to the query of pages, but it is better to do it in streaming mode (stream=True) We will also need a shutill module that has a convenient function copyfileobj. It allows you to copy the contents of binary files – in our case from the Internet to our disk.
+import requests
+import shutil
+import os
+# Файл, который надо скачать
+s = 'https://xakep.ru/robots.txt'
+# С помощью функции os.path.split(s) вытаскиваем из строки путь к файлу и его имя
+dirname, filename = os.path.split(s)
+# GET-запрос в режиме stream=True для скачивания файла
+r = requests.get(s, stream=True)
+# Если ответ сервера удачен (200)
+if r.status_code == 200:
+# Создаем файл и открываем его в бинарном режиме для записи
+with open(filename, 'wb') as f:
+# Декодируем поток данных на основе заголовка content-encoding
+r.raw.decode_content = True
+# Копируем поток данных из интернета в файл с помощью модуля shutil
+shutil.copyfileobj(r.raw, f)
+Info
+The server’s response codes help you understand how the request went. The code 200 means that the server has successfully processed the query and gave us a response, code 404 - the page was not found, 500 is an internal server error, 503 is an unavailable server and so on. You will find a full list of codes on Wikipedia.
+ 
+Error handling
+Before disassembles a more real example, I have to show you another language design that is indispensable when working with files and the network. This is the treatment of exceptional situations, that is, errors.
+Often, when the program works, the computer faces different problems. For example, the file is not found, the network is not available, the place on the disk ended. If the programmer did not take care of this, then the Python interpreter will simply complete the work with the mistake. But there is a way to foresee the troubles right in the code and continue the work - design try... except.
+She looks like this:
+try:
+# Тут какие-то команды,
+# которые могут привести к ошибке
+except:
+# Наши действия, если ошибка произошла
+You can catch specific types of errors if after the word exceptSpecify the type name. For example, KeyboardInterruptworks, if the user tries to complete the program by pressing Ctrl-C. In our government to ban it!
+Yes, we can even allow to divide by zero if we catch the error ZeroDivisionError. Here is what it will look like:
+try:
+k = 1 / 0
+except ZeroDivisionError:
+k = 'over 9000'
+print(k)
+www
+Full list of exceptions
+ 
+We write a port scanner
+And now we're going to write our own port scanner! It will be simple, but quite a slave. This will help us in this soft module, where work with sockets is implemented.
+Info
+A skets is an interface of data exchange between processes. There are client and server sockets. A server socket listens to a certain port in anticipation of connecting customers, and the client connects to the server. After the connection has been established, the data exchange begins.
+This is what the code will look like.
+import socket
+# Список портов для сканирования
+ports = [20, 21, 22, 23, 25, 42, 43, 53, 67, 69, 80, 110, 115, 123, 137, 138, 139, 143, 161, 179, 443, 445, 514, 515, 993, 995, 1080, 1194, 1433, 1702, 1723, 3128, 3268, 3306, 3389, 5432, 5060, 5900, 5938, 8080, 10000, 20000]
+host = input('Введи имя сайта без http/https или IP-адрес: ')
+print ("Ожидай, идет сканирование портов!")
+# В цикле перебираем порты из списка
+for port in ports:
+# Создаем сокет
+s = socket.socket()
+# Ставим тайм-аут в одну cекунду
+s.settimeout(1)
+# Ловим ошибки
+try:
+# Пробуем соединиться, хост и порт передаем как список
+s.connect((host, port))
+# Если соединение вызвало ошибку
+except socket.error:
+# тогда ничего не делаем
+pass
+else:
+print(f"{host}: {port} порт активен")
+# Закрываем соединение
+s.close
+print ("Сканирование завершено!")
+As you can see, nothing complicated!
+ 
+Homework
+1.	Make the port scanner to receive an IP list from one file and write the scan results in another.
+2.	In the last article, you learned to work with a clipboard. Write a program that is constantly running and periodically receives the contents of the exchange buffer. If it has changed, it adds it to the end of the file monitoring.txt.Try to write in the log only those intercepted lines in which there are Latin letters and numbers, so it is more likely to catch passwords.
+3.	Write a program that reads a file of this kind:
+Иван Иванов|ivanov@mail.ru|Password123
+Дима Лапушок|superman1993@xakep.ru|1993superman
+Вася Пупкин|pupok@yandex.ru|qwerty12345
+Фродо Бэггинс|Frodo@mail.ru|MoRdOr100500
+Кевин Митник|kevin@xakep.ru|dontcrackitplease
+Юзер Юзерович|uswer@yandex.ru|aaaa321
+The program must sort the strings for domains from email, for each domain create a file and place a list of mailing addresses in each file.
+4.	Write the program that passes the sites on the list, downloads robots.txt and sitemap.xml files and saves on the disk. If the file is not found, a message about it is displayed.
+That's all for today. From the next article, you will learn how to work with the OS file system, deal with the functions, learn the power of regular expressions and write a simple SQL vulnerability scanner. Don't miss it!
+
+
