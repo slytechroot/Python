@@ -9,10 +9,14 @@ Content of the article
 •	We write a port scanner
 •	Homework
 Once the crocodile Gena and Cheburashka was instructed to write an essay on the topic “How I spent the summer”. The problem was that all summer friends drank beer. A gene that does not know how to lie, and wrote, so Cheburashka had to replace some words. And since Cheburashka was an encoder on the python, he did it with a string function. In this article, I will show you how to keep up with Cheburashka and learn how to work with lines, files and make queries to websites in Python.
+
 From the editorial board
 Recently, we conducted a survey among readers and found that many would like to study Python, and start from the very beginning. As an experiment, we published an article “Python from absolute zero. We learn to code without boring books”, where they talked about Python’s azas: variables, conditions, cycles and lists. The responses were positive, and we decided to continue to introduce readers to Python in our brand-owned boring style.
+
 This article, like the previous one, is available without a paid subscription, so boldly share these links with friends who dream of learning Python!
+
 Let’s start with the lines. To solve the problem that confronted friends, Cheburashka used the function replace(), which replaces one substring in the line with another.
+
 First, he announced the variable sAnd he put there a line that Gena sent him.
 s = 'Все лето мы пили пиво. Вот как-то открываю дверь, а на пороге Чебурашка, весь такой пьяный-пьяный, и бутылка из кармана торчит.'
 Then Cheburashka identified a dictionary of words that needed to be replaced.
@@ -21,6 +25,7 @@ And now with the help of a cycle forCheburashka had a dictionary to replace each
 for key in slova:
 s = s.replace(key, slova[key])
 print(s)
+
 Info
 Dictionaries are very similar to the lists, but the values in them are written in pairs: the key and the value. You can find the value by the key. We can assume that in the lists the keys are indices (0, 1, 2 ...), and in dictionaries - lines.
 Function replace()convenient to use to completely remove some words from the line. To do this, we will replace them with an empty line (if you open and close the quote, you will get an empty line):
